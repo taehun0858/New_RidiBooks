@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/MemberController")
+@WebServlet("/member/controller")
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,16 +24,11 @@ public class MemberController extends HttpServlet {
 		MemberService service = new MemberService();
 		int statusCode = service.joinMember(request, response);		
 		response.setStatus(statusCode);
-		// 성공적으로 회원가입시 200코드 전달됨. -> 코드가 전달되는데서 Id고유 번호를 전달해주는걸로 변경예정
-		HttpSession session = request.getSession();
-		if(session.isNew() || session.getAttribute("isLogin")==null) {
-			session.setAttribute("isLogin", true);
-			// 추후 세션에 isLogin속성에 boolean이 아니라 Id의 고유 번호를 넣어줄 예정
-		}
+		// 성공적으로 회원가입시 200코드 전달됨. 
 		
 		if(statusCode == HttpServletResponse.SC_OK) {
 			// 상태코드가 200이면 다음 페이지로 이동
-			response.sendRedirect("회원가입이 완료된 다음 보일 페이지 URL");
+			response.sendRedirect("회원가입이 완료된 다음 보일 페이지 URL"); // 로그인 컨트롤러에서 로그인 자동으로 실행
 		}
 	}
 

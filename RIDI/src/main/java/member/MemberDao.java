@@ -1,11 +1,15 @@
 package member;
 
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 public class MemberDao {
@@ -30,6 +34,7 @@ public class MemberDao {
 	
 	// member정보 추가하기 -> 성공 시 true반환, 실패 시  false반환 
 	public boolean insertMemebr(MemberDto member) {
+		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		boolean success = false;		
@@ -65,5 +70,66 @@ public class MemberDao {
 		}
 		
 		return success;
+	}
+
+	public boolean loginMemebr(String id, String pw) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		boolean success = false;
+		
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM member WHERE id=? AND pw=?;";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			 	
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) success=true;return success;				
+						
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+		}
+		
+		return success;
+	}
+
+	public int loginIdNum(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int IdNum = 0;
+		
+		try {
+			conn = getConnection();
+			String sql = "SELECT Id_Num FROM member WHERE id=?;";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			 	
+			ResultSet rs = pstmt.executeQuery();
+			IdNum = rs.getInt("Id_Num");
+							
+						
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+		}
+		
+		return IdNum;
 	}
 }
