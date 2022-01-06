@@ -77,7 +77,6 @@ public class MemberService {
 		MemberDao dao = new MemberDao();
 		boolean success = dao.loginMemebr(Id,Pw);
 		
-		// 로그인 검증 코드
 		
 		if(success) loginId = dao.loginIdNum(Id);
 		return loginId;
