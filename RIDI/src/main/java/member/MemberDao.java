@@ -100,7 +100,9 @@ public class MemberDao {
 		return success;
 	}
 
+	// Id_Num을 반환해주는 메서드 
 	public int loginIdNum(String id) {
+		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int IdNum = 0;

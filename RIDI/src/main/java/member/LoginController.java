@@ -11,22 +11,33 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LoginController
  */
-@WebServlet("/LoginController")
+@WebServlet("/member/logIn")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	// 로그아웃
+	protected void doGET(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		session.invalidate();
 	}
+	
+	// 로그인 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		MemberService service = new MemberService();
-		int loginId = service.login(request, response);
-		// 로그인 성공시 상태코드 200 전달
-		if(loginId!=0) response.setStatus(200);
-		
-		// 로그인 성공시 세션의 isLogin속성에 아이디 번호 전달
+		int statuscode = service.login(request, response);
+		response.setStatus(statuscode);
+		// 로그인 실행시 결과(상태코드)를 상태코드에 전달
+		int loginId;
 		HttpSession session = request.getSession();
-		if(response.getStatus()==200 && session.getAttribute("isLogin")==null) session.setAttribute("isLogin", loginId);
+		if(response.getStatus()==200) {
+			// 로그인을 성공했을 때(상태코드가 200일때) 로그인한 아이디의 고유 번호를 전달받아 세션의 isLogin속성에 저장
+			// 세션은 5분동안 아무런 행동을 하지 않는다면 없어짐
+			loginId=service.getLoginIdNum(request, response);
+			session.setAttribute("isLogin", loginId);
+			session.setMaxInactiveInterval(60*5);
+		}
+		
 		
 		
 		

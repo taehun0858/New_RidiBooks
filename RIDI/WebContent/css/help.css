@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 상단 배너 */
+header {
+    display: block;
+    width: 100%;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 62px;
+    background-color: #1f8ce6;
+}
+
+.header-nav {
+    display: table;
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    margin-left: 40px;
+}
+
+.nav-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nav-wrapper a {
+    border: 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    width: auto;
+    text-decoration: none;
+}
+
+/* 본문 */
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 25px 5% 0;
+}
+
+.sub-nav {
+    display: flex;
+    justify-content: space-between;
+    min-height: 50px;
+    padding-bottom: 15px;
+}
+
+ol {
+    list-style: none;
+    padding-top: 10px;
+}
+
+li {
+    display: inline-block;
+
+}
+li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #9ea7ad;
+}
+
+input[type="search"] {
+    border: 1px solid #d1d5d9;
+    border-radius: 6px;
+    color: #303538;
+    height: 40px;
+    padding-left: 40px;
+    padding-right: 20px;
+    width: 300px;
+}
+input[type="search"]:active {
+    border: 1px solid #1f8ce6;
+}
+
+.search i {
+    font-size: 18px;
+    color: #7d8e9e;
+    position: absolute;
+    top: 98px;
+    right: 248px;
+}

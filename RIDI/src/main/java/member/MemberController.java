@@ -6,7 +6,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @WebServlet("/member/controller")
 public class MemberController extends HttpServlet {
@@ -28,7 +27,7 @@ public class MemberController extends HttpServlet {
 		
 		if(statusCode == HttpServletResponse.SC_OK) {
 			// 상태코드가 200이면 다음 페이지로 이동
-			response.sendRedirect("회원가입이 완료된 다음 보일 페이지 URL"); // 로그인 컨트롤러에서 로그인 자동으로 실행
+			response.sendRedirect("/ridibooks/login.html"); // 로그인 컨트롤러에서 로그인 자동으로 실행
 		}
 	}
 
