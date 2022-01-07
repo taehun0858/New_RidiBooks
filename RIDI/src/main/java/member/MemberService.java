@@ -31,7 +31,7 @@ public class MemberService {
 		if(!Pw.equals(Pw2)) { 
 			// 비밀번호와 비밀번호 확인의 값은 같아야함.
 			statusCode = 401; return statusCode;}
-		
+		if(!Email.contains("@naver.com") || Email.contains("@google.com")) { statusCode = 401; return statusCode;}
 		
 		MemberDto member = new MemberDto();
 		member.setId(Id);

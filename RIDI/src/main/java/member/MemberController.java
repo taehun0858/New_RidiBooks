@@ -23,6 +23,7 @@ public class MemberController extends HttpServlet {
 		MemberService service = new MemberService();
 		int statusCode = service.joinMember(request, response);		
 		response.setStatus(statusCode);
+		// 회원가입기능 실행시 결과(상태코드)를 전달
 		// 성공적으로 회원가입시 200코드 전달됨. 
 		
 		if(statusCode == HttpServletResponse.SC_OK) {
