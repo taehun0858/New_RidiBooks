@@ -70,8 +70,8 @@
     </section>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script>
-        let $userid = $(".userId");
-        let $userpw = $(".userPw");
+        let $userId = $(".userId");
+        let $userPw = $(".userPw");
         let $idmessage = $(".message1");
         let $pwmessage = $(".message2");
         let $allmessage = $(".message3");
@@ -81,7 +81,7 @@
             $.ajax({
                 url: "member/logIn",
                 type: "POST",
-                data: "ID=" + $userid + "&PW=" + $userpw,
+                data: "ID=" + $userId + "&PW=" + $userPw,
                 success: function() {
                     location.href = "회원가입후 메인페이지";
                 },
