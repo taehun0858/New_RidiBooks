@@ -245,6 +245,9 @@ ul {
     border-bottom: 1px solid rgb(214, 222, 235);
     padding: 13px 15px;
 }
+.privacy {
+    border-bottom: 1px solid rgb(214, 222, 235);
+}
 
 .ulterms:hover {
     cursor: pointer;
@@ -285,4 +288,28 @@ button[type="submit"] {
 
 input[type="radio"] {
     display: none;
+}
+
+.error {
+    position: relative;
+    padding-right: 5px;
+    padding-left: 23px;
+    margin-top: -6px;
+    margin-bottom: 10px;
+}
+.error i {
+    position: absolute;
+    top: 0.5px;
+    left: 5px;
+    width: 12px;
+    height: 12px;
+    vertical-align: text-top;
+    fill: rgb(230, 73, 56);
+}
+
+.error p {
+    color: rgb(230, 73, 56);
+    font-size: 12px;
+    letter-spacing: -0.5px;
+    line-height: 15px;
 }
