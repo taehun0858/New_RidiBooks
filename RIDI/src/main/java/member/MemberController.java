@@ -12,13 +12,12 @@ public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Get 동작 - 검색?
+		// Get 동작 - 로그인 상태 체크
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// POST동작 회원가입,로그인
+		// POST동작 - 회원가입
 		
-		// 
 		request.setCharacterEncoding("UTF-8");
 		MemberService service = new MemberService();
 		int statusCode = service.joinMember(request, response);		
@@ -33,7 +32,7 @@ public class MemberController extends HttpServlet {
 	}
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Put 동작 - 회원 상태 변경(탈퇴)
+		// Put 동작 - 회원 정보 변경(비밀번호 변경)
 	}
 	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

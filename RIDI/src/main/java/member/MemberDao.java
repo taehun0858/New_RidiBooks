@@ -69,7 +69,7 @@ public class MemberDao {
 		return success;
 	}
 
-	public boolean loginMemebr(String id, String pw) {
+	public boolean getLoginMemebr(String id, String pw) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		boolean success = false;
@@ -101,7 +101,7 @@ public class MemberDao {
 	}
 
 	// Id_Num을 반환해주는 메서드 
-	public int loginIdNum(String id) {
+	public int getLoginIdNum(String id) {
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -130,5 +130,36 @@ public class MemberDao {
 		}
 		
 		return IdNum;
+	}
+	
+	public boolean getIdCheckBoolean(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		boolean result = false;
+		
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM member WHERE id=?;";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			 	
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) result=true;return result;				
+						
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+		}
+		
+		
+		return result;
 	}
 }
