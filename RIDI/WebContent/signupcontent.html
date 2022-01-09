@@ -54,11 +54,11 @@
                     <input type="text" id="userbirth" class="userbirth" placeholder="출생년도">
                     
                     <div class="bgender">
-                        <label for="gender" class="onecheck">
+                        <label for="gender" class="checkmale">
                             <input type="radio" name="gender" class="checkgender"  value="남" placeholder="남">
                             <span class="gcheck">남</span>
                         </label>
-                        <label for="gender" class="onecheck">
+                        <label for="gender" class="checkfe">
                             <input type="radio" name="gender" class="checkgender" value="여" placeholder="여">
                             <span class="gcheck">여</span>
                         </label>
@@ -92,7 +92,7 @@
                     </button>
                     <button type="button"  class="privacy">
                         <input type="radio" readonly>
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkbtn"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="eccheck"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                         <span class="ulterms">개인 정보 수집 및 이용 동의(필수)</span>
                         <a href="/legal/privacy-collect-and-use" class="tcheck">내용 확인<svg viewBox="0 0 30 48" width="10" height="10" fill="#808991" display="inline-block" class="fig-133dw2"><path d="M.9 4.4L5.2 0l23.9 23.9L5.1 48 .8 43.7l20-20z"></path></svg></a>
                     </button>
@@ -105,26 +105,31 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script>
         
-        let $label = $(".onecheck");
-        let $mlabel = $label.eq(0);
-        let $fmlabel = $label.eq(1);
+        const $checkmale = $(".checkmale");
+        const $checkfemale = $(".checkfe");
 
-        $($mlabel).on("click",function(e) {
-            $mlabel.css("background-color", "#dbefff");
-            
-            return false;
+        $(".checkmale").on("click", function(e) {
+            $checkmale.css("background-color", "#dbefff");
+            $checkfemale.css("background-color", "white");
+
+            e.preventDefault()
         });
 
-        $($fmlabel).on("click", function(e) {
-            $fmlabel.css("background-color", "dbefff");
-
+        $(".checkfe").on("click", function(e) {
+            $checkmale.css("background-color", "white");
+            $checkfemale.css("background-color", "#dbefff");
         });
 
-        $(".contain").on("click", function(e) {
-            let $allcheck = $(".checkbtn");
-            $allcheck.css("fill", "rgb(31, 140, 230");
+        let $checkbtn = $(".checkbtn");
+        let $eccheck = $(".eccheck");
+
+        $(".checkbtn").on("click", function() {
+            $checkbtn.css("fill" , "rgb(31, 140, 230");
         });
-    
+
+        $(".eccheck").on("click", function() {
+            $eccheck.css("fill", "rgb(31,140,230)");
+        });
     </script>
 
 </body>

@@ -185,14 +185,14 @@ input:hover{
     cursor: pointer;
 }
 
-.checkbtn {
+.checkbtn, .eccheck {
     width: 18px;
     height: 18px;
     vertical-align: middle;
     fill: rgb(214, 222, 235);
 }
 
-.checkbtn:active {
+.checkbtn:active ,.eccheck:active {
     fill: rgb(31, 140, 230);
 }
 
@@ -283,6 +283,6 @@ button[type="submit"] {
     box-shadow: rgb(209, 213, 217 / 30%) 0px 1px 1px 0px;
 }
 
-button[type="radio"] {
+input[type="radio"] {
     display: none;
 }
