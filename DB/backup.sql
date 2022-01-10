@@ -18,11 +18,25 @@ DROP DATABASE IF EXISTS `ridibooks`;
 CREATE DATABASE IF NOT EXISTS `ridibooks` /*!40100 DEFAULT CHARACTER SET utf8mb3 */;
 USE `ridibooks`;
 
--- 테이블 데이터 ridibooks.member:~1 rows (대략적) 내보내기
+-- 테이블 ridibooks.member 구조 내보내기
+DROP TABLE IF EXISTS `member`;
+CREATE TABLE IF NOT EXISTS `member` (
+  `Id_Num` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` varchar(20) NOT NULL,
+  `Pw` varchar(18) DEFAULT NULL,
+  `Email` varchar(30) DEFAULT NULL,
+  `Name` varchar(17) DEFAULT NULL,
+  `Birth` int(11) DEFAULT NULL,
+  `Sex` char(1) DEFAULT NULL,
+  `m_redate` datetime DEFAULT NULL,
+  `m_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id_Num`),
+  UNIQUE KEY `Email_Name` (`Email`,`Name`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COMMENT='회원가입 때 입력한 정보';
+
+-- 테이블 데이터 ridibooks.member:~0 rows (대략적) 내보내기
 DELETE FROM `member`;
 /*!40000 ALTER TABLE `member` DISABLE KEYS */;
-INSERT INTO `member` (`Id_Num`, `Id`, `Pw`, `Email`, `Name`, `Birth`, `Sex`, `m_redate`, `m_date`) VALUES
-	(6, 'go0858', '1111', 'ekdh0858@naver.com', '박태훈', 1998, '남', NULL, NULL);
 /*!40000 ALTER TABLE `member` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
