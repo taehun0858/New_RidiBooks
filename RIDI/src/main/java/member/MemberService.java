@@ -69,8 +69,11 @@ public class MemberService {
 		
 		MemberDao dao = new MemberDao();
 		boolean success = dao.getLoginMemebr(Id,Pw);
-		if(success) {statusCode = 200;}
-		// 로그인 성공시(입력한 아이디와 비밀번호에 맞는 정보가 있을 때) 200코드 전달
+		if(success) {
+			statusCode = 200;
+			dao.loginDateUpdate(Id);
+		}
+		// 로그인 성공시(입력한 아이디와 비밀번호에 맞는 정보가 있을 때) 200코드 전달, 최근 로그인 날짜 지금 날짜로 변경
 		else {statusCode = 404;}
 		// 로그인 실패시(입력한 아이디와 비밀번호에 맞는 정보가 없을 때) 404코드 전달
 		
@@ -94,6 +97,25 @@ public class MemberService {
 		boolean result = dao.getIdCheckBoolean(id);
 		
 		return result;
+	}
+	
+	public boolean checkEmail(String Email) {
+		MemberDao dao = new MemberDao();
+		boolean result = dao.getEmailCheckBoolean(Email);
+		
+		return result;
+	}
+
+	public String findIdByEmail(String email) {
+		MemberDao dao = new MemberDao();
+		String foundId = dao.findIdByEmail(email);
+		return foundId;
+	}
+
+	public String findPw(String id, String email) {
+		MemberDao dao = new MemberDao();
+		String foundPw = dao.findPw(id,email);
+		return foundPw;
 	}
 
 }
