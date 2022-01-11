@@ -19,7 +19,8 @@ public class MemberService {
 		String Birth = request.getParameter("Birth");
 		String Sex = request.getParameter("Sex");
 		String Email = request.getParameter("Email");
-		String Agree = request.getParameter("Agree"); 
+		String Agree1 = request.getParameter("Agree1");
+		String Agree2 = request.getParameter("Agree2"); 
 		// member테이블에 저장하는게 나을지 아님 처음 했던데로 Agree테이블에 따로 저장하는게 나을지??
 		int statusCode = 400;
 		
@@ -40,9 +41,6 @@ public class MemberService {
 		member.setBirth(Birth);
 		member.setSex(Sex.charAt(0));
 		member.setEmail(Email);
-		// LocalDateTime M_date = LocalDateTime.now();
-		// member.setM_Date(M_date); 
-		// 회원가입한 날짜와 시간 인데 시간이 안들어감(형식이 Date이니까) 
 		
 		
 		MemberDao dao = new MemberDao();

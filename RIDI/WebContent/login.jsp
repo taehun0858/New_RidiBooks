@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>·Î±×ÀÎ - ¸®µğºÏ½º</title>
+    <title>ë¡œê·¸ì¸ - ë¦¬ë””ë¶ìŠ¤</title>
     <link rel="stylesheet" href="css/login.css">
     <link rel="shortcut icon" href="https://static.ridicdn.net/_next/static/images/favicon-29c82025983fa410b3369f441b102764.ico">
 </head>
 <body>
-    <!-- »ó´Ü ¹è³Ê -->
+    <!-- ìƒë‹¨ ë°°ë„ˆ -->
     <div class="header-wrapper">
         <h1 class="logo-title">
             <a href="http://www.ridibooks.com/">
@@ -22,58 +22,58 @@
         </h1>
     </div>
     
-    <!-- º»¹® -->
+    <!-- ë³¸ë¬¸ -->
     <section class="main">
         <div class="content-wrapper">
             <form method="post" action="/ridibooks/member/logIn">
                 <div class="input-group">
                     <label class="account-label">
-                        <input type="text" class="userId" name="Id" placeholder="¾ÆÀÌµğ">
+                        <input type="text" class="userId" name="Id" placeholder="ì•„ì´ë””">
                     </label>
                     <label class="account-label">
-                        <input type="password" class="userPw" name="Pw" placeholder="ºñ¹Ğ¹øÈ£">
+                        <input type="password" class="userPw" name="Pw" placeholder="ë¹„ë°€ë²ˆí˜¸">
                     </label>
 
                     <div class="remember-group">
                         <label class="account-checkbox">
-                            <input type="checkbox"> <span>·Î±×ÀÎ »óÅÂ À¯Áö</span>
+                            <input type="checkbox"> <span>ë¡œê·¸ì¸ ìƒíƒœ ìœ ì§€</span>
                             <div class="link">
-                                <a href="https://ridibooks.com/account/find-id?return_url=https%3A%2F%2Fridibooks.com%2F%3FNaPm%3Dct%253Dkxi90zy0%257Cci%253Dcheckout%257Ctr%253Dds%257Ctrx%253D%257Chk%253D766e783cd25d7f974a231a61b73159fe207802a3">¾ÆÀÌµğ Ã£±â</a>
-                                <a href="https://ridibooks.com/account/find-password" class="border">ºñ¹Ğ¹øÈ£ Àç¼³Á¤</a>
+                                <a href="https://ridibooks.com/account/find-id?return_url=https%3A%2F%2Fridibooks.com%2F%3FNaPm%3Dct%253Dkxi90zy0%257Cci%253Dcheckout%257Ctr%253Dds%257Ctrx%253D%257Chk%253D766e783cd25d7f974a231a61b73159fe207802a3">ì•„ì´ë”” ì°¾ê¸°</a>
+                                <a href="https://ridibooks.com/account/find-password" class="border">ë¹„ë°€ë²ˆí˜¸ ì¬ì„¤ì •</a>
                             </div>
                         </label>
                     </div>
                 </div>
                 <div class="message1">
                     <p><svg viewBox="0 0 8 48" class="ridi_icon exclamation exclamation_1"><path d="M4 0C2.1 0 .6 1.5.6 3.4v27.4c0 1.9 1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4V3.4C7.4 1.5 5.9 0 4 0zm0 41.1c-1.9 0-3.4 1.5-3.4 3.4S2.1 48 4 48s3.4-1.5 3.4-3.4-1.5-3.5-3.4-3.5z"></path></svg>
-                        ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä
+                        ì•„ì´ë””ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”
                     </p>
                 </div>
                 <div class="message2">
                     <p><svg viewBox="0 0 8 48" class="ridi_icon exclamation exclamation_1"><path d="M4 0C2.1 0 .6 1.5.6 3.4v27.4c0 1.9 1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4V3.4C7.4 1.5 5.9 0 4 0zm0 41.1c-1.9 0-3.4 1.5-3.4 3.4S2.1 48 4 48s3.4-1.5 3.4-3.4-1.5-3.5-3.4-3.5z"></path></svg>
-                        ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä
+                        ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”
                     </p>
                 </div>
                 <div class="message3">
                     <p><svg viewBox="0 0 8 48" class="ridi_icon exclamation exclamation_1"><path d="M4 0C2.1 0 .6 1.5.6 3.4v27.4c0 1.9 1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4V3.4C7.4 1.5 5.9 0 4 0zm0 41.1c-1.9 0-3.4 1.5-3.4 3.4S2.1 48 4 48s3.4-1.5 3.4-3.4-1.5-3.5-3.4-3.5z"></path></svg>
-                        ¾ÆÀÌµğ ¶Ç´Â ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä
+                        ì•„ì´ë”” ë˜ëŠ” ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”
                     </p>
                 </div>
                 <div class="message4">
                     <p><svg viewBox="0 0 8 48" class="ridi_icon exclamation exclamation_1"><path d="M4 0C2.1 0 .6 1.5.6 3.4v27.4c0 1.9 1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4V3.4C7.4 1.5 5.9 0 4 0zm0 41.1c-1.9 0-3.4 1.5-3.4 3.4S2.1 48 4 48s3.4-1.5 3.4-3.4-1.5-3.5-3.4-3.5z"></path></svg>
-                        Å»ÅğÇÑ »ç¿ëÀÚ ÀÔ´Ï´Ù
+                        íƒˆí‡´í•œ ì‚¬ìš©ì ì…ë‹ˆë‹¤
                     </p>
                 </div>
 
-                <button type="submit" class="loginbtn">·Î±×ÀÎ</button>
-                <button type="button" class="signupbtn">È¸¿ø°¡ÀÔ</button>
+                <button type="submit" class="loginbtn">ë¡œê·¸ì¸</button>
+                <button type="button" class="signupbtn">íšŒì›ê°€ì…</button>
             </form>
         </div>
     </section>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script>
-        let $userid = $(".Id");
-        let $userpw = $(".Pw");
+        let $userid = $(".userId");
+        let $userpw = $(".userPw");
         let $idmessage = $(".message1");
         let $pwmessage = $(".message2");
         let $allmessage = $(".message3");
@@ -85,7 +85,7 @@
                 type: "POST",
                 data: "ID=" + $userid + "&PW=" + $userpw,
                 success: function() {
-                    location.href = "È¸¿ø°¡ÀÔÈÄ ¸ŞÀÎÆäÀÌÁö";
+                    location.href = "íšŒì›ê°€ì…í›„ ë©”ì¸í˜ì´ì§€";
                 },
                 error: function(response) {
                     if(response.status == 400) {

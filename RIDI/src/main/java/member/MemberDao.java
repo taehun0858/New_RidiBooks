@@ -214,7 +214,6 @@ public class MemberDao {
 			pstmt.setString(1, email);
 			 	
 			ResultSet rs = pstmt.executeQuery();
-			// rs는 try문 안에만 있어서 안닫아지는데 굳이 안닫아도 없어지는지??
 			if(rs.next()) result=true;
 			rs.close();
 						
