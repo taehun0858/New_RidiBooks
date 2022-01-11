@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -46,8 +48,13 @@ public class MemberDao {
 			pstmt.setString(3, member.getEmail());
 			pstmt.setString(4, member.getName());
 			pstmt.setString(5, member.getBirth());
-			pstmt.setDate(6, member.getM_Date());
-			pstmt.setDate(7, member.getM_reDate());
+			LocalDateTime joinDate = LocalDateTime.now();
+			LocalDateTime logindate = LocalDateTime.now();
+			
+			DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+			
+			pstmt.setString(6, dft.format(joinDate));
+			pstmt.setString(7, dft.format(logindate));
 			pstmt.setString(8, String.valueOf(member.getSex())); 	
 			// member의 데이터 형태가 char이지만 pstmt에서는 char저장이 없는듯-> member.getSex()를 String로 형변환
 			
@@ -84,7 +91,8 @@ public class MemberDao {
 			 	
 			ResultSet rs = pstmt.executeQuery();
 			
-			if(rs.next()) success=true;return success;				
+			if(rs.next()) success=true;
+			rs.close();
 						
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -116,6 +124,7 @@ public class MemberDao {
 			 	
 			ResultSet rs = pstmt.executeQuery();
 			IdNum = rs.getInt("Id_Num");
+			rs.close();
 							
 						
 		} catch (SQLException e) {
@@ -146,7 +155,37 @@ public class MemberDao {
 			 	
 			ResultSet rs = pstmt.executeQuery();
 			
-			if(rs.next()) result=true;return result;				
+			if(rs.next()) result=true;
+			rs.close();				
+						
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			
+		}
+		
+		
+		return result;
+	}
+	
+	public void loginDateUpdate(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+			
+		try {
+			conn = getConnection();
+			String sql = "UPDATE member SET m_redate=? WHERE id=?;";
+			pstmt = conn.prepareStatement(sql);
+			LocalDateTime m_redate = LocalDateTime.now();
+			DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
+			pstmt.setString(1, dft.format(m_redate));
+			pstmt.setString(2, id);
 						
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -160,6 +199,103 @@ public class MemberDao {
 		}
 		
 		
+	}
+
+	public boolean getEmailCheckBoolean(String email) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		boolean result = false;
+		
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM member WHERE Email=?;";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, email);
+			 	
+			ResultSet rs = pstmt.executeQuery();
+			// rs는 try문 안에만 있어서 안닫아지는데 굳이 안닫아도 없어지는지??
+			if(rs.next()) result=true;
+			rs.close();
+						
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			
+		}
+		
+		
 		return result;
+	}
+
+	public String findIdByEmail(String email) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String Id = null;
+		
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM member WHERE Email=?;";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, email);
+			 	
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) Id=rs.getString("Id");
+			// 행이 존재할때 그 행의 "Id" 값을 Id변수에 저장한다.
+			rs.close();		
+						
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			
+		}
+		
+		
+		return Id;
+	}
+
+	public String findPw(String id, String email) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String Pw=null;
+		
+		try {
+			conn = getConnection();
+			String sql = "SELECT Pw FROM member WHERE Email=? AND Id=?;";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, email);
+			pstmt.setString(2, id);
+			 	
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) Pw=rs.getString("Pw");
+			// 행이 존재할때 그 행의 "Id" 값을 Id변수에 저장한다.
+			rs.close();
+						
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			
+		}
+		return Pw;
 	}
 }
