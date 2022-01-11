@@ -185,14 +185,14 @@ input:hover{
     cursor: pointer;
 }
 
-.fig-16m6ba2 {
+.checkterms, .eccheck {
     width: 18px;
     height: 18px;
     vertical-align: middle;
     fill: rgb(214, 222, 235);
 }
 
-.fig-16m6ba2:active {
+.checkterms:active, .eccheck:active {
     fill: rgb(31, 140, 230);
 }
 
@@ -282,3 +282,4 @@ button[type="submit"] {
     margin-top: 15px;
     box-shadow: rgb(209, 213, 217 / 30%) 0px 1px 1px 0px;
 }
+

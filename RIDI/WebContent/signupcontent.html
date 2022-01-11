@@ -22,44 +22,44 @@
 
     <!-- 본문 -->
     <section class="main">
-        <form action="/ridibooks/member/controller" method="POST">
+        <form action="post">
             <div class="userinput">
                 <span class="userinfo">5~20자 영문, 숫자 입력</span>
-                <input type="text" id="userid" class="userid" placeholder="아이디" name="Id">
+                <input type="text" id="userid" class="userid" placeholder="아이디">
             </div>
             <div class="userinput">
                 <div class="userpw">
                     <span class="userinfo">8자 이상, 영문/숫자/특수문자 중 2가지 이상 입력</span>
-                    <input type="password" id="userpw" class="userpw" placeholder="비밀번호" name="Pw">
+                    <input type="password" id="userpw" class="userpw" placeholder="비밀번호">
                 </div>
             </div>
             <div class="userinput">
                 <div class="userpw">
                     <span class="userinfo">비밀번호 재입력</span>
-                    <input type="password" id="userpw-re" class="userpw-re" placeholder="비밀번호 확인" name="Pw2">
+                    <input type="password" id="userpw-re" class="userpw-re" placeholder="비밀번호 확인">
                 </div>
             
             <div class="userinput">
                 <span class="userinfo">이메일 주소 입력</span>
-                <input type="text" id="useremail" class="useremail" placeholder="이메일 주소" name="Email">
+                <input type="text" id="useremail" class="useremail" placeholder="이메일 주소">
             </div>
             <div class="userinput">
                 <span class="userinfo">이름 입력</span>
-                <input type="text" id="username" class="username" placeholder="이름" name="Name">
+                <input type="text" id="username" class="username" placeholder="이름">
             </div>
             <div class="userinput">
                 <p>선택 입력</p>
                 <div class="birth">
                     <span class="userinfo">예: 1981</span>
-                    <input type="text" id="userbirth" class="userbirth" placeholder="출생년도" name="Birth">
+                    <input type="text" id="userbirth" class="userbirth" placeholder="출생년도">
                     
-                    <div class="bgender" >
-                        <label for="gender">
-                            <input type="radio" id="gender1" class="gender" value="남" placeholder="남" name="Sex">
+                    <div class="bgender">
+                        <label for="gender" class="checkmale">
+                            <input type="radio" name="gender" id="gender" class="gender" value="남" placeholder="남">
                             <span class="gcheck">남</span>
-                        </label>
-                        <label for="gender">
-                            <input type="radio" id="gender2" class="gender" value="여" placeholder="여" name="Sex">
+                        </label>                   
+                        <label for="gender" class="checkfe">
+                            <input type="radio" name="gender" id="gender" class="gender" value="여" placeholder="여">
                             <span class="gcheck">여</span>
                         </label>
                     </div>
@@ -68,31 +68,31 @@
 
             <div class="terms">
                 <button type="button" class="contain">
-                    <input type="checkbox" readonly >
-                    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="fig-16m6ba2 eqqnqi21"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                    <input type="checkbox" readonly>
+                    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkterms"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                     <span class="allterms">선택 포함 전체 약관 동의</span>
                 </button>
                 <ul>
                     <button type="button" class="termsbox">
-                        <input type="checkbox" readonly class=agree-terms>
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="fig-16m6ba2 eqqnqi21"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                        <input type="checkbox" readonly>
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkterms"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                         <span class="ulterms">이용약관 동의(필수)</span>
                         <a href="/legal/terms" class="tcheck">약관보기<svg viewBox="0 0 30 48" width="10" height="10" fill="#808991" display="inline-block" class="fig-133dw2"><path d="M.9 4.4L5.2 0l23.9 23.9L5.1 48 .8 43.7l20-20z"></path></svg></a>
                     </button>
                     <button type="button" class="termsbox">
-                        <input type="checkbox" readonly name="Agree1">
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="fig-16m6ba2 eqqnqi21"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                        <input type="checkbox" readonly>
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkterms"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                         <span class="ulterms">이벤트, 혜택 알림 수신 동의(선택)</span>
                     </button>
                     <button type="button"  class="termsbox">
-                        <input type="checkbox" readonly name="Agree2">
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="fig-16m6ba2 eqqnqi21"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                        <input type="checkbox" readonly>
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkterms"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                         <span class="ulterms">성별, 생년 정보 제공 동의(선택)</span>
                         <a href="/legal/provide-gender-and-birth" class="tcheck">내용 확인<svg viewBox="0 0 30 48" width="10" height="10" fill="#808991" display="inline-block" class="fig-133dw2"><path d="M.9 4.4L5.2 0l23.9 23.9L5.1 48 .8 43.7l20-20z"></path></svg></a>
                     </button>
                     <button type="button"  class="termsbox">
                         <input type="checkbox" readonly>
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="fig-16m6ba2 eqqnqi21"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="eccheck"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                         <span class="ulterms">개인 정보 수집 및 이용 동의(필수)</span>
                         <a href="/legal/privacy-collect-and-use" class="tcheck">내용 확인<svg viewBox="0 0 30 48" width="10" height="10" fill="#808991" display="inline-block" class="fig-133dw2"><path d="M.9 4.4L5.2 0l23.9 23.9L5.1 48 .8 43.7l20-20z"></path></svg></a>
                     </button>
@@ -102,38 +102,35 @@
             <button type="submit">회원 가입 완료</button>
         </form>
     </section>
-    
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script>
-   		let $type = $(".userinfo").attr("속성")
-        let $userid = $(".Id");
-        let $userpw = $(".Pw");
-        let $idmessage = $(".message1");
-        let $pwmessage = $(".message2");
-        let $allmessage = $(".message3");
-        let $dropuser = $(".message4");
+        const $checkmale = $(".checkmale");
+        const $checkfemale = $(".checkfe");
 
-        $("userinput").on("click", function() {
-            $.ajax({
-                url: "check",
-                type: "POST",
-                data: "ID=" + $userid + "&PW=" + $userpw,
-                success: function() {
-                    location.href = "회원가입후 메인페이지";
-                },
-                error: function(response) {
-                    if(response.status == 400) {
-                        $idmessage.css("display","block");
-                    } else if(response.status == 400) {
-                        $pwmessage.css("display", "block");
-                    } else if(response.status == 401) {
-                        $allmessage.css("display", "block");
-                    } else if (response.status == 404) {
-                        $dropuser.css("display", "block");
-                    };
-                }
-            });
+        $(".checkfe").on("click",function(e){
+            $checkmale.css("background-color","white");
+            $checkfemale.css("background-color", "#dbefff");
+            
+            e.preventDefault()
         });
+        
+        
+        $(".checkmale").on("click",function(e){
+            $checkmale.css("background-color", "#dbefff");
+            $checkfemale.css("background-color","white");
+        });
+
+        let $checkterms = $(".checkterms");
+        let $eccheck = $(".eccheck");
+
+        $(".contain").on("click", function(e){
+            $checkterms.css("fill","rgb(31, 140, 230)");
+        });
+        $(".eccheck").on("click", function(){
+            $eccheck.css("fill","rgb(31, 140, 230)");
+        });
+
     </script>
 </body>
 </html>
