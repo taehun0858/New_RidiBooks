@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인 - 리디북스</title>
-    <link rel="stylesheet" href="css/logIn.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="shortcut icon" href="https://static.ridicdn.net/_next/static/images/favicon-29c82025983fa410b3369f441b102764.ico">
 </head>
 <body>
