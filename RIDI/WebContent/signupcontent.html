@@ -75,18 +75,18 @@
                 <ul>
                     <button type="button" class="termsbox">
                         <input type="checkbox" readonly>
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkterms"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checktwo"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                         <span class="ulterms">이용약관 동의(필수)</span>
                         <a href="/legal/terms" class="tcheck">약관보기<svg viewBox="0 0 30 48" width="10" height="10" fill="#808991" display="inline-block" class="fig-133dw2"><path d="M.9 4.4L5.2 0l23.9 23.9L5.1 48 .8 43.7l20-20z"></path></svg></a>
                     </button>
                     <button type="button" class="termsbox">
                         <input type="checkbox" readonly>
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkterms"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkthree"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                         <span class="ulterms">이벤트, 혜택 알림 수신 동의(선택)</span>
                     </button>
                     <button type="button"  class="termsbox">
                         <input type="checkbox" readonly>
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkterms"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkfour"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                         <span class="ulterms">성별, 생년 정보 제공 동의(선택)</span>
                         <a href="/legal/provide-gender-and-birth" class="tcheck">내용 확인<svg viewBox="0 0 30 48" width="10" height="10" fill="#808991" display="inline-block" class="fig-133dw2"><path d="M.9 4.4L5.2 0l23.9 23.9L5.1 48 .8 43.7l20-20z"></path></svg></a>
                     </button>
@@ -125,10 +125,22 @@
         let $eccheck = $(".eccheck");
 
         $(".contain").on("click", function(e){
-            $checkterms.css("fill","rgb(31, 140, 230)");
+            $checkterms.toggleClass("fill");
+            $(".checktwo").toggleClass("fill");
+            $(".checkthree").toggleClass("fill");
+            $(".checkfour").toggleClass("fill");
+        });
+        $(".checktwo").on("click", function(){
+            $(".checktwo").toggleClass("fill");
+        });
+        $(".checkthree").on("click", function(){
+            $(".checkthree").toggleClass("fill");
+        });
+        $(".checkfour").on("click", function(){
+            $(".checkfour").toggleClass("fill");
         });
         $(".eccheck").on("click", function(){
-            $eccheck.css("fill","rgb(31, 140, 230)");
+            $eccheck.toggleClass("fill");
         });
 
     </script>

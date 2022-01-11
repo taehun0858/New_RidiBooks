@@ -185,16 +185,21 @@ input:hover{
     cursor: pointer;
 }
 
-.checkterms, .eccheck {
+.checkterms, .eccheck, .checktwo, .checkthree, .checkfour {
     width: 18px;
     height: 18px;
     vertical-align: middle;
     fill: rgb(214, 222, 235);
 }
 
-.checkterms:active, .eccheck:active {
+.checkterms:active, .eccheck:active  {
     fill: rgb(31, 140, 230);
 }
+
+.checktwo:active, .checkthree:active, .checkfour:active {
+    fill: rgb(31, 140, 230);
+}
+
 
 .agree-terms {
     position: absolute;
@@ -283,3 +288,6 @@ button[type="submit"] {
     box-shadow: rgb(209, 213, 217 / 30%) 0px 1px 1px 0px;
 }
 
+.fill {
+    fill: rgb(31, 140, 230);
+}
