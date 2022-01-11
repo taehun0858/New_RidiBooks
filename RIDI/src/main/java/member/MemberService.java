@@ -45,6 +45,15 @@ public class MemberService {
 		
 		MemberDao dao = new MemberDao();
 		boolean success = dao.insertMemebr(member);
+		if(Agree1!=null||!Agree1.isEmpty()) {
+			member.setAgree1(Agree1);
+			dao.insertAgree1(member);
+			}
+		if(Agree2!=null||!Agree2.isEmpty()) {
+			member.setAgree2(Agree2);
+			dao.insertAgree2(member);
+		}
+		
 		
 		
 		if(success) statusCode = HttpServletResponse.SC_OK;
