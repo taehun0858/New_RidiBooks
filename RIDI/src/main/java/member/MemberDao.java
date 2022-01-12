@@ -298,30 +298,23 @@ public class MemberDao {
 		return Pw;
 	}
 
-	public void insertAgree1(MemberDto member) {
+	public boolean insertAgree1(MemberDto member) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-			
+		boolean success = false;	
 		
 		try {
 			conn = getConnection();
-			String sql = "INSERT INTO memberagree(Id,a_num,a_date) VALUES(?,?,?,?,?,?,?,?);";
+			String sql = "INSERT INTO memberagree(Id,a_num,a_date) VALUES(?,?,?);";
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, member.getId());
-			pstmt.setString(2, member.getPw());
-			pstmt.setString(3, member.getEmail());
-			pstmt.setString(4, member.getName());
-			pstmt.setString(5, member.getBirth());
-			LocalDateTime joinDate = LocalDateTime.now();
-			LocalDateTime logindate = LocalDateTime.now();
+			pstmt.setInt(2, 2);
+			LocalDateTime agreedate = LocalDateTime.now();
 			
 			DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 			
-			pstmt.setString(6, dft.format(joinDate));
-			pstmt.setString(7, dft.format(logindate));
-			pstmt.setString(8, String.valueOf(member.getSex())); 	
-			// member의 데이터 형태가 char이지만 pstmt에서는 char저장이 없는듯-> member.getSex()를 String로 형변환
+			pstmt.setString(3, dft.format(agreedate));
 			
 			int result = pstmt.executeUpdate();
 			
@@ -338,6 +331,6 @@ public class MemberDao {
 			}
 		}
 		
-		return;
+		return success;
 	}
 }

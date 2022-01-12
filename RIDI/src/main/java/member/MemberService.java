@@ -42,17 +42,13 @@ public class MemberService {
 		member.setSex(Sex.charAt(0));
 		member.setEmail(Email);
 		
-		
+		Agree1="agree";
 		MemberDao dao = new MemberDao();
 		boolean success = dao.insertMemebr(member);
-		if(Agree1!=null||!Agree1.isEmpty()) {
+		if(Agree1.equals("agree")) {
 			member.setAgree1(Agree1);
 			dao.insertAgree1(member);
 			}
-		if(Agree2!=null||!Agree2.isEmpty()) {
-			member.setAgree2(Agree2);
-			dao.insertAgree2(member);
-		}
 		
 		
 		
