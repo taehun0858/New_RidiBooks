@@ -30,12 +30,13 @@ public class LoginController extends HttpServlet {
 		// 로그인 실행시 결과(상태코드)를 상태코드에 전달
 		int loginId;
 		HttpSession session = request.getSession();
-		if(response.getStatus()==200) {
+		if(statuscode==200) {
 			// 로그인을 성공했을 때(상태코드가 200일때) 로그인한 아이디의 고유 번호를 전달받아 세션의 isLogin속성에 저장
 			// 세션은 5분동안 아무런 행동을 하지 않는다면 없어짐
 			loginId=service.getLoginIdNum(request, response);
 			session.setAttribute("isLogin", loginId);
 			session.setMaxInactiveInterval(60*5);
+			response.sendRedirect("/ridibooks/main.html");
 		}
 		
 		

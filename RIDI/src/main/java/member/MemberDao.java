@@ -31,7 +31,7 @@ public class MemberDao {
 		return null;		
 	}
 	
-	// member정보 추가하기 -> 성공 시 true반환, 실패 시  false반환 
+	// 회원가입시 회원정보를 데이터테이블에 저장 
 	public boolean insertMemebr(MemberDto member) {
 		
 		Connection conn = null;
@@ -76,10 +76,10 @@ public class MemberDao {
 		return success;
 	}
 
-	public boolean getLoginMemebr(String id, String pw) {
+	public int getLoginMemebr(String id, String pw) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		boolean success = false;
+		int success = 0;
 		
 		try {
 			conn = getConnection();
@@ -91,7 +91,7 @@ public class MemberDao {
 			 	
 			ResultSet rs = pstmt.executeQuery();
 			
-			if(rs.next()) success=true;
+			if(rs.next()) success=rs.getInt("Id_Num");
 			rs.close();
 						
 		} catch (SQLException e) {
@@ -123,7 +123,7 @@ public class MemberDao {
 			pstmt.setString(1, id);
 			 	
 			ResultSet rs = pstmt.executeQuery();
-			IdNum = rs.getInt("Id_Num");
+			if(rs.next())IdNum = rs.getInt("Id_Num");
 			rs.close();
 							
 						

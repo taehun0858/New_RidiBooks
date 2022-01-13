@@ -71,8 +71,8 @@ public class MemberService {
 		// 아이디의 길이가 5~20 사이가 아니거나 비밀번호의 길이가 8보다 작다면 401전달
 		
 		MemberDao dao = new MemberDao();
-		boolean success = dao.getLoginMemebr(Id,Pw);
-		if(success) {
+		int loginmemberNum = dao.getLoginMemebr(Id,Pw);
+		if(loginmemberNum != 0) {
 			statusCode = 200;
 			dao.loginDateUpdate(Id);
 		}
