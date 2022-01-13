@@ -27,6 +27,7 @@ public class LoginController extends HttpServlet {
 		MemberService service = new MemberService();
 		int statuscode = service.login(request, response);
 		response.setStatus(statuscode);
+//		response.setStatus(200);
 		// 로그인 실행시 결과(상태코드)를 상태코드에 전달
 		int loginId;
 		HttpSession session = request.getSession();

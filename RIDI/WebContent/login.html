@@ -79,7 +79,7 @@
 
         $("loginbtn").on("click", function() {
             $.ajax({
-                url: "member/logIn",
+                url: "ridibooks/member/logIn",
                 type: "POST",
                 data: "ID=" + $userid + "&PW=" + $userpw,
                 success: function() {

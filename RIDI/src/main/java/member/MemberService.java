@@ -64,8 +64,8 @@ public class MemberService {
 	public int login(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("UTF-8");
 		// 로그인을 해서 성공하면 200코드를, 해당정보가 없다면 404, 파라미터가 다 전달되지 않았다면 400, 파라미터 값이 잘못되었다면 401 전달
-		String Id = request.getParameter("Id");
-		String Pw = request.getParameter("Pw");
+		String Id = request.getParameter("ID");
+		String Pw = request.getParameter("PW");
 		int statusCode;
 		
 		if(Id==null || Id.isEmpty()||Pw.isEmpty()||Pw==null) {statusCode = 400;return statusCode;}
