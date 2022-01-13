@@ -55,11 +55,11 @@
                     
                     <div class="bgender">
                         <label for="gender" class="checkmale">
-                            <input type="radio" name="Sex" id="gender" class="gender" value="남" placeholder="남">
+                            <input type="radio" name="Sex" id="male" class="gender" value="남" placeholder="남">
                             <span class="gcheck">남</span>
                         </label>                   
                         <label for="gender" class="checkfe">
-                            <input type="radio" name="Sex" id="gender" class="gender" value="여" placeholder="여">
+                            <input type="radio" name="Sex" id="female" class="gender" value="여" placeholder="여">
                             <span class="gcheck">여</span>
                         </label>
                     </div>
@@ -116,6 +116,7 @@
         $(".checkfe").on("click",function(e){
             $checkmale.css("background-color","white");
             $checkfemale.css("background-color", "#dbefff");
+            $("#female").prop("checked",true);
             
             e.preventDefault()
         });
@@ -124,6 +125,7 @@
         $(".checkmale").on("click",function(e){
             $checkmale.css("background-color", "#dbefff");
             $checkfemale.css("background-color","white");
+            $("#male").prop("checked",true);
         });
 
         let $checkterms = $(".checkterms");
@@ -152,6 +154,8 @@
         $(".subbtn").on("click",function(){
         	if($(".checkthree").hasClass("fill")){$("#Agree1").prop("checked",true);}
         	if($(".checkfour").hasClass("fill")){$("#Agree2").prop("checked",true);}
+//         	if($("#male").css("background-color")=="#dbefff"){$("#male").prop("checked",true);}
+//         	if($("#female").css("background-color")=="#dbefff"){$("#female").prop("checked",true);}
         });
         
 
