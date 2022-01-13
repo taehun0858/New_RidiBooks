@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인 - 리디북스</title>
-    <link rel="stylesheet" href="css/logIn.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="shortcut icon" href="https://static.ridicdn.net/_next/static/images/favicon-29c82025983fa410b3369f441b102764.ico">
 </head>
 <body>
@@ -23,7 +23,7 @@
     <!-- 본문 -->
     <section class="main">
         <div class="content-wrapper">
-
+            <form action="post">
                 <div class="input-group">
                     <label class="account-label">
                         <input type="text" class="userId" name="userId" placeholder="아이디">
@@ -54,7 +54,7 @@
                 <div class="message4">
                     <p>! 탈퇴한 사용자 입니다</p>
                 </div>
-
+            </form>
                 <button type="submit" class="loginbtn">로그인</button>
                 <button type="button" class="signupbtn">회원가입</button>
             
@@ -63,24 +63,28 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script>
                 
-        let $userid = $(".userId").val();
-        let $userpw = $(".userPw").val();
-        let $idmessage = $(".message1");
-        let $pwmessage = $(".message2");
-        let $allmessage = $(".message3");
-        let $dropuser = $(".message4");
+        var $userid = $(".userId").val();
+        var $userpw = $(".userPw").val();
+        var $idmessage = $(".message1");
+        var $pwmessage = $(".message2");
+        var $allmessage = $(".message3");
+        var $dropuser = $(".message4");
 
         $(".loginbtn").on("click", function() {
-        
+            console.log($userid);
+            console.log($userpw);
             if($userid == 0) {
                 $($idmessage).css("display","block");
-            } else if($userpw == 0) {
-                $($pwmessage).css("display","block");
+            } else if ($userid >= 1 && $userpw == 0) {
+                $($idmessage).css("display","none");
+                $($userpw).css("display", "block");
             };
+
+
         });
 
             $.ajax({
-                url: "member/logIn",
+                url: "ridibooks/member/logIn",
                 type: "POST",
                 data: "ID=" + $userid + "&PW=" + $userpw,
                 success: function() {
