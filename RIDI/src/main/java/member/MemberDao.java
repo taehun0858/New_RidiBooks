@@ -123,7 +123,7 @@ public class MemberDao {
 			pstmt.setString(1, id);
 			 	
 			ResultSet rs = pstmt.executeQuery();
-			if(rs.next())IdNum = rs.getInt("Id_Num");
+			if(rs.next()) IdNum = rs.getInt("Id_Num");
 			rs.close();
 							
 						
@@ -309,6 +309,42 @@ public class MemberDao {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, member.getId());
+			pstmt.setInt(2, 1);
+			LocalDateTime agreedate = LocalDateTime.now();
+			
+			DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+			
+			pstmt.setString(3, dft.format(agreedate));
+			
+			int result = pstmt.executeUpdate();
+			
+			success = result == 1;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+		}
+		
+		return success;
+	}
+
+	public boolean insertAgree2(MemberDto member) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		boolean success = false;	
+		
+		try {
+			conn = getConnection();
+			String sql = "INSERT INTO memberagree(Id,a_num,a_date) VALUES(?,?,?);";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, member.getId());
 			pstmt.setInt(2, 2);
 			LocalDateTime agreedate = LocalDateTime.now();
 			
@@ -332,5 +368,6 @@ public class MemberDao {
 		}
 		
 		return success;
+		
 	}
 }

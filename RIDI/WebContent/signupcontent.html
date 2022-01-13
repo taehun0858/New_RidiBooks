@@ -80,13 +80,13 @@
                         <a href="/legal/terms" class="tcheck">약관보기<svg viewBox="0 0 30 48" width="10" height="10" fill="#808991" display="inline-block" class="fig-133dw2"><path d="M.9 4.4L5.2 0l23.9 23.9L5.1 48 .8 43.7l20-20z"></path></svg></a>
                     </button>
                     <button type="button" class="termsbox">
-                        <input type="checkbox" readonly name="Agree1" value="agree">
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkthree"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                        <input type="checkbox" readonly id="Agree1" name="Agree1" value="agree">
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" id="agree1btn" class="checkthree"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                         <span class="ulterms">이벤트, 혜택 알림 수신 동의(선택)</span>
                     </button>
                     <button type="button"  class="termsbox">
-                        <input type="checkbox" readonly name="Agree2" value="agree">
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="checkfour"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
+                        <input type="checkbox" readonly id="Agree2" name="Agree2" value="agree">
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" id="agree2btn" class="checkfour"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm0 45.6C12.089 45.6 2.4 35.911 2.4 24S12.089 2.4 24 2.4 45.6 12.089 45.6 24 35.911 45.6 24 45.6z"></path><path d="M20.806 26.275l-5.22-5.342L12 24.595l8.808 9.005L36 18.062 32.417 14.4z"></path></svg>
                         <span class="ulterms">성별, 생년 정보 제공 동의(선택)</span>
                         <a href="/legal/provide-gender-and-birth" class="tcheck">내용 확인<svg viewBox="0 0 30 48" width="10" height="10" fill="#808991" display="inline-block" class="fig-133dw2"><path d="M.9 4.4L5.2 0l23.9 23.9L5.1 48 .8 43.7l20-20z"></path></svg></a>
                     </button>
@@ -99,13 +99,18 @@
                 </ul>
             </div>
 
-            <button type="submit">회원 가입 완료</button>
+            <button type="submit" class="subbtn">회원 가입 완료</button>
         </form>
     </section>
 
     <script src="js/jquery-3.6.0.min.js"></script>
+   
+    <!--<label for ="cbox">체크박스</label>
+    <input type="checkbox" id="cbox" name="cbox">
+    <button id="btn">체크하기</button>  -->
+
     <script>
-        const $checkmale = $(".checkmale");
+	    const $checkmale = $(".checkmale");
         const $checkfemale = $(".checkfe");
 
         $(".checkfe").on("click",function(e){
@@ -125,8 +130,8 @@
         let $eccheck = $(".eccheck");
 
         $(".contain").on("click", function(e){
-            $checkterms.toggleClass("fill");
-            $(".checktwo").toggleClass("fill");
+            $checkterms.toggleClass("fill");           
+            $(".checktwo").toggleClass("fill");            
             $(".checkthree").toggleClass("fill");
             $(".checkfour").toggleClass("fill");
             $(".eccheck").toggleClass("fill");
@@ -143,6 +148,12 @@
         $(".eccheck").on("click", function(){
             $eccheck.toggleClass("fill");
         });
+        
+        $(".subbtn").on("click",function(){
+        	if($(".checkthree").hasClass("fill")){$("#Agree1").prop("checked",true);}
+        	if($(".checkfour").hasClass("fill")){$("#Agree2").prop("checked",true);}
+        });
+        
 
     </script>
 </body>
