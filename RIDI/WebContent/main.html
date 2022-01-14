@@ -7,6 +7,9 @@
     <title>일반도서 - 리디북스</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="https://static.ridicdn.net/_next/static/images/favicon-29c82025983fa410b3369f441b102764.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../WebContent/js/jquery.bxslider.js"></script>
+    <link href="../WebContent/css/jquery.bxslider.css" rel="stylesheet">
 </head>
 <body>  
     <!-- 상단 배너 -->
@@ -110,7 +113,18 @@
     </div>
 
     <!-- 본문 캐러셀 -->
-
+    <ul class="bxslider">
+        <li><img src="../WebContent/images/main.jpg"></li>
+        <li><img src="../WebContent/images/main.jpg"></li>
+        <li><img src="../WebContent/images/main.jpg"></li>
+        <li><img src="../WebContent/images/main.jpg"></li>
+        <li><img src="../WebContent/images/main.jpg"></li>
+        <li><img src="../WebContent/images/main.jpg"></li>
+        <li><img src="../WebContent/images/main.jpg"></li>
+        <li><img src="../WebContent/images/main.jpg"></li>
+        <li><img src="../WebContent/images/main.jpg"></li>
+        <li><img src="../WebContent/images/main.jpg"></li>
+    </ul>
     
 
 
@@ -128,6 +142,23 @@
         });
         $(".myridi a").on("click" ,function () {
             $(".myridi a").toggleClass("underline");
+        });
+    </script>
+     <script>
+        $(document).ready(function(e){
+            $('.bxslider').bxSlider( {
+                mode: 'horizontal',// 가로 방향 수평 슬라이드
+                speed: 1500,        // 이동 속도를 설정
+                pager: true,      // 현재 위치 페이징 표시 여부 설정
+                moveSlides: 1,     // 슬라이드 이동시 개수
+                slideWidth: 414.95,   // 슬라이드 너비
+                minSlides: 1,      // 최소 노출 개수
+                maxSlides: 3,      // 최대 노출 개수
+                slideMargin: 10,    // 슬라이드간의 간격
+                auto: true,        // 자동 실행 여부
+                autoHover: true,   // 마우스 호버시 정지 여부
+                controls: true    // 이전 다음 버튼 노출 여부
+            });
         });
     </script>
 </body>
