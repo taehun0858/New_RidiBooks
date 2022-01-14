@@ -52,7 +52,7 @@
                     <p>! 아이디 또는 비밀번호를 확인해주세요</p>
                 </div>
                 <div class="message4">
-                    <p>! 탈퇴한 사용자 입니다</p>
+                    <p>! 없는 사용자입니다.</p>
                 </div>
 
                 <button type="submit" class="loginbtn">로그인</button>
@@ -62,18 +62,20 @@
     </section>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script>                
-        let $userid = $(".userId").val();
-        let $userpw = $(".userPw").val();
+        
         let $idmessage = $(".message1");
         let $pwmessage = $(".message2");
         let $allmessage = $(".message3");
         let $dropuser = $(".message4");
 
         $(".loginbtn").on("click", function() {
+        	let $userid = $(".userId").val();
+            let $userpw = $(".userPw").val();
+        	
         	$.ajax({
                 url: "/ridibooks/member/logIn",
                 type: "POST",
-                data: "id=go0858&pw=00000000",
+                data: "ID="+$userid+"&PW="+$userpw,
                 success: function() {
                     location.href = "/ridibooks/main.html";
                 },
@@ -81,9 +83,17 @@
                     if(response.status == 400) {
                         $idmessage.css("display","block");
                         $pwmessage.css("display", "block");
+                        $allmessage.css("display", "none");
+                        $dropuser.css("display", "none");
                     } else if(response.status == 401) {
+                    	$idmessage.css("display","none");
+                        $pwmessage.css("display", "none");
                         $allmessage.css("display", "block");
+                        $dropuser.css("display", "none");
                     } else if (response.status == 404) {
+                    	$idmessage.css("display","none");
+                        $pwmessage.css("display", "none");
+                        $allmessage.css("display", "none");
                         $dropuser.css("display", "block");
                     };
                 }

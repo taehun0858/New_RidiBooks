@@ -19,7 +19,8 @@ public class CheckController extends HttpServlet {
 		
 		MemberService service = new MemberService();
 		
-		String Type = request.getContentType();
+		String Type = request.getParameter("type");
+		// "type"라는 이름의 파라미터를 받아옴
 		// 전달되는 컨텐츠의 타입이 뭔지 받아옴
 		
 		String Id = request.getParameter("Id");		
@@ -32,7 +33,7 @@ public class CheckController extends HttpServlet {
 			// 이메일이 없으면 200, 아이디가 있으면 400전달
 			if(!EmailCheck)response.setStatus(200);
 			else response.setStatus(400);
-		}else {
+		}else if(Type.equals("text")) {
 			Idcheck = service.checkId(Id);
 			// 아이디가 없으면 200, 아이디가 있으면 400전달
 			if(!Idcheck)response.setStatus(200);
