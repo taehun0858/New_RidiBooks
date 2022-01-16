@@ -594,7 +594,17 @@ main {
     margin-top: 17px;
 }
 
+@media (max-width: 999px) {
+
+    .newridibooks .newridicontent {
+        margin : 10px auto 0px;
+    }
+}
+
+
 .newridicontent .newrapper {
+    display: flex;
+    flex-wrap: nowrap;
     margin: -8px auto 0;
 
 }
@@ -605,5 +615,248 @@ main {
     }
 }
 
+.newridicontent .newrapper ul {
+    flex: 0 0 auto;
+    margin-left: 10px;
+    padding: 7px 0px 0px 7px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.newrapper ul li {
+    margin-right: 12px;
+}
+
+@media (min-width : 834px) {
+    .newrapper ul li {
+        margin-right: 20px;
+    }
+}
+
+.newrapper ul li img {
+    width: 140px;
+}
 
 
+
+
+
+/* 푸터 부분 */
+.footer {
+    color: #fff;
+    background: #303538;
+    height: 271.02px;
+}
+
+footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    transition: all 0.3s;
+    max-height: 700px;
+}
+
+footer .footercontent {
+    display: flex;
+    transition: height 0.3s ease-in-out;
+}
+
+@media (max-width:999px) {
+    footer .footercontent {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+.footercontent .maincontent {
+    display: flex;
+    min-width: 192px;
+    align-items: center;
+    margin-right: 42px;
+    list-style-type: none;
+    margin-top: -107px;
+    padding: 0;
+}
+@media (max-width:999px) {
+    .footercontent .maincontent {
+        margin-bottom: 28px;
+    }
+}
+
+.maincontent li a {
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.maincontent li a span {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.maincontent .center::after {
+    position: relative;
+    font-size: 11px;
+    content: ' ';
+    top: -3px;
+    margin: 0 10px;
+    border-left: 1px solid #525A61;
+}
+
+.footercontent .subcontent {
+    display: flex;
+    padding-top: 6px;
+    list-style-type: none;
+    margin-bottom: 48px;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 999px) {
+    .footercontent .subcontent {
+        margin-bottom: 24px;
+        transition: all 0.3s;
+        max-height: 230px;
+    }
+}
+
+.footercontent .subcontent .ridi ul {
+    margin-right: 16px;
+    position: relative;
+    list-style: none;
+}
+
+.subcontent .ridi ul li {
+    width: 140px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+
+.subcontent .ridi ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.subcontent .contents ul {
+    margin-right: 16px;
+    list-style-type: none;
+}
+
+.subcontent .contents ul li {
+    width: 140px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+
+
+
+.subcontent .contents ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.subcontent .facebook {
+    margin-left: 20px;
+    margin-right: -20px;
+}
+
+.subcontent .facebook ul {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.subcontent .facebook ul li {
+    width: 140px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+
+}
+
+.subcontent .facebook ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.subcontent .intro ul {
+    margin-right: 16px;
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.subcontent .intro ul li {
+    width: 140px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+
+.subcontent .intro ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.info {
+    display: block;
+    position: relative;
+    height: 17px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    margin-right: 24px;
+    margin-top: 30px;
+    margin-bottom: 16px;
+    align-items: center;
+    color: #808991;
+    transition: opacity 0.3s ease-in-out;
+    letter-spacing: -0.157143px;
+    cursor: pointer;
+}
+
+.info button {
+    cursor: pointer;
+    border: 0;
+    color: #808991;
+    background: transparent;
+    width: 11px;
+    height: 14px;
+}
+.info p {
+    display: none;
+}
+
+
+.ridicorp {
+    display: flex;
+}
+
+.ridicorp p {
+    height: 17px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #7e8992;
+    margin-right: 24px;
+    letter-spacing: -0.03em;
+    cursor: pointer;
+}
+
+.ridicorp span {
+    font-weight: bold;
+}
