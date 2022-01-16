@@ -637,9 +637,51 @@ main {
     width: 140px;
 }
 
+/* 사람들이 지금 많이 읽고 있는 책 */
 
+.now {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 0;
+    position: relative;
+}
 
+.now .title {
+    max-width: 990px;
+    display: flex;
+    flex-direction: column;
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 26px;
+    color: black;
+}
 
+@media (max-width: 833px) {
+    .now .title {
+        padding: 6px 16px 0;
+        margin: 0 auto 12px;
+    }
+}
+
+.now .title .time {
+    width: 96px;
+    height: 30px;
+    padding: 9px;
+    padding-right: 13px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(255deg, #0077d9 4%, #72d2e0);
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+}
+
+.now .title .time span {
+    letter-spacing: -0.03em;
+}
 
 /* 푸터 부분 */
 .footer {
