@@ -269,9 +269,6 @@ form .searchbox input:active {
 
 /* 본문 캐러셀 */
 
-main {
-    margin-top: 20px;
-}
 /** VARIABLES
 ===================================*/
 /** RESET AND LAYOUT
@@ -286,6 +283,7 @@ main {
     touch-action: pan-y;
   }
   .bx-wrapper img {
+    margin-top: 20px;
     max-width: 100%;
     display: block;
     border-radius: 6px;
@@ -306,21 +304,8 @@ main {
   .bx-wrapper {
     border: 0;
     background: #fff;
-  }
-  .slideWrap ul {
-      display: inline-flex;
-      list-style: none;
-      margin: 0 auto;
-  }
-
-  .slideWrap ul li {
-    margin-right: 10px;
-}
-
-  .slideWrap ul li img{
-      width: 414.95px;
-      height: 276.62px;
-      border-radius: 6px;
+    margin: auto;
+    max-width: 1262px;
   }
 
   .bx-wrapper .bx-pager,
@@ -498,7 +483,8 @@ main {
     font-size: .85em;
     padding: 10px;
   }
-
+  
+  
 
 .navicon {
     position: relative;
@@ -572,6 +558,7 @@ main {
 
 /* 방금 나온 신간 */
 .newridibooks {
+    height: 398.11px;
     padding-top: 31px;
     padding-bottom: 36px;
     background: url(../images/newridi.png) center center no-repeat #17202e;
@@ -592,6 +579,37 @@ main {
     margin: 0 auto;
     position: relative;
     margin-top: 17px;
+}
+
+.newslider li .content {
+    width: 100%;
+    margin-top: 6px;
+}
+.newridibooks .newridicontent .newrapper .bx-wrapper {
+    height: 293.91px;
+}
+
+
+.newridibooks .newridicontent .newrapper .bx-wrapper .bx-viewport {
+    height: 293.91px;
+}
+
+.newslider li .content h3 {
+    letter-spacing: -0.03em;
+    margin-top: 3px;
+    line-height: 1.4em;
+    color: white;
+    font-size: 14px;
+}
+
+.newslider li .content p {
+    color: #9EA7AD;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 5px;
+    line-height: 1.2em;
 }
 
 @media (max-width: 999px) {
@@ -635,6 +653,26 @@ main {
 
 .newrapper ul li img {
     width: 140px;
+}
+
+.newridibooks .bx-wrapper {
+    background: transparent;
+}
+
+.newridibooks .bx-wrapper img {
+    margin-top: 10px;
+    border-radius: 0px;
+}
+
+.newridibooks .bx-wrapper .bx-controls-direction .bx-prev {
+    left: -7%;
+}
+
+.newridibooks .bx-wrapper .bx-controls-direction .bx-next {
+    right: -8%;
+}
+.newridicontent .newrapper {
+    margin-left: -77px;
 }
 
 /* 사람들이 지금 많이 읽고 있는 책 */
