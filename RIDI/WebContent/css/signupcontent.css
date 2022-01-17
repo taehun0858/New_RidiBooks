@@ -185,21 +185,24 @@ input:hover{
     cursor: pointer;
 }
 
-.checkterms, .eccheck, .checktwo, .checkthree, .checkfour {
+<<<<<<< HEAD
+.checkbtn, .eccheck {
+=======
+.checkterms, .eccheck {
+>>>>>>> frontend
     width: 18px;
     height: 18px;
     vertical-align: middle;
     fill: rgb(214, 222, 235);
 }
 
-.checkterms:active, .eccheck:active  {
+<<<<<<< HEAD
+.checkbtn:active ,.eccheck:active {
+=======
+.checkterms:active, .eccheck:active {
+>>>>>>> frontend
     fill: rgb(31, 140, 230);
 }
-
-.checktwo:active, .checkthree:active, .checkfour:active {
-    fill: rgb(31, 140, 230);
-}
-
 
 .agree-terms {
     position: absolute;
@@ -229,7 +232,7 @@ ul {
     margin: 0;
     cursor: pointer;
 }
-.termsbox {
+.termsbox, .privacy {
     position: relative;
     text-align: left;
     width: 100%;
@@ -249,6 +252,9 @@ ul {
 .termsbox:last-child {
     border-bottom: 1px solid rgb(214, 222, 235);
     padding: 13px 15px;
+}
+.privacy {
+    border-bottom: 1px solid rgb(214, 222, 235);
 }
 
 .ulterms:hover {
@@ -288,6 +294,33 @@ button[type="submit"] {
     box-shadow: rgb(209, 213, 217 / 30%) 0px 1px 1px 0px;
 }
 
-.fill {
-    fill: rgb(31, 140, 230);
+<<<<<<< HEAD
+input[type="radio"] {
+    display: none;
 }
+
+.error {
+    position: relative;
+    padding-right: 5px;
+    padding-left: 23px;
+    margin-top: -6px;
+    margin-bottom: 10px;
+}
+.error i {
+    position: absolute;
+    top: 0.5px;
+    left: 5px;
+    width: 12px;
+    height: 12px;
+    vertical-align: text-top;
+    fill: rgb(230, 73, 56);
+}
+
+.error p {
+    color: rgb(230, 73, 56);
+    font-size: 12px;
+    letter-spacing: -0.5px;
+    line-height: 15px;
+}
+=======
+>>>>>>> frontend
