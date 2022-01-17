@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header-banner {
+    width: 100%;
+    background-color: #1f8ce6;
+}
+
+.header-banner header {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav {
+    padding: 16px 16px 24px 20px;
+}
+
+.header-banner nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-banner .logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-banner .logo .logowrapper {
+    flex: none;
+    order: 1;
+    min-height: 30px;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-bottom: 0;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logowrapper .bar, .logowrapper li {
+    margin-top: 8px;
+}
+
+
+svg {
+    width: 119px;
+    height: 18px;
+    fill: white;
+}
+
+.logo .bar::before {
+    display: inline-block;
+    content: '';
+    width: 1px;
+    height: 14px;
+    margin: 0 10px;
+    background-color: white;
+    opacity: 0.3;
+}
+.logo .button {
+    order: 3;
+    margin-left: auto;
+}
+
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+}
+
+.button li {
+    margin-left: 6px;
+}
+
+.button .signupbtn {
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0 16px;
+    font-weight: bold;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    background-color: #1f8ce6;
+    border: 1px solid #99d1ff;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button .loginbtn {
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0 16px;
+    font-weight: bold;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #1f8ce6;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+form {
+    flex: 1;
+    max-width: 340px;
+    order: 2;
+    z-index: 7000;
+}
+
+form .searchbox {
+    outline: none;
+    width: 340px;
+    height: 36px;
+    margin-left: 8px;
+}
+
+
+form label {
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+form label svg {
+    flex: none;
+    color: #808991;
+    font-size: 24px;
+    margin: 0 4px 0 6px;
+    opacity: 0.6;
+    width: 24px;
+    height: 24px;
+}
+
+form .searchbox input {
+    width: 100%;
+    height: 36px;
+    letter-spacing: -0.03em;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 16px;
+    background: none;
+    appearance: none;
+}
+
+form .searchbox input:active {
+    border: 0;
+}
+
+.mainnav {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+}
+
+.mainnav .home, .mainnav .alarm, .mainnav .cart, .mainnav .myridi{
+    margin-right: 50px;
+    padding-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    height: 36px;
+}
+
+
+.mainnav a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.mainnav a:hover {
+    cursor: pointer;
+    background-color: #3497e8;
+    border: 0;
+    border-radius: 3px;
+    color: #80bef1;
+}
+
+
+.headerlogo svg {
+    width: 20px;
+    height: 20px;
+}
+
+.headerlogo span {
+    height: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 5px;
+    line-height: 1;
+    top: 1px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.underline {
+    border-bottom: 3px solid #99d1ff;
+}
+
+.subnav {
+   width: 100%;
+   margin: 0;
+   background-color: white;
+   list-style-type: none; 
+}
+
+.subnav .line {
+    width: 100%;
+    border-bottom: 1px solid #e6e8eb;
+}
+
+.subnav .line ul {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.subnav .line ul li {
+    list-style: none;
+    line-height: 56px;
+    height: 100%;
+    margin-right: 0;
+    cursor: pointer;
+    text-align: center;
+    color: #40474d;
+}
+.subnav .line ul li a {
+    color: #40474d;
+    text-decoration: none;
+    padding: 0 20px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 48px;
+}
+.subnav .line ul li a:hover {
+    color: #b0b3b6;
+}
+
+
+.line ul li svg {
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    fill: #636c73;
+}
