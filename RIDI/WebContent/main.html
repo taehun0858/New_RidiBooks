@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>일반도서 - 리디북스</title>
     <link rel="stylesheet" href="css/main.css">
+    <link href="css/jquery.bxslider.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <link rel="shortcut icon" href="https://static.ridicdn.net/_next/static/images/favicon-29c82025983fa410b3369f441b102764.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>  
     <!-- 상단 배너 -->
@@ -109,13 +113,129 @@
         </div>
     </div>
 
-    <!-- 본문 캐러셀 -->
+    <main>
+        <!-- 본문 캐러셀 -->
+        <div class="slideWrap">
+            <ul class="control_slider">
+                <li><img src="images/main.jpg"></li>
+                <li><img src="images/main1.jpg"></li>
+                <li><img src="images/main2.jpg"></li>
+                <li><img src="images/main.jpg"></li>
+                <li><img src="images/main1.jpg"></li>
+                <li><img src="images/main2.jpg"></li>
+                <li><img src="images/main.jpg"></li>
+                <li><img src="images/main1.jpg"></li>
+                <li><img src="images/main2.jpg"></li>
+                <li><img src="images/main1.jpg" /></li>
+            </ul>
+        </div>
 
+        <section class="navicon">
+            <div class="navi">
+                <div class="naviwrapper">
+                    <div class="navicontent">
+                        <ul>
+                            <li><a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" color="#E8CB99" class="fig-8yznbt"><path d="M.001 22s-.046 4.493.453 8.846c.428 3.727 1.402 7.614 3.244 9.456 1.842 1.842 5.729 2.816 9.457 3.244 4.352.499 8.845.453 8.845.453s4.493.046 8.846-.453c3.727-.428 7.614-1.402 9.456-3.244 1.842-1.842 2.816-5.729 3.244-9.456.499-4.353.453-8.846.453-8.846s.046-4.493-.453-8.845c-.428-3.728-1.402-7.615-3.244-9.457C38.46 1.856 34.573.882 30.846.454 26.493-.045 22 .001 22 .001s-4.493-.046-8.845.453C9.427.882 5.54 1.856 3.698 3.698 1.856 5.54.882 9.427.454 13.155-.045 17.507.001 22 .001 22" fill="currentColor"></path></svg>
+                                <div class="navilogo">
+                                    <img src="images/new.png" alt="신간">
+                                </div>
+                                <span>신간</span>
+                            </a></li>
+                            <li><a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" color="#99D1CB" class="fig-8yznbt"><path d="M.001 22s-.046 4.493.453 8.846c.428 3.727 1.402 7.614 3.244 9.456 1.842 1.842 5.729 2.816 9.457 3.244 4.352.499 8.845.453 8.845.453s4.493.046 8.846-.453c3.727-.428 7.614-1.402 9.456-3.244 1.842-1.842 2.816-5.729 3.244-9.456.499-4.353.453-8.846.453-8.846s.046-4.493-.453-8.845c-.428-3.728-1.402-7.615-3.244-9.457C38.46 1.856 34.573.882 30.846.454 26.493-.045 22 .001 22 .001s-4.493-.046-8.845.453C9.427.882 5.54 1.856 3.698 3.698 1.856 5.54.882 9.427.454 13.155-.045 17.507.001 22 .001 22" fill="currentColor"></path></svg>
+                                <div class="navilogo">
+                                    <img src="images/gift.png" alt="이벤트">
+                                </div>
+                                <span>이벤트</span>
+                            </a></li>
+                            <li><a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" color="#B9BEF1" class="fig-8yznbt"><path d="M.001 22s-.046 4.493.453 8.846c.428 3.727 1.402 7.614 3.244 9.456 1.842 1.842 5.729 2.816 9.457 3.244 4.352.499 8.845.453 8.845.453s4.493.046 8.846-.453c3.727-.428 7.614-1.402 9.456-3.244 1.842-1.842 2.816-5.729 3.244-9.456.499-4.353.453-8.846.453-8.846s.046-4.493-.453-8.845c-.428-3.728-1.402-7.615-3.244-9.457C38.46 1.856 34.573.882 30.846.454 26.493-.045 22 .001 22 .001s-4.493-.046-8.845.453C9.427.882 5.54 1.856 3.698 3.698 1.856 5.54.882 9.427.454 13.155-.045 17.507.001 22 .001 22" fill="currentColor"></path></svg>
+                                <div class="navilogo">
+                                    <img src="images/best.png" alt="베스트셀러">
+                                </div>
+                                <span>베스트셀러</span>
+                            </a></li>
+                            <li><a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" color="#99D1CB" class="fig-8yznbt"><path d="M.001 22s-.046 4.493.453 8.846c.428 3.727 1.402 7.614 3.244 9.456 1.842 1.842 5.729 2.816 9.457 3.244 4.352.499 8.845.453 8.845.453s4.493.046 8.846-.453c3.727-.428 7.614-1.402 9.456-3.244 1.842-1.842 2.816-5.729 3.244-9.456.499-4.353.453-8.846.453-8.846s.046-4.493-.453-8.845c-.428-3.728-1.402-7.615-3.244-9.457C38.46 1.856 34.573.882 30.846.454 26.493-.045 22 .001 22 .001s-4.493-.046-8.845.453C9.427.882 5.54 1.856 3.698 3.698 1.856 5.54.882 9.427.454 13.155-.045 17.507.001 22 .001 22" fill="currentColor"></path></svg>
+                                <div class="navilogo">
+                                    <img src="images/borrow.png" alt="대여전">
+                                </div>
+                                <span>대여전</span>
+                            </a></li>
+                            <li><a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" color="#F1C0A7" class="fig-8yznbt"><path d="M.001 22s-.046 4.493.453 8.846c.428 3.727 1.402 7.614 3.244 9.456 1.842 1.842 5.729 2.816 9.457 3.244 4.352.499 8.845.453 8.845.453s4.493.046 8.846-.453c3.727-.428 7.614-1.402 9.456-3.244 1.842-1.842 2.816-5.729 3.244-9.456.499-4.353.453-8.846.453-8.846s.046-4.493-.453-8.845c-.428-3.728-1.402-7.615-3.244-9.457C38.46 1.856 34.573.882 30.846.454 26.493-.045 22 .001 22 .001s-4.493-.046-8.845.453C9.427.882 5.54 1.856 3.698 3.698 1.856 5.54.882 9.427.454 13.155-.045 17.507.001 22 .001 22" fill="currentColor"></path></svg>
+                                <div class="navilogo">
+                                    <img src="images/nowpopularset.png" alt="지금 인기세트">
+                                </div>
+                                <span>지금 인기세트</span>
+                            </a></li>
+                            <li><a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" color="#ABDCBA" class="fig-8yznbt"><path d="M.001 22s-.046 4.493.453 8.846c.428 3.727 1.402 7.614 3.244 9.456 1.842 1.842 5.729 2.816 9.457 3.244 4.352.499 8.845.453 8.845.453s4.493.046 8.846-.453c3.727-.428 7.614-1.402 9.456-3.244 1.842-1.842 2.816-5.729 3.244-9.456.499-4.353.453-8.846.453-8.846s.046-4.493-.453-8.845c-.428-3.728-1.402-7.615-3.244-9.457C38.46 1.856 34.573.882 30.846.454 26.493-.045 22 .001 22 .001s-4.493-.046-8.845.453C9.427.882 5.54 1.856 3.698 3.698 1.856 5.54.882 9.427.454 13.155-.045 17.507.001 22 .001 22" fill="currentColor"></path></svg>
+                                <div class="navilogo">
+                                    <img src="images/newcalendar.png" alt="신간 캘린더">
+                                </div>
+                                <span>신간 캘린더</span>
+                            </a></li>
+                            <li><a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" color="#D5ADEB" class="fig-8yznbt"><path d="M.001 22s-.046 4.493.453 8.846c.428 3.727 1.402 7.614 3.244 9.456 1.842 1.842 5.729 2.816 9.457 3.244 4.352.499 8.845.453 8.845.453s4.493.046 8.846-.453c3.727-.428 7.614-1.402 9.456-3.244 1.842-1.842 2.816-5.729 3.244-9.456.499-4.353.453-8.846.453-8.846s.046-4.493-.453-8.845c-.428-3.728-1.402-7.615-3.244-9.457C38.46 1.856 34.573.882 30.846.454 26.493-.045 22 .001 22 .001s-4.493-.046-8.845.453C9.427.882 5.54 1.856 3.698 3.698 1.856 5.54.882 9.427.454 13.155-.045 17.507.001 22 .001 22" fill="currentColor"></path></svg>
+                                <div class="navilogo">
+                                    <img src="images/generalmap.png" alt="일반 혜택지도">
+                                </div>
+                                <span>일반 혜택지도</span>
+                            </a></li>
+                            <li><a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" color="#F0B9B9" class="fig-8yznbt"><path d="M.001 22s-.046 4.493.453 8.846c.428 3.727 1.402 7.614 3.244 9.456 1.842 1.842 5.729 2.816 9.457 3.244 4.352.499 8.845.453 8.845.453s4.493.046 8.846-.453c3.727-.428 7.614-1.402 9.456-3.244 1.842-1.842 2.816-5.729 3.244-9.456.499-4.353.453-8.846.453-8.846s.046-4.493-.453-8.845c-.428-3.728-1.402-7.615-3.244-9.457C38.46 1.856 34.573.882 30.846.454 26.493-.045 22 .001 22 .001s-4.493-.046-8.845.453C9.427.882 5.54 1.856 3.698 3.698 1.856 5.54.882 9.427.454 13.155-.045 17.507.001 22 .001 22" fill="currentColor"></path></svg>
+                                <div class="navilogo">
+                                    <img src="images/weeklycoupon.png" alt="위클리 쿠폰">
+                                </div>
+                                <span>위클리 쿠폰</span>
+                            </a></li>
+                            <li><a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" color="#BADBA1" class="fig-8yznbt"><path d="M.001 22s-.046 4.493.453 8.846c.428 3.727 1.402 7.614 3.244 9.456 1.842 1.842 5.729 2.816 9.457 3.244 4.352.499 8.845.453 8.845.453s4.493.046 8.846-.453c3.727-.428 7.614-1.402 9.456-3.244 1.842-1.842 2.816-5.729 3.244-9.456.499-4.353.453-8.846.453-8.846s.046-4.493-.453-8.845c-.428-3.728-1.402-7.615-3.244-9.457C38.46 1.856 34.573.882 30.846.454 26.493-.045 22 .001 22 .001s-4.493-.046-8.845.453C9.427.882 5.54 1.856 3.698 3.698 1.856 5.54.882 9.427.454 13.155-.045 17.507.001 22 .001 22" fill="currentColor"></path></svg>
+                                <div class="navilogo">
+                                    <img src="images/ridipaper.png" alt="리디페이퍼">
+                                </div>
+                                <span>리디페이퍼</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 방금 나온 신간 -->
+        <section class="newridibooks">
+            <h2>집 앞 서점에 방금 나온 신간</h2>
+            <div class="newridicontent">
+                <div class="newrapper">
+                    <ul>
+                        <li><img src="images/books.jpg"></li>
+                        <li><img src="images/books.jpg"></li>
+                        <li><img src="images/books.jpg"></li>
+                        <li><img src="images/books.jpg"></li>
+                        <li><img src="images/books.jpg"></li>
+                        <li><img src="images/books.jpg"></li>
+                        <li><img src="images/books.jpg"></li>
+                        <li><img src="images/books.jpg"></li>
+                        <li><img src="images/books.jpg"></li>
+                        <li><img src="images/books.jpg"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+
+
+    </main>
     
 
 
 
-    <script src="js/jquery-3.6.0.min.js"></script>
+
+
+    <script src="js/jquery.bxslider.js"></script>
     <script>
         $(".home a").on("click" ,function () {
             $(".home a").toggleClass("underline");
@@ -130,5 +250,29 @@
             $(".myridi a").toggleClass("underline");
         });
     </script>
+    <script>
+
+    $(document).ready(function() {
+        $(".control_slider").bxSlider( {
+            mode: 'horizontal',// 가로 방향 수평 슬라이드
+            speed: 1500,        // 이동 속도를 설정
+            pager: true,      // 현재 위치 페이징 표시 여부 설정
+            moveSlides: 1,     // 슬라이드 이동시 개수
+            slideWidth: 414.95,   // 슬라이드 너비
+            minSlides: 1,      // 최소 노출 개수
+            maxSlides: 3,      // 최대 노출 개수
+            slideMargin: 10,    // 슬라이드간의 간격
+            auto: true,        // 자동 실행 여부
+            autoHover: true,   // 마우스 호버시 정지 여부
+            controls: true,   // 이전 다음 버튼 노출 여부
+            nextText: '<i class="fas fa-chevron-right"></i>',
+            prevText: '<i class="fas fa-chevron-left"></i>'
+            
+        });
+
+    });
+ 
+    </script>
+
 </body>
 </html>
