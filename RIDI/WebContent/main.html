@@ -209,17 +209,77 @@
             <h2>집 앞 서점에 방금 나온 신간</h2>
             <div class="newridicontent">
                 <div class="newrapper">
-                    <ul>
-                        <li><img src="images/books.jpg"></li>
-                        <li><img src="images/books.jpg"></li>
-                        <li><img src="images/books.jpg"></li>
-                        <li><img src="images/books.jpg"></li>
-                        <li><img src="images/books.jpg"></li>
-                        <li><img src="images/books.jpg"></li>
-                        <li><img src="images/books.jpg"></li>
-                        <li><img src="images/books.jpg"></li>
-                        <li><img src="images/books.jpg"></li>
-                        <li><img src="images/books.jpg"></li>
+                    <ul class="newcontent">
+                        <li>
+                            <img src="images/books.jpg">
+                            <div class="booktitle">
+                                <h3>다정소감</h3>
+                                <p>김혼비</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/books.jpg">
+                            <div class="booktitle">
+                                <h3>다정소감</h3>
+                                <p>김혼비</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/books.jpg">
+                            <div class="booktitle">
+                                <h3>다정소감</h3>
+                                <p>김혼비</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/books.jpg">
+                            <div class="booktitle">
+                                <h3>다정소감</h3>
+                                <p>김혼비</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/books.jpg">
+                            <div class="booktitle">
+                                <h3>다정소감</h3>
+                                <p>김혼비</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/books.jpg">
+                            <div class="booktitle">
+                                <h3>다정소감</h3>
+                                <p>김혼비</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/books.jpg">
+                            <div class="booktitle">
+                                <h3>다정소감</h3>
+                                <p>김혼비</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/books.jpg">
+                            <div class="booktitle">
+                                <h3>다정소감</h3>
+                                <p>김혼비</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/books.jpg">
+                            <div class="booktitle">
+                                <h3>다정소감</h3>
+                                <p>김혼비</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/books.jpg">
+                            <div class="booktitle">
+                                <h3>다정소감</h3>
+                                <p>김혼비</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -272,6 +332,28 @@
 
     });
  
+    </script>
+
+    <script>
+        $(document).ready(function() {
+        $(".newcontent").bxSlider( {
+            mode: 'horizontal',// 가로 방향 수평 슬라이드
+            speed: 200,        // 이동 속도를 설정
+            pager: false,      // 현재 위치 페이징 표시 여부 설정
+            moveSlides: 1,     // 슬라이드 이동시 개수
+            slideWidth: 140,   // 슬라이드 너비
+            minSlides: 1,      // 최소 노출 개수
+            maxSlides: 6,      // 최대 노출 개수
+            slideMargin: 20,    // 슬라이드간의 간격
+            auto: false,        // 자동 실행 여부
+            autoHover: true,   // 마우스 호버시 정지 여부
+            controls: true,   // 이전 다음 버튼 노출 여부
+            nextText: '<i class="fas fa-chevron-right"></i>',
+            prevText: '<i class="fas fa-chevron-left"></i>'
+            
+        });
+
+    });
     </script>
 
 </body>
