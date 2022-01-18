@@ -3,7 +3,6 @@ package member;
 
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -122,6 +121,12 @@ public class MemberService {
 		MemberDao dao = new MemberDao();
 		String foundPw = dao.findPw(id,email);
 		return foundPw;
+	}
+
+	public void showAlarms(int loginIdNum) {
+		// 로그인 아이디의 고유 번호를 받아왔음. -> 다오로 그 고유번호에 해당하는 아이디의 알람들을 보여줄 수 있어야함
+		MemberDao dao = new MemberDao();
+		
 	}
 
 }
