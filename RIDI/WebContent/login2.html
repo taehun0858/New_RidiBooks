@@ -23,17 +23,13 @@
     <!-- 본문 -->
     <section class="main">
         <div class="content-wrapper">
-<<<<<<< HEAD
-            <form method="post" action="/ridibooks/member/logIn">
-=======
-            <form action="post">
->>>>>>> 00b519fbdc4de3cebf53a2864cdac054016b98eb
+
                 <div class="input-group">
                     <label class="account-label">
-                        <input type="text" class="userId" name="Id" placeholder="아이디">
+                        <input type="text" class="userId" name="userId" placeholder="아이디">
                     </label>
                     <label class="account-label">
-                        <input type="password" class="userPw" name="Pw" placeholder="비밀번호">
+                        <input type="password" class="userPw" name="userPw" placeholder="비밀번호">
                     </label>
 
                     <div class="remember-group">
@@ -56,57 +52,56 @@
                     <p>! 아이디 또는 비밀번호를 확인해주세요</p>
                 </div>
                 <div class="message4">
-                    <p>! 탈퇴한 사용자 입니다</p>
+                    <p>! 없는 사용자입니다.</p>
                 </div>
-            </form>
+
                 <button type="submit" class="loginbtn">로그인</button>
                 <button type="button" class="signupbtn">회원가입</button>
             
         </div>
     </section>
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script>
-                
-        var $userid = $(".userId").val();
-        var $userpw = $(".userPw").val();
-        var $idmessage = $(".message1");
-        var $pwmessage = $(".message2");
-        var $allmessage = $(".message3");
-        var $dropuser = $(".message4");
+    <script>                
+        
+        let $idmessage = $(".message1");
+        let $pwmessage = $(".message2");
+        let $allmessage = $(".message3");
+        let $dropuser = $(".message4");
 
         $(".loginbtn").on("click", function() {
-            console.log($userid);
-            console.log($userpw);
-            if($userid == 0) {
-                $($idmessage).css("display","block");
-            } else if ($userid >= 1 && $userpw == 0) {
-                $($idmessage).css("display","none");
-                $($userpw).css("display", "block");
-            };
-
-
-        });
-
-
-            $.ajax({
-                url: "ridibooks/member/logIn",
+        	let $userid = $(".userId").val();
+            let $userpw = $(".userPw").val();
+        	
+        	$.ajax({
+                url: "/ridibooks/member/logIn",
                 type: "POST",
-                data: "ID=" + $userId + "&PW=" + $userPw,
+                data: "ID="+$userid+"&PW="+$userpw,
                 success: function() {
-                    location.href = "회원가입후 메인페이지";
+                    location.href = "/ridibooks/main.html";
                 },
                 error: function(response) {
                     if(response.status == 400) {
                         $idmessage.css("display","block");
-                    } else if(response.status == 400) {
                         $pwmessage.css("display", "block");
+                        $allmessage.css("display", "none");
+                        $dropuser.css("display", "none");
                     } else if(response.status == 401) {
+                    	$idmessage.css("display","none");
+                        $pwmessage.css("display", "none");
                         $allmessage.css("display", "block");
+                        $dropuser.css("display", "none");
                     } else if (response.status == 404) {
+                    	$idmessage.css("display","none");
+                        $pwmessage.css("display", "none");
+                        $allmessage.css("display", "none");
                         $dropuser.css("display", "block");
                     };
                 }
             });
+
+        });
+
+            
     </script>
 </body>
 </html>
