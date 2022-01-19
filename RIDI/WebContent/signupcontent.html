@@ -27,6 +27,12 @@
                 <span class="userinfo">5~20자 영문, 숫자 입력</span>
                 <input type="text" id="userid" class="userid" placeholder="아이디" name="Id">
             </div>
+            <div class="message1" style="display:none;">
+                    <p>이미 사용중인 아이디입니다.</p>
+            </div>
+            
+            
+            
             <div class="userinput">
                 <div class="userpw">
                     <span class="userinfo">8자 이상, 영문/숫자/특수문자 중 2가지 이상 입력</span>
@@ -41,7 +47,10 @@
             </div>
             <div class="userinput">
                 <span class="userinfo">이메일 주소 입력</span>
-                <input type="text" id="useremail" class="useremail" placeholder="이메일 주소" name="Email">
+                <input type="email" id="useremail" class="useremail" placeholder="이메일 주소" name="Email">
+            </div>
+            <div class="message2" style="display:none;">
+                    <p>이미 사용중인 이메일입니다.</p>
             </div>
             <div class="userinput">
                 <span class="userinfo">이름 입력</span>
@@ -154,8 +163,44 @@
         $(".subbtn").on("click",function(){
         	if($(".checkthree").hasClass("fill")){$("#Agree1").prop("checked",true);}
         	if($(".checkfour").hasClass("fill")){$("#Agree2").prop("checked",true);}
-//         	if($("#male").css("background-color")=="#dbefff"){$("#male").prop("checked",true);}
-//         	if($("#female").css("background-color")=="#dbefff"){$("#female").prop("checked",true);}
+        });
+        
+        $(".userid").focusout(function(){
+        	let $idtype = $(".userid").attr("type");
+        	let $id = $(".userid").val();        	
+        	
+        	$.ajax({        		
+        		url:"/ridibooks/check",
+//         		type="GET",
+        		data:"type="+$idtype+"&Id="+$id,
+        		success: function(){
+        			$(".message1").attr("style","display:none");
+        		},
+        		error:function(response){
+        			$(".message1").attr("style","display:block");
+        		}
+        		
+        	
+        	});
+        });
+        
+        $(".useremail").focusout(function(){
+        	let $emailtype = $(".useremail").attr("type");
+        	let $email = $(".useremail").val();        	
+        	
+        	$.ajax({        		
+        		url:"/ridibooks/check",
+//         		type="GET",
+        		data:"type="+$emailtype+"&Email="+$email,
+        		success: function(){
+        			$(".message2").attr("style","display:none");
+        		},
+        		error:function(response){
+        			$(".message2").attr("style","display:block");
+        		}
+        		
+        	
+        	});
         });
         
 

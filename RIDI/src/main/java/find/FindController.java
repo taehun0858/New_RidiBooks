@@ -13,7 +13,7 @@ import member.MemberService;
 public class FindController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	protected void doPOST(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String type = request.getParameter("findtype");
 		String Email = request.getParameter("Email");
