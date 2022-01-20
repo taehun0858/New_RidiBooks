@@ -28,7 +28,7 @@ public class CheckController extends HttpServlet {
 		boolean EmailCheck;
 		boolean Idcheck;
 		
-		if(Type.equals(Email)) {		
+		if(Type.equals("email")) {		
 			EmailCheck = service.checkEmail(Email);			
 			// 이메일이 없으면 200, 아이디가 있으면 400전달
 			if(!EmailCheck)response.setStatus(200);

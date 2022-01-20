@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Collection;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -79,7 +80,7 @@ public class MemberDao {
 	public int getLoginMemebr(String id, String pw) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		int success = 0;
+		int successId = 0;
 		
 		try {
 			conn = getConnection();
@@ -91,7 +92,7 @@ public class MemberDao {
 			 	
 			ResultSet rs = pstmt.executeQuery();
 			
-			if(rs.next()) success=rs.getInt("Id_Num");
+			if(rs.next()) successId=rs.getInt("Id_Num");
 			rs.close();
 						
 		} catch (SQLException e) {
@@ -105,7 +106,7 @@ public class MemberDao {
 			}
 		}
 		
-		return success;
+		return successId;
 	}
 
 	// Id_Num을 반환해주는 메서드 
@@ -369,5 +370,43 @@ public class MemberDao {
 		
 		return success;
 		
+	}
+
+	public Collection<AlarmDto> getAlarmProducts(int loginIdNum) {
+		// 아이디 고유값으로 알람 데이터베이스에서 고유번호에 해당하는 모든 정보들을 가져옴
+		// 그 정보들중에서 사진url과 상품 이름, 상품 가격 을productDto에 저장
+		// 조회된 모든 행들의 정보들을(url,이름,가격) productDto타입의 변수에 저장해서 
+		// productDto타입의 Collection에 넣기
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		boolean success = false;	
+		Collection<AlarmDto> products = null;
+		
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM alarms WHERE m_Num = ?;";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, loginIdNum);
+		
+			
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				// 다음 행이 없을 때 까지 이름과 가격 url을 가져와서 AlaramDto타입의 변수에 저장하고 Collection(products)에 넣기 
+				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+		}
+		
+		return products;
 	}
 }

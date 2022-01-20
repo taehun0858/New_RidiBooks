@@ -17,8 +17,7 @@ public class CartController extends HttpServlet {
 		HttpSession session = request.getSession();
 		MemberService service = new MemberService();
 		if(session.getAttribute("isLogin")==null || Integer.parseInt((String) session.getAttribute("isLogin"))==0) {
-			// 세션의 isLogin홋성 값을 가져옴 그 속성값은 결국 로그인한 아이디의 아이디 고유번호일것임, isLogin이 비었거나 0이라면
-			
+			// 세션의 isLogin홋성 값을 가져옴 그 속성값은 결국 로그인한 아이디의 아이디 고유번호일것임, isLogin이 비었거나 0이라면			
 		}
 		
 	}

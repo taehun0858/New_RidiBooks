@@ -13,20 +13,22 @@ import member.MemberService;
 public class FindController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	protected void doPOST(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+		String type = request.getParameter("findtype");
 		String Email = request.getParameter("Email");
+		String Id = request.getParameter("Id");
 		
 		MemberService service = new MemberService();
 		
-		String foundId = service.findIdByEmail(Email);
-		request.setAttribute("Id", foundId);
+		String foundId=null;
+		String foundPw = null;
+		if(type.equals("Email")) {
+			foundId = service.findIdByEmail(Email);
+		}else if(type.equals("Email,Id")){
+			foundPw = service.findPw(Id,Email);
+		}		
 		
-		String Id = request.getParameter("Id");
-		
-		String foundPw = service.findPw(Id,Email);
-		request.setAttribute("Pw", foundPw);
 	}
 
 
