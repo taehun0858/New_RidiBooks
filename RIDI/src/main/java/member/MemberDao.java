@@ -267,38 +267,6 @@ public class MemberDao {
 		return Id;
 	}
 
-	public String findPw(String id, String email) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		String Pw=null;
-		
-		try {
-			conn = getConnection();
-			String sql = "SELECT Pw FROM member WHERE Email=? AND Id=?;";
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, email);
-			pstmt.setString(2, id);
-			 	
-			ResultSet rs = pstmt.executeQuery();
-			if(rs.next()) Pw=rs.getString("Pw");
-			// 행이 존재할때 그 행의 "Id" 값을 Id변수에 저장한다.
-			rs.close();
-						
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if(conn!= null) {try {conn.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-			if(pstmt!= null) {try {pstmt.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-			
-		}
-		return Pw;
-	}
-
 	public boolean insertAgree1(MemberDto member) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -408,5 +376,42 @@ public class MemberDao {
 		}
 		
 		return products;
+	}
+
+	public String resetPw(String id, String email, String resetedPw) {
+		String foundPw=null;		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = getConnection();
+			String sql = "UPDATE member SET Pw=? WHERE id=? AND email=?";
+			pstmt = conn.prepareStatement(sql);
+			
+			
+			pstmt.setString(1, resetedPw);
+			pstmt.setString(2, id);
+			pstmt.setString(3, email);
+			pstmt.setInt(2, 2);
+			
+			int result = pstmt.executeUpdate();
+			
+		
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+		}
+		
+		
+		
+		int result ;
+		return foundPw;
 	}
 }

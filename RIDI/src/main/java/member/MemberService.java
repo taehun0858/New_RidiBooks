@@ -119,12 +119,6 @@ public class MemberService {
 		return foundId;
 	}
 
-	public String findPw(String id, String email) {
-		MemberDao dao = new MemberDao();
-		String foundPw = dao.findPw(id,email);
-		return foundPw;
-	}
-
 	public Collection<AlarmDto> getAlarms(int loginIdNum) {
 		// 로그인 아이디의 고유 번호를 받아왔음. -> 다오로 그 고유번호에 해당하는 아이디의 알람들을 보여줄 수 있어야함
 		MemberDao dao = new MemberDao();
@@ -145,6 +139,12 @@ public class MemberService {
 		
 		
 		return loginBoolean;
+	}
+
+	public String resetPw(String id, String email, String resetedPw) {
+		MemberDao dao = new MemberDao();
+		String foundPw = dao.resetPw(id,email,resetedPw);
+		return foundPw;
 	}
 
 }
