@@ -168,7 +168,8 @@
         $(".userid").focusout(function(){
         	let $idtype = $(".userid").attr("type");
         	let $id = $(".userid").val();        	
-        	
+ 
+// 아이디가 이미 가입된 아이디 인지 이메일이 이미 가입된 이메일인지 확인하는 ajax생성 완료 -> 테스트 까지 마침, 테스트 이상없음         	
         	$.ajax({        		
         		url:"/ridibooks/check",
 //         		type="GET",
@@ -179,8 +180,6 @@
         		error:function(response){
         			$(".message1").attr("style","display:block");
         		}
-        		
-        	
         	});
         });
         
@@ -198,8 +197,6 @@
         		error:function(response){
         			$(".message2").attr("style","display:block");
         		}
-        		
-        	
         	});
         });
         
