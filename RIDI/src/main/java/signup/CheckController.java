@@ -1,4 +1,4 @@
-package check;
+package signup;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.MemberService;
+import signup.MemberService;
 
 @WebServlet("/check")
 public class CheckController extends HttpServlet {

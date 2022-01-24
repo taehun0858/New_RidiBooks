@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.MemberService;
+import signup.MemberService;
 
 @WebServlet("/FindController")
 public class FindController extends HttpServlet {
@@ -34,9 +34,24 @@ public class FindController extends HttpServlet {
 		String foundPw = null;
 		if(type.equals("Email")) {
 			foundId = service.findIdByEmail(Email);
-			out.println(foundId);
 			
-		}else if(type.equals("Email,Id")){
+			out.println("<html>");
+
+			  out.println("<head>");
+			  out.println("<title>Hello</title>");
+			  out.println("</head>");
+
+			  out.println("<body>");
+			  out.println(foundId);
+			  out.println("<h1>WorldServlet get</h1>");
+			  out.println("</body>");
+
+			  out.println("</html>");
+
+			  out.close();
+			response.sendRedirect("/ridibooks/test.html?findId="+foundId);
+			
+		}else if(type.equals("Email,text")){
 			foundPw = service.resetPw(Id,Email,Pw);
 		}else if(type.isEmpty() || type==null) {		
 			response.setStatus(401);// 타입의 형식을 전달해주지 않는다면 401에러 발생

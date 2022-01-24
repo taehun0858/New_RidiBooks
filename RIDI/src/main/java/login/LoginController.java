@@ -1,4 +1,4 @@
-package member;
+package login;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -24,7 +24,7 @@ public class LoginController extends HttpServlet {
 	// 로그인 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		MemberService service = new MemberService();
+		LoginService service = new LoginService();
 		int statuscode = service.login(request, response);
 		response.setStatus(statuscode);
 //		response.setStatus(200);

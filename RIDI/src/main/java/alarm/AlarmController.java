@@ -1,4 +1,4 @@
-package mypage;
+package alarm;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import member.MemberService;
+import signup.MemberService;
 
 @WebServlet("/AlarmController")
 public class AlarmController extends HttpServlet {
@@ -20,7 +20,7 @@ public class AlarmController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		MemberService service = new MemberService();
+		AlarmService service = new AlarmService();
 		// 로그인되어 있는지 확인 -> 로그인 되어 있다면 세션에 있는 로그인 아이디 고유 번호 가져옴
 		// 그 번호로 등록되어진 알림 목록들을 가져와서 보여줌
 		HttpSession session = request.getSession();

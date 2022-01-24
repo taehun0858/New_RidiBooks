@@ -1,4 +1,4 @@
-package member;
+package signup;
 
 import java.sql.Date;
 
