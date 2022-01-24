@@ -24,7 +24,7 @@ public class FindController extends HttpServlet {
 		String Email = request.getParameter("Email");
 		String Id = request.getParameter("Id");
 		String Pw = request.getParameter("Pw");
-		MemberService service = new MemberService();
+		FindService service = new FindService();
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		

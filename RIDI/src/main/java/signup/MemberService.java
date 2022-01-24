@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class MemberService {
+	
 	public int joinMember(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("UTF-8");
 		
@@ -75,21 +76,6 @@ public class MemberService {
 		boolean result = dao.getEmailCheckBoolean(Email);
 		
 		return result;
-	}
-
-	public String findIdByEmail(String email) {
-		MemberDao dao = new MemberDao();
-		String foundId = dao.findIdByEmail(email);
-		return foundId;
-	}
-
-	
-	
-
-	public String resetPw(String id, String email, String resetedPw) {
-		MemberDao dao = new MemberDao();
-		String foundPw = dao.resetPw(id,email,resetedPw);
-		return foundPw;
 	}
 
 }
