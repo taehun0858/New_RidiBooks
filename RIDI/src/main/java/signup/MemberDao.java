@@ -1,4 +1,4 @@
-package member;
+package signup;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -77,70 +77,6 @@ public class MemberDao {
 		return success;
 	}
 
-	public int getLoginMemebr(String id, String pw) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		int successId = 0;
-		
-		try {
-			conn = getConnection();
-			String sql = "SELECT * FROM member WHERE id=? AND pw=?;";
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, id);
-			pstmt.setString(2, pw);
-			 	
-			ResultSet rs = pstmt.executeQuery();
-			
-			if(rs.next()) successId=rs.getInt("Id_Num");
-			rs.close();
-						
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if(conn!= null) {try {conn.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-			if(pstmt!= null) {try {pstmt.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-		}
-		
-		return successId;
-	}
-
-	// Id_Num을 반환해주는 메서드 
-	public int getLoginIdNum(String id) {
-		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		int IdNum = 0;
-		
-		try {
-			conn = getConnection();
-			String sql = "SELECT Id_Num FROM member WHERE id=?;";
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, id);
-			 	
-			ResultSet rs = pstmt.executeQuery();
-			if(rs.next()) IdNum = rs.getInt("Id_Num");
-			rs.close();
-							
-						
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if(conn!= null) {try {conn.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-			if(pstmt!= null) {try {pstmt.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-		}
-		
-		return IdNum;
-	}
 	
 	public boolean getIdCheckBoolean(String id) {
 		Connection conn = null;
@@ -175,32 +111,7 @@ public class MemberDao {
 		return result;
 	}
 	
-	public void loginDateUpdate(String id) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-			
-		try {
-			conn = getConnection();
-			String sql = "UPDATE member SET m_redate=? WHERE id=?;";
-			pstmt = conn.prepareStatement(sql);
-			LocalDateTime m_redate = LocalDateTime.now();
-			DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
-			pstmt.setString(1, dft.format(m_redate));
-			pstmt.setString(2, id);
-						
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if(conn!= null) {try {conn.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-			if(pstmt!= null) {try {pstmt.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-		}
-		
-		
-	}
+	
 
 	public boolean getEmailCheckBoolean(String email) {
 		Connection conn = null;
@@ -340,43 +251,7 @@ public class MemberDao {
 		
 	}
 
-	public Collection<AlarmDto> getAlarmProducts(int loginIdNum) {
-		// 아이디 고유값으로 알람 데이터베이스에서 고유번호에 해당하는 모든 정보들을 가져옴
-		// 그 정보들중에서 사진url과 상품 이름, 상품 가격 을productDto에 저장
-		// 조회된 모든 행들의 정보들을(url,이름,가격) productDto타입의 변수에 저장해서 
-		// productDto타입의 Collection에 넣기
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		boolean success = false;	
-		Collection<AlarmDto> products = null;
-		
-		try {
-			conn = getConnection();
-			String sql = "SELECT * FROM alarms WHERE m_Num = ?;";
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setInt(1, loginIdNum);
-		
-			
-			ResultSet rs = pstmt.executeQuery();
-			while(rs.next()) {
-				// 다음 행이 없을 때 까지 이름과 가격 url을 가져와서 AlaramDto타입의 변수에 저장하고 Collection(products)에 넣기 
-				
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if(conn!= null) {try {conn.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-			if(pstmt!= null) {try {pstmt.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-		}
-		
-		return products;
-	}
+	
 
 	public String resetPw(String id, String email, String resetedPw) {
 		String foundPw=null;		

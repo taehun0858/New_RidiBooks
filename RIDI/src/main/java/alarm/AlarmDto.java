@@ -1,4 +1,4 @@
-package member;
+package alarm;
 
 public class AlarmDto {
 	String imageUrl;
