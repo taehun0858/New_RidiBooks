@@ -77,19 +77,6 @@ public class MemberService {
 		return result;
 	}
 
-	public String findIdByEmail(String email) {
-		MemberDao dao = new MemberDao();
-		String foundId = dao.findIdByEmail(email);
-		return foundId;
-	}
-
 	
-	
-
-	public String resetPw(String id, String email, String resetedPw) {
-		MemberDao dao = new MemberDao();
-		String foundPw = dao.resetPw(id,email,resetedPw);
-		return foundPw;
-	}
 
 }

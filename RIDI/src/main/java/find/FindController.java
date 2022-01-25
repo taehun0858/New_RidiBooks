@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import signup.MemberService;
 
-@WebServlet("/FindController")
+@WebServlet("/find")
 public class FindController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,34 +24,19 @@ public class FindController extends HttpServlet {
 		String Email = request.getParameter("Email");
 		String Id = request.getParameter("Id");
 		String Pw = request.getParameter("Pw");
-		MemberService service = new MemberService();
+		FindService service = new FindService();
 		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		
-		
-		
+				
 		String foundId=null;
 		String foundPw = null;
-		if(type.equals("Email")) {
-			foundId = service.findIdByEmail(Email);
+		if(type.equals("email")) {
+			foundId = service.findIdByEmail(Email);	
 			
-			out.println("<html>");
-
-			  out.println("<head>");
-			  out.println("<title>Hello</title>");
-			  out.println("</head>");
-
-			  out.println("<body>");
-			  out.println(foundId);
-			  out.println("<h1>WorldServlet get</h1>");
-			  out.println("</body>");
-
-			  out.println("</html>");
-
-			  out.close();
-			response.sendRedirect("/ridibooks/test.html?findId="+foundId);
+			PrintWriter writer = response.getWriter();
 			
-		}else if(type.equals("Email,text")){
+			writer.print(foundId);
+			
+		}else if(type.equals("email,text")){
 			foundPw = service.resetPw(Id,Email,Pw);
 		}else if(type.isEmpty() || type==null) {		
 			response.setStatus(401);// 타입의 형식을 전달해주지 않는다면 401에러 발생
