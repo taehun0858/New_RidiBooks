@@ -280,6 +280,7 @@ main {
 .bx-wrapper {
     position: relative;
     margin-bottom: 60px;
+    margin: auto;
     padding: 0;
     *zoom: 1;
     -ms-touch-action: pan-y;
@@ -594,10 +595,6 @@ main {
     margin-top: 17px;
 }
 
-.newridicontent .newrapper {
-    margin: -8px auto 0;
-
-}
 
 @media (min-width: 1000px) {
     .newridicontent .newrapper {
@@ -605,5 +602,59 @@ main {
     }
 }
 
+.newridicontent .newrapper .bx-wrapper {
+    background: transparent;
+}
 
+.newridicontent .newrapper .bx-controls-direction .bx-prev {
+    left: -65px;
+} 
 
+.newridicontent .newrapper .bx-controls-direction .bx-next {
+    right: -69px;
+}
+
+.newridicontent .newrapper .bx-wrapper img {
+    border-radius: 0px;
+}
+
+.newridibooks .newridicontent .newrapper .newcontent li .booktitle {
+    width: 100%;
+    margin-top: 6px;
+}
+
+.newridibooks .newridicontent .newrapper .newcontent li .booktitle h3 {
+    letter-spacing: -0.03em;
+    margin-top: 3px;
+    font-size: 14px;
+    line-height: 1.4em;
+    max-height: calc(1.4em * 2);
+    font-weight: bold;
+    color: white;
+}
+
+.newridibooks .newridicontent .newrapper .newcontent li .booktitle p {
+    font-size: 14px;
+    color: #9ea7ad;
+    width: 100%;
+    margin-top: 5px;
+    line-height: 1.2em;
+    font-weight: normal;
+}
+
+.newrapper .bx-wrapper .bx-controls-direction a {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        margin-top: -16px;
+        outline: 0;
+        width: 40px;
+        background-color: #384252;
+        border-radius: 40px;
+        height: 40px;
+        z-index: 9999;
+        box-shadow: 0 0.8px 3px rgb(0 0 0 / 33%);
+        opacity: 0.95;
+        transition: opacity 0.1s;
+        color: #B8BFC4;
+    }

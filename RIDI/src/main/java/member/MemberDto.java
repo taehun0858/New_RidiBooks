@@ -8,12 +8,26 @@ public class MemberDto {
 	private String Email;				// 이메일
 	private String Name;				// 이름
 	private String Birth;				// 생년월일
-	private Date m_Date;		// 가입일
-	private Date m_reDate;		// 최근 접속일
+	private Date m_Date;				// 가입일
+	private Date m_reDate;				// 최근 접속일
 	private char Sex;					// 성별
-	private int m_cash = 0;					// 보유 캐쉬
-	private int m_point = 0;				// 보유 포인트
+	private int m_cash = 0;				// 보유 캐쉬
+	private int m_point = 0;			// 보유 포인트
+	private String Agree1;				// 첫 번째 선택 동의 여부	
+	private String Agree2;				// 두 번째 선택 동의 여부
 	
+	public String getAgree1() {
+		return Agree1;
+	}
+	public void setAgree1(String agree1) {
+		Agree1 = agree1;
+	}
+	public String getAgree2() {
+		return Agree2;
+	}
+	public void setAgree2(String agree2) {
+		Agree2 = agree2;
+	}
 	public MemberDto() {
 		// 회원이 생기면서 생길 테이블 정보들을 생성하는 코드
 		// 내 서재, 내 쿠폰, 내 위시리스트, 내 카트, 내 알림 등등 
