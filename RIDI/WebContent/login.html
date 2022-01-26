@@ -23,11 +23,7 @@
     <!-- 본문 -->
     <section class="main">
         <div class="content-wrapper">
-<<<<<<< HEAD
-            <form method="post" action="/ridibooks/member/logIn">
-=======
             <form action="post">
->>>>>>> 00b519fbdc4de3cebf53a2864cdac054016b98eb
                 <div class="input-group">
                     <label class="account-label">
                         <input type="text" class="userId" name="Id" placeholder="아이디">
@@ -75,10 +71,10 @@
         var $dropuser = $(".message4");
 
         $(".loginbtn").on("click", function() {
-            console.log($userid);
-            console.log($userpw);
+
             if($userid == 0) {
                 $($idmessage).css("display","block");
+                return false;
             } else if ($userid >= 1 && $userpw == 0) {
                 $($idmessage).css("display","none");
                 $($userpw).css("display", "block");
@@ -86,27 +82,7 @@
 
 
         });
-
-
-            $.ajax({
-                url: "ridibooks/member/logIn",
-                type: "POST",
-                data: "ID=" + $userId + "&PW=" + $userPw,
-                success: function() {
-                    location.href = "회원가입후 메인페이지";
-                },
-                error: function(response) {
-                    if(response.status == 400) {
-                        $idmessage.css("display","block");
-                    } else if(response.status == 400) {
-                        $pwmessage.css("display", "block");
-                    } else if(response.status == 401) {
-                        $allmessage.css("display", "block");
-                    } else if (response.status == 404) {
-                        $dropuser.css("display", "block");
-                    };
-                }
-            });
     </script>
+    
 </body>
 </html>
