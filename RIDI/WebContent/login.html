@@ -23,7 +23,11 @@
     <!-- 본문 -->
     <section class="main">
         <div class="content-wrapper">
+<<<<<<< HEAD
             <form method="post" action="/ridibooks/member/logIn">
+=======
+            <form action="post">
+>>>>>>> 00b519fbdc4de3cebf53a2864cdac054016b98eb
                 <div class="input-group">
                     <label class="account-label">
                         <input type="text" class="userId" name="Id" placeholder="아이디">
@@ -43,41 +47,47 @@
                     </div>
                 </div>
                 <div class="message1">
-                    <p><svg viewBox="0 0 8 48" class="ridi_icon exclamation exclamation_1"><path d="M4 0C2.1 0 .6 1.5.6 3.4v27.4c0 1.9 1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4V3.4C7.4 1.5 5.9 0 4 0zm0 41.1c-1.9 0-3.4 1.5-3.4 3.4S2.1 48 4 48s3.4-1.5 3.4-3.4-1.5-3.5-3.4-3.5z"></path></svg>
-                        아이디를 입력해주세요
-                    </p>
+                    <p>! 아이디를 입력해주세요</p>
                 </div>
                 <div class="message2">
-                    <p><svg viewBox="0 0 8 48" class="ridi_icon exclamation exclamation_1"><path d="M4 0C2.1 0 .6 1.5.6 3.4v27.4c0 1.9 1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4V3.4C7.4 1.5 5.9 0 4 0zm0 41.1c-1.9 0-3.4 1.5-3.4 3.4S2.1 48 4 48s3.4-1.5 3.4-3.4-1.5-3.5-3.4-3.5z"></path></svg>
-                        비밀번호를 입력해주세요
-                    </p>
+                    <p>! 비밀번호를 입력해주세요</p>
                 </div>
                 <div class="message3">
-                    <p><svg viewBox="0 0 8 48" class="ridi_icon exclamation exclamation_1"><path d="M4 0C2.1 0 .6 1.5.6 3.4v27.4c0 1.9 1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4V3.4C7.4 1.5 5.9 0 4 0zm0 41.1c-1.9 0-3.4 1.5-3.4 3.4S2.1 48 4 48s3.4-1.5 3.4-3.4-1.5-3.5-3.4-3.5z"></path></svg>
-                        아이디 또는 비밀번호를 확인해주세요
-                    </p>
+                    <p>! 아이디 또는 비밀번호를 확인해주세요</p>
                 </div>
                 <div class="message4">
-                    <p><svg viewBox="0 0 8 48" class="ridi_icon exclamation exclamation_1"><path d="M4 0C2.1 0 .6 1.5.6 3.4v27.4c0 1.9 1.5 3.4 3.4 3.4s3.4-1.5 3.4-3.4V3.4C7.4 1.5 5.9 0 4 0zm0 41.1c-1.9 0-3.4 1.5-3.4 3.4S2.1 48 4 48s3.4-1.5 3.4-3.4-1.5-3.5-3.4-3.5z"></path></svg>
-                        탈퇴한 사용자 입니다
-                    </p>
+                    <p>! 탈퇴한 사용자 입니다</p>
                 </div>
-
+            </form>
                 <button type="submit" class="loginbtn">로그인</button>
                 <button type="button" class="signupbtn">회원가입</button>
-            </form>
+            
         </div>
     </section>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script>
-        let $userId = $(".userId");
-        let $userPw = $(".userPw");
-        let $idmessage = $(".message1");
-        let $pwmessage = $(".message2");
-        let $allmessage = $(".message3");
-        let $dropuser = $(".message4");
+                
+        var $userid = $(".userId").val();
+        var $userpw = $(".userPw").val();
+        var $idmessage = $(".message1");
+        var $pwmessage = $(".message2");
+        var $allmessage = $(".message3");
+        var $dropuser = $(".message4");
 
-        $("loginbtn").on("click", function() {
+        $(".loginbtn").on("click", function() {
+            console.log($userid);
+            console.log($userpw);
+            if($userid == 0) {
+                $($idmessage).css("display","block");
+            } else if ($userid >= 1 && $userpw == 0) {
+                $($idmessage).css("display","none");
+                $($userpw).css("display", "block");
+            };
+
+
+        });
+
+
             $.ajax({
                 url: "ridibooks/member/logIn",
                 type: "POST",
@@ -97,7 +107,6 @@
                     };
                 }
             });
-        });
     </script>
 </body>
 </html>
