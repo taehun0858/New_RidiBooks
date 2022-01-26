@@ -84,6 +84,10 @@ input {
     line-height: normal;
     box-shadow: none;
 }
+input:hover {
+    border: 1px solid #9ea7ad;
+}
+
 
 button {
     margin-top: 12px;
