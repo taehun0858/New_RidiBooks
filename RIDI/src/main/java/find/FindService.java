@@ -9,9 +9,16 @@ public class FindService {
 		return foundId;
 	}
 	
-	public String resetPw(String id, String email, String resetedPw) {
+	public String resetPw(String id, String email) {
 		FindDao dao = new FindDao();
-		String foundPw = dao.resetPw(id,email,resetedPw);
+		String foundPw = dao.resetPw(Pw,resetedPw);
+		return foundPw;
+	}
+
+	public String findPw(String id, String email) {
+		FindDao dao = new FindDao();
+		String foundPw = dao.findPw(id,email);
+		
 		return foundPw;
 	}
 	

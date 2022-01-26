@@ -98,4 +98,38 @@ public class FindDao {
 		return foundPw;
 	}
 
+	public String findPw(String id, String email) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String Pw=null;
+		
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM member WHERE Id=? AND Email=?;";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			pstmt.setString(2, email);
+			 	
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) Pw=rs.getString("Pw");
+			// 행이 존재할때 그 행의 "Id" 값을 Id변수에 저장한다.
+			rs.close();		
+						
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			
+		}
+		
+		
+		return Pw;
+	}
+
 }

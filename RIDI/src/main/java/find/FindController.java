@@ -23,7 +23,6 @@ public class FindController extends HttpServlet {
 		String type = request.getParameter("findtype");
 		String Email = request.getParameter("Email");
 		String Id = request.getParameter("Id");
-		String Pw = request.getParameter("Pw");
 		FindService service = new FindService();
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
@@ -34,25 +33,11 @@ public class FindController extends HttpServlet {
 		String foundPw = null;
 		if(type.equals("Email")) {
 			foundId = service.findIdByEmail(Email);
+			out.println(foundId);
 			
-			out.println("<html>");
-
-			  out.println("<head>");
-			  out.println("<title>Hello</title>");
-			  out.println("</head>");
-
-			  out.println("<body>");
-			  out.println(foundId);
-			  out.println("<h1>WorldServlet get</h1>");
-			  out.println("</body>");
-
-			  out.println("</html>");
-
-			  out.close();
-			response.sendRedirect("/ridibooks/test.html?findId="+foundId);
-			
-		}else if(type.equals("Email,text")){
-			foundPw = service.resetPw(Id,Email,Pw);
+		}else if(type.equals("Email,text") || type.equals("text,Email")){
+			foundPw = service.findPw(Id,Email);
+			// 계정의 비밀번호를 가져옴
 		}else if(type.isEmpty() || type==null) {		
 			response.setStatus(401);// 타입의 형식을 전달해주지 않는다면 401에러 발생
 		}
