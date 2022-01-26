@@ -93,11 +93,83 @@ public class FindDao {
 				catch (SQLException e) {e.printStackTrace();}
 			}
 		}
-		
-		
-		
-		int result ;
 		return foundPw;
+	}
+
+	public PwDto findPw(String id, String email) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		PwDto Pw = new PwDto();
+		
+		
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM member WHERE Email=? AND Id=?;";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, email);
+			pstmt.setString(2, id);
+			 	
+			ResultSet rs = pstmt.executeQuery();
+			
+			 if(rs.next()) {
+				 // 해당하는 비밀번호가 있으면 PwDto에 저장
+				 Pw.setEmail(email);
+				 Pw.setId(id);
+				 Pw.setPw(rs.getString("Pw"));
+			 }
+			rs.close();
+						
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			
+		}
+		
+		
+		return Pw;
+	}
+
+	public boolean reset(String pw, PwDto pwDto) {
+		String foundPw=null;		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String Id = pwDto.getId();
+		String usedPw = pwDto.getPw();
+		String email = pwDto.getEmail();
+		boolean success=false;
+		try {
+			conn = getConnection();
+			String sql = "UPDATE member SET Pw=? WHERE id=? AND email=?";
+			pstmt = conn.prepareStatement(sql);
+			
+			
+			pstmt.setString(1, pw);
+			pstmt.setString(2, Id);
+			pstmt.setString(3, email);
+			
+			int result = pstmt.executeUpdate();
+			if(result>0) {success=true;}
+		
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+		}
+		
+		return success;
 	}
 	
 }

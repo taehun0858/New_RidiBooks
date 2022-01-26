@@ -19,7 +19,7 @@
         let $findtype = $(".useremail").attr("type");
     	$.ajax({
             url: "/ridibooks/find",
-            type: "POST",
+            type: "Get",
             data: "findtype="+$findtype+"&Email="+$useremail,
             success: function(data) {
                 location.href = "findIdTest.jsp?findid="+data;
