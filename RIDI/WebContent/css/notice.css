@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 상단 배너 */
+header {
+    display: block;
+    width: 100%;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 62px;
+    background-color: #1f8ce6;
+}
+
+.header-nav {
+    display: table;
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    margin-left: 213px;
+}
+
+.nav-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nav-wrapper a {
+    border: 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    width: auto;
+    text-decoration: none;
+}
