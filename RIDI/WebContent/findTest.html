@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<form action="/ridibooks/find" method="Post">
 		<input type="email" name="Email" class="useremail">
+		<input type="text" name="Id" class="userid">
 	</form>
-		<button class="findbtn">아이디 찾기</button>
+		<button class="findbtn">鍮꾨��踰덊샇 李얘린</button>
 </body>
 
 <script src="js/jquery-3.6.0.min.js"></script>
@@ -16,13 +17,15 @@
     
     $(".findbtn").on("click", function() {
     	let $useremail = $(".useremail").val();
+    	let $userid = $(".userid").val();
         let $findtype = $(".useremail").attr("type");
     	$.ajax({
             url: "/ridibooks/find",
             type: "Get",
-            data: "findtype="+$findtype+"&Email="+$useremail,
-            success: function(data) {
-                location.href = "findIdTest.jsp?findid="+data;
+            data: "findtype=resetPw&Id="+$userid+"&Email="+$useremail,
+            success: function() {
+            	
+                location.href = "findPwTest.jsp";
             },
             error: function(response) {
                 

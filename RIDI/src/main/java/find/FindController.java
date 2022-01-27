@@ -58,7 +58,7 @@ public class FindController extends HttpServlet {
 		}else if(type.equals("resetPw")){
 			foundPw = service.findPw(Id,Email);
 			if(foundPw!=null) {
-				writer.print(foundPw);
+				request.setAttribute("PwDto",foundPw);				
 				// 변경해줄 비밀번호를 찾아옴
 				response.setStatus(200);
 				// 비밀번호 정보를 찾았으면 200을 전달해줌}
