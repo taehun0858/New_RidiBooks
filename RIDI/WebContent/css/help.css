@@ -96,18 +96,21 @@ input[type="search"]:active {
     font-size: 18px;
     position: absolute;
     top: 98px;
-    right: 352px;
+    right: 662px;
     line-height: 1em;
     vertical-align: middle;
 }
 
 .main-container {
     display: flex;
-    flex-direction: column;
+    max-width: 1120px;
+    margin: 0 auto;
 }
-@media (min-width:1024px) {
+@media (min-width: 1120px) {
+
     .main-container {
-        flex-direction: row;
+        padding: 25px 0 0 0;
+        width: 90%;
     }
 }
 
@@ -239,6 +242,11 @@ article {
     }
 }
 
+.text a {
+    text-decoration: none;
+    color: #1f8ce6;
+}
+
 .article-wrapper {
     max-width: 100%;
 }
@@ -367,6 +375,10 @@ footer {
     display: block;
     color: #fff;
     padding: 0;
+}
+
+.display {
+    display: none;
 }
 
 .information p {
