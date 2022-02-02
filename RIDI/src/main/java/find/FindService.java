@@ -9,16 +9,19 @@ public class FindService {
 		return foundId;
 	}
 
-	public PwDto findPw(String id, String email) {
+	public String findPw(PwDto member) {
 		FindDao dao = new FindDao();
-		PwDto foundPw = (PwDto) dao.findPw(id,email);
-		
-		return foundPw;
+		String id = member.getId();
+		String email = member.getEmail();
+		String Pw = dao.findPw(id, email);
+		return Pw;
 	}
 
-	public boolean resetPw(String pw, PwDto pwDto) {
+	public boolean resetPw(PwDto member, String Pw) {
 		FindDao dao = new FindDao();
-		boolean success = dao.reset(pw,pwDto);
+		boolean success = dao.reset(Pw, member);
+		
 		return success;
 	}
+
 }

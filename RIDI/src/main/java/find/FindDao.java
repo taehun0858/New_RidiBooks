@@ -96,11 +96,10 @@ public class FindDao {
 		return foundPw;
 	}
 
-	public PwDto findPw(String id, String email) {
+	public String findPw(String id, String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		PwDto Pw = new PwDto();
-		
+		String Pw = null;
 		
 		try {
 			conn = getConnection();
@@ -114,9 +113,7 @@ public class FindDao {
 			
 			 if(rs.next()) {
 				 // 해당하는 비밀번호가 있으면 PwDto에 저장
-				 Pw.setEmail(email);
-				 Pw.setId(id);
-				 Pw.setPw(rs.getString("Pw"));
+				 Pw = rs.getString("Pw");
 			 }
 			rs.close();
 						
