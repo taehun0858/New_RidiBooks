@@ -10,7 +10,11 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class FindDao {
+<<<<<<< HEAD
 	// DB접속
+=======
+	
+>>>>>>> feature/newbackend
 	private Connection getConnection() {
 		InitialContext ic;
 		try {
@@ -61,7 +65,12 @@ public class FindDao {
 		
 		return Id;
 	}
+<<<<<<< HEAD
 
+=======
+	
+	
+>>>>>>> feature/newbackend
 	public String resetPw(String id, String email, String resetedPw) {
 		String foundPw=null;		
 		Connection conn = null;
@@ -92,15 +101,19 @@ public class FindDao {
 				catch (SQLException e) {e.printStackTrace();}
 			}
 		}
+<<<<<<< HEAD
 		
 		
 	
+=======
+>>>>>>> feature/newbackend
 		return foundPw;
 	}
 
 	public String findPw(String id, String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
+<<<<<<< HEAD
 		String Pw=null;
 		
 		try {
@@ -115,6 +128,25 @@ public class FindDao {
 			if(rs.next()) Pw=rs.getString("Pw");
 			// 행이 존재할때 그 행의 "Id" 값을 Id변수에 저장한다.
 			rs.close();		
+=======
+		String Pw = null;
+		
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM member WHERE Email=? AND Id=?;";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, email);
+			pstmt.setString(2, id);
+			 	
+			ResultSet rs = pstmt.executeQuery();
+			
+			 if(rs.next()) {
+				 // 해당하는 비밀번호가 있으면 PwDto에 저장
+				 Pw = rs.getString("Pw");
+			 }
+			rs.close();
+>>>>>>> feature/newbackend
 						
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -132,4 +164,43 @@ public class FindDao {
 		return Pw;
 	}
 
+<<<<<<< HEAD
+=======
+	public boolean reset(String pw, PwDto pwDto) {
+		String foundPw=null;		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String Id = pwDto.getId();
+		String usedPw = pwDto.getPw();
+		String email = pwDto.getEmail();
+		boolean success=false;
+		try {
+			conn = getConnection();
+			String sql = "UPDATE member SET Pw=? WHERE id=? AND email=?";
+			pstmt = conn.prepareStatement(sql);
+			
+			
+			pstmt.setString(1, pw);
+			pstmt.setString(2, Id);
+			pstmt.setString(3, email);
+			
+			int result = pstmt.executeUpdate();
+			if(result>0) {success=true;}
+		
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+			if(pstmt!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+		}
+		
+		return success;
+	}
+	
+>>>>>>> feature/newbackend
 }
