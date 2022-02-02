@@ -10,11 +10,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class FindDao {
-<<<<<<< HEAD
 	// DB접속
-=======
-	
->>>>>>> feature/newbackend
 	private Connection getConnection() {
 		InitialContext ic;
 		try {
@@ -65,12 +61,7 @@ public class FindDao {
 		
 		return Id;
 	}
-<<<<<<< HEAD
-
-=======
 	
-	
->>>>>>> feature/newbackend
 	public String resetPw(String id, String email, String resetedPw) {
 		String foundPw=null;		
 		Connection conn = null;
@@ -101,34 +92,12 @@ public class FindDao {
 				catch (SQLException e) {e.printStackTrace();}
 			}
 		}
-<<<<<<< HEAD
-		
-		
-	
-=======
->>>>>>> feature/newbackend
 		return foundPw;
 	}
 
 	public String findPw(String id, String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-<<<<<<< HEAD
-		String Pw=null;
-		
-		try {
-			conn = getConnection();
-			String sql = "SELECT * FROM member WHERE Id=? AND Email=?;";
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, id);
-			pstmt.setString(2, email);
-			 	
-			ResultSet rs = pstmt.executeQuery();
-			if(rs.next()) Pw=rs.getString("Pw");
-			// 행이 존재할때 그 행의 "Id" 값을 Id변수에 저장한다.
-			rs.close();		
-=======
 		String Pw = null;
 		
 		try {
@@ -146,7 +115,6 @@ public class FindDao {
 				 Pw = rs.getString("Pw");
 			 }
 			rs.close();
->>>>>>> feature/newbackend
 						
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -164,14 +132,10 @@ public class FindDao {
 		return Pw;
 	}
 
-<<<<<<< HEAD
-=======
 	public boolean reset(String pw, PwDto pwDto) {
-		String foundPw=null;		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String Id = pwDto.getId();
-		String usedPw = pwDto.getPw();
 		String email = pwDto.getEmail();
 		boolean success=false;
 		try {
@@ -201,6 +165,4 @@ public class FindDao {
 		
 		return success;
 	}
-	
->>>>>>> feature/newbackend
 }

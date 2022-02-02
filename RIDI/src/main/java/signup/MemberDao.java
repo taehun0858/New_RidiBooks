@@ -145,10 +145,6 @@ public class MemberDao {
 		return result;
 	}
 
-<<<<<<< HEAD
-=======
-	
->>>>>>> feature/newbackend
 
 	public boolean insertAgree1(MemberDto member) {
 		Connection conn = null;
@@ -223,10 +219,4 @@ public class MemberDao {
 		
 	}
 
-<<<<<<< HEAD
-=======
-	
-
-	
->>>>>>> feature/newbackend
 }

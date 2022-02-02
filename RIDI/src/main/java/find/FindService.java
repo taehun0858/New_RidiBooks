@@ -8,22 +8,6 @@ public class FindService {
 		String foundId = dao.findIdByEmail(email);
 		return foundId;
 	}
-<<<<<<< HEAD
-	
-	public String resetPw(String id, String email) {
-		FindDao dao = new FindDao();
-		String foundPw = dao.resetPw(Pw,resetedPw);
-		return foundPw;
-	}
-
-	public String findPw(String id, String email) {
-		FindDao dao = new FindDao();
-		String foundPw = dao.findPw(id,email);
-		
-		return foundPw;
-	}
-	
-=======
 
 	public String findPw(PwDto member) {
 		FindDao dao = new FindDao();
@@ -40,5 +24,4 @@ public class FindService {
 		return success;
 	}
 
->>>>>>> feature/newbackend
 }

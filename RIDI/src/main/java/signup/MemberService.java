@@ -78,9 +78,4 @@ public class MemberService {
 		return result;
 	}
 
-<<<<<<< HEAD
-=======
-	
-
->>>>>>> feature/newbackend
 }
