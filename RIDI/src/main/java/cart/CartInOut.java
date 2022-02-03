@@ -17,10 +17,10 @@ public class CartInOut extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String requestType = request.getParameter("active");
 		String bookNum = request.getParameter("bookNum");
-		String idNum = (String) request.getSession().getAttribute("isLogin");
+		Integer idNum = (Integer) request.getSession().getAttribute("isLogin");
 		CartService service = new CartService(idNum);
 		boolean success = false;
-		if(requestType.equals("in")) {
+		if(requestType.equals("in")) { 
 			// 동작이 in 이면 카트에 넣기
 			success = service.cartIn(bookNum);
 			// 카트에서 빼려면 카트에 없는 상태인지 알아야함
