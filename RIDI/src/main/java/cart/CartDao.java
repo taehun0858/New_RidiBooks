@@ -31,7 +31,7 @@ public class CartDao {
 		return null;		
 	}
 
-	public List<Book> getCartBooks(String loginIdNum) {
+	public List<Book> getCartBooks(Integer loginIdNum) {
 		// 로그인 고유번호에 해당하는 카트에 담긴 책들을 보내줌
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -42,7 +42,7 @@ public class CartDao {
 			// 조인을 해야하는데 아직 조인을 잘 몰라서 못씀
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, loginIdNum);
+			pstmt.setInt(1, loginIdNum);
 			 	
 			ResultSet rs = pstmt.executeQuery();
 			

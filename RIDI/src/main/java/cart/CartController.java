@@ -36,13 +36,14 @@ public class CartController extends HttpServlet {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("isLogin")!=null || Integer.parseInt((String) session.getAttribute("isLogin"))!=0) {
 			// 로그인을 하고 카트페이지에 왔을때
-			String loginIdNum = (String) session.getAttribute("isLogin");
+			Integer loginIdNum = (Integer) session.getAttribute("isLogin");
 			//loginIdNum은 세션의 isLogin에 저장되어있는 로그인한 회원의 고유번호를 가져옴
 			CartService service = new CartService(loginIdNum);
 			//가져온 고유번호를 이용해서 서비스를 만듦.
 			List<Book> books = service.getCartBooks();
-			PrintWriter writer = response.getWriter();
-			writer.print(books);
+//			PrintWriter writer = response.getWriter();
+//			writer.print(books); => printWriter로 쓰면 객체가 전달되는게 아니라 문자열들이 전달되는것임.
+			request.setAttribute("CartBooks", books);
 		}
 		
 		
