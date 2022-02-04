@@ -15,9 +15,10 @@ public class CartInOut extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 페이지에서 보내는 동작의 종류가 in인지 out인지 확인해서 맞는 동작을 한다.
 		String requestType = request.getParameter("active");
-		String bookNum = request.getParameter("bookNum");
-		String idNum = (String) request.getSession().getAttribute("isLogin");
+		int bookNum = Integer.parseInt((String)request.getParameter("bookNum"));
+		int idNum = Integer.parseInt((String) request.getSession().getAttribute("isLogin"));
 		CartService service = new CartService(idNum);
 		boolean success = false;
 		if(requestType.equals("in")) {
@@ -29,14 +30,11 @@ public class CartInOut extends HttpServlet {
 			// 동작이 out 이면 카트에서 빼기
 			// 카트에서 빼려면 캍트에 등록된 상태인지 알아야함
 			// success에 동작의 성공 여부를 저장함
+			success=service.cartout(bookNum);
 		}
 		if(success==true) {response.setStatus(200);}
 		else {response.setStatus(400);}
 		
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
 	}
 
 }
