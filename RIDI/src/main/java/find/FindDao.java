@@ -62,39 +62,6 @@ public class FindDao {
 		return Id;
 	}
 	
-	
-	public String resetPw(String id, String email, String resetedPw) {
-		String foundPw=null;		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		
-		try {
-			conn = getConnection();
-			String sql = "UPDATE member SET Pw=? WHERE id=? AND email=?";
-			pstmt = conn.prepareStatement(sql);
-			
-			
-			pstmt.setString(1, resetedPw);
-			pstmt.setString(2, id);
-			pstmt.setString(3, email);
-			pstmt.setInt(2, 2);
-			
-			int result = pstmt.executeUpdate();
-			
-		
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if(conn!= null) {try {conn.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-			if(pstmt!= null) {try {pstmt.close();} 
-				catch (SQLException e) {e.printStackTrace();}
-			}
-		}
-		return foundPw;
-	}
 
 	public String findPw(String id, String email) {
 		Connection conn = null;
@@ -134,11 +101,9 @@ public class FindDao {
 	}
 
 	public boolean reset(String pw, PwDto pwDto) {
-		String foundPw=null;		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String Id = pwDto.getId();
-		String usedPw = pwDto.getPw();
 		String email = pwDto.getEmail();
 		boolean success=false;
 		try {

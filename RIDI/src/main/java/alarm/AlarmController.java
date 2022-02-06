@@ -1,41 +1,49 @@
 package alarm;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import signup.MemberService;
 
 @WebServlet("/AlarmController")
 public class AlarmController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int IdNum = Integer.parseInt((String) request.getSession().getAttribute("isLogin"));
+		String active = request.getParameter("active");
+		int alarmNum = Integer.parseInt(request.getParameter("alarmNum"));
 		AlarmService service = new AlarmService();
-		// 로그인되어 있는지 확인 -> 로그인 되어 있다면 세션에 있는 로그인 아이디 고유 번호 가져옴
-		// 그 번호로 등록되어진 알림 목록들을 가져와서 보여줌
-		HttpSession session = request.getSession();
-		int loginIdNum=0;
-		if(service.checkLoginStatus(request)) {
-			// 로그인을 했는지 안했는지 확인해서   -> 했으면 true, 안했으면 false
-			loginIdNum = (Integer) session.getAttribute("isLogin");
-			// 세션의 isLogin속성의 값을 정수형으로 반환해서 저장
-			service.getAlarms(loginIdNum);
-			// 저장한 isLogin값을 통해서 로그인한 사람이 가진 알람들을 가져옴 (사진,제목,가격?) - 데이터 테이블 만들어야 함
-			
-		}else {
-			response.sendRedirect("/ridibooks/login.html");
-		}
-		
-	}
+		boolean success = false;
+		if (IdNum == 0) {
+			response.setStatus(404);
+		} // 로그인이 안되어있다면 404상태코드 저장
 
+		if (active.equals("show")) {
+			// 알람 메세지들을 전달해주는 동작
+			List<AlarmDto> alarms = service.showAlarms(IdNum);
+			if (alarms != null) {
+				response.setStatus(200); // 알람에 메세지들이 하나라도 전달됬으면 200상태코드
+				request.setAttribute("messages", alarms);
+			} else if (alarms == null) {
+				response.setStatus(201);
+			} // 알람에 메세지들이 하나도 없으면 201상태코드
+		} 
+		else if (active.equals("put")) {
+			success = service.changeAlarm(IdNum, alarmNum);
+			if (success == false)
+				response.setStatus(401);
+		} 
+		else if (active.equals("out")) {
+			success = service.changeAlarm(IdNum, alarmNum);
+			if (success == false)
+				response.setStatus(402);
+		}
+
+	}
 }

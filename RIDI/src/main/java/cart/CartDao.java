@@ -86,7 +86,7 @@ public class CartDao {
 		
 		try {
 			conn = getConnection();
-			String sql = "INSERT INTO cart(Id_Num,b_Num) VALUES(?,?);";
+			String sql = "INSERT INTO cart(Id_Num,b_num) VALUES(?,?);";
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, loginIdNum);
@@ -199,7 +199,7 @@ public class CartDao {
 					pstmt = conn.prepareStatement(sql);
 					
 					pstmt.setInt(1, bookNum);
-					 	
+					pstmt.setInt(2, loginIdNum);
 					ResultSet rs = pstmt.executeQuery();
 					
 					while(rs.next()) {
