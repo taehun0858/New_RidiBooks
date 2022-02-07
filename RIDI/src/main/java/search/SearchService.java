@@ -9,5 +9,10 @@ public class SearchService {
 		List<SearchDto> results = dao.searchResults(word);
 		return results;
 	}
+	public List<SearchDto> autoSearch(String word) {
+		// word에 대한 검증
+		List<SearchDto> results = dao.searchResults(word);
+		return results;
+	}
 
 }
