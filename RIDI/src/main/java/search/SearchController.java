@@ -18,15 +18,15 @@ public class SearchController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String active = request.getParameter("active");
 		String word = request.getParameter("searchWord");
-		SearchService service = new SearchService();
+		SearchDao dao = new SearchDao();
 		List<SearchDto> results= new ArrayList<>();
 		
 		if(active.equals("show")) {
-			results= service.searchResults(word);
+			results= dao.searchResults(word);
 			request.setAttribute("searchResults", results);
-			// 검색어가 들어간 책을 찾아서 전달
+			
 		}else if(active.equals("autosearch")) {
-			results = service.autoSearch(word);	
+			results = dao.autoSearchResults(word);	
 			request.setAttribute("autoSearchResults", results);
 			// 오토서치에서 다른점은 책의 이름과 출판사, 저자만 보여주는 results 를 전달해줘야함
 		}

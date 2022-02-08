@@ -5,6 +5,16 @@ public class SearchDto {
 	String imageUrl;
 	String author;
 	String introduce;
+	String publisher;
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
 	int price;
 
 	public String getTitle() {

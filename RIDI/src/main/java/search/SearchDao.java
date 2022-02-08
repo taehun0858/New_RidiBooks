@@ -56,12 +56,58 @@ public class SearchDao {
 				String author = rs.getString("b_author");
 				String introduce = rs.getString("b_introduce");
 				int price = rs.getInt("b_price");
+				String publisher = rs.getString("b_publisher");
 				SearchDto result = new SearchDto();
 				result.setTitle(title);
 				result.setImageUrl(imageurl);
 				result.setPrice(price);
 				result.setIntroduce(introduce);
 				result.setAuthor(author);
+				result.setPublisher(publisher);
+				results.add(result);
+				
+			}
+			rs.close();
+							
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!= null) {try {pstmt.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+				if(pstmt!= null) {try {conn.close();} 
+				catch (SQLException e) {e.printStackTrace();}
+			}
+		}
+			
+		return results;
+	}
+
+	public List<SearchDto> autoSearchResults(String word) {
+		// searchResults와 같은 메서드임. 다른점은 이름과, 출판사, 저자만 저장해서 전달해줌
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		List<SearchDto> results= new ArrayList<>();
+			
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM book WHERE b_name LIKE %?% OR b_publisher LIKE %?% OR b_author LIKE %?%;";
+			pstmt = conn.prepareStatement(sql);
+				
+			pstmt.setString(1, word);
+			pstmt.setString(2, word);
+			pstmt.setString(3, word);
+				 	
+			ResultSet rs = pstmt.executeQuery();
+				
+			if(rs.next()) {
+				String title = rs.getString("b_name");
+				String publisher = rs.getString("b_publisher");
+				String author = rs.getString("b_author");
+				SearchDto result = new SearchDto();
+				result.setTitle(title);
+				result.setAuthor(author);
+				result.setPublisher(publisher);
 				results.add(result);
 				
 			}
