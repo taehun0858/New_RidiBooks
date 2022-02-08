@@ -45,7 +45,7 @@ nav {
 }
 
 
-svg {
+.logowrapper li svg, .logowrapper .bar svg , .headerlogo svg{
     width: 119px;
     height: 18px;
     fill: white;
@@ -658,3 +658,545 @@ main {
         transition: opacity 0.1s;
         color: #B8BFC4;
     }
+
+
+/* 사람들이 지금 많이 읽고 있는 책 */
+
+.nowreading {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 0;
+  position: relative;
+}
+
+.nowreading .nowtitle {
+  max-width: 990px;
+  margin: 0 auto 16px;
+  padding: 6px 20px 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 19px;
+  font-weight: normal;
+  line-height: 26px;
+  color: black;
+}
+
+.nowreading .nowtitle .time {
+  width: 84px;
+  height: 15px;
+  padding: 9px;
+  padding-right: 13px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(255deg, #0077d9 4%, #72d2e0);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+
+.popularwrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.popularwrapper .flex {
+  flex: none;
+  width: 1px;
+}
+
+.popularwrapper .popular {
+  flex: 1 0 auto;
+}
+
+.popular ul {
+  display: grid;
+  grid: repeat(3, 94px)/ auto-flow 308px;
+  grid-column-gap: 13px;
+  padding: 0 24px;
+  list-style-type: none;
+}
+
+.popular ul li {
+  display: flex;
+
+}
+
+.popular ul li .book {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  margin-right: 18px;
+  width: 50px;
+}
+
+.popularbook {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.popularbook img {
+  width: 50px;
+  height: 70px;
+}
+
+.bookcontent {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e6e8eb;
+  min-width: 0;
+  margin-bottom: 16px;
+}
+
+.bookcontent h3 {
+  flex: 0 0 auto;
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  height: 22px;
+  margin-left: 4px;
+  margin-right: 29px;
+}
+
+.bookcontent .booklogo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.booklogo .bookname {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  line-height: 1.4em;
+  cursor: pointer;
+  margin-left: -30px;
+
+}
+.booklogo p {
+    font-weight: normal;
+    line-height: 1.2em;
+    color: #636C73;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 5px;
+    padding: 1px 0 1px;
+    margin-top: 4px;
+}
+
+/* 오늘, 리디의 발견 */
+.todayridi {
+  padding-top: 31px;
+  padding-bottom: 36px;
+  background: #fff;
+  background-size: contain;
+}
+
+.todayridi h2 {
+  max-width: 1000px;
+  margin: 0 auto 16px;
+  padding: 6px 25px 0;
+  font-size: 19px;
+  font-weight: normal;
+  color: black;
+  letter-spacing: -0.03em;
+}
+.todayridi .todaycontent {
+  width: 1005px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 17px;
+}
+
+
+@media (min-width: 1000px) {
+  .todaycontent .todaywrapper {
+      width: 964px;
+  }
+}
+
+.todaycontent .todaywrapper .bx-wrapper {
+  background: transparent;
+}
+
+.todaycontent .todaywrapper .bx-controls-direction .bx-prev {
+  left: -65px;
+} 
+
+.todaycontent .todaywrapper .bx-controls-direction .bx-next {
+  right: -23px;
+}
+
+.todaycontent .todaywrapper .bx-wrapper img {
+  border-radius: 0px;
+}
+
+.todayridi .todaycontent .todaywrapper .todayridicontent li .booktitle {
+  width: 100%;
+  margin-top: 6px;
+}
+
+.todayridi .todaycontent .todaywrapper .todayridicontent li .booktitle h3 {
+  letter-spacing: -0.03em;
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 1.4em;
+  max-height: calc(1.4em * 2);
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.todayridi .todaycontent .todaywrapper .todayridicontent li .booktitle p {
+  font-size: 14px;
+  color: #9ea7ad;
+  width: 100%;
+  margin-top: 5px;
+  line-height: 1.2em;
+  font-weight: normal;
+}
+
+.todaywrapper .bx-wrapper .bx-controls-direction a {
+      position: absolute;
+      top: 50%;
+      text-align: center;
+      margin-top: -50px;
+      margin-left: 40px;
+      outline: 0;
+      width: 40px;
+      background-color: #ffffff;
+      border-radius: 40px;
+      height: 40px;
+      z-index: 9999;
+      box-shadow: 0 0.8px 3px rgb(0 0 0 / 33%);
+      opacity: 0.95;
+      transition: opacity 0.1s;
+      color: #B8BFC4;
+  }
+
+
+/* 베스트 셀러 */
+.bestseller {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+.bestseller .besttitle {
+  max-width: 990px;
+  margin: 0 auto 16px;
+  padding: 6px 20px 0;
+  flex-direction: column;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 26px;
+  color: #000;
+  cursor: pointer;
+}
+
+.bestwrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.bestwrapper .flex {
+  flex: none;
+  width: 1px;
+}
+
+.bestwrapper .bestselling {
+  flex: 1 0 auto;
+}
+
+.bestselling ul {
+  display: grid;
+  grid: repeat(3, 138px)/ auto-flow 308px;
+  grid-column-gap: 13px;
+  padding: 0 24px;
+  list-style-type: none;
+}
+
+.bestselling ul li {
+  display: flex;
+
+}
+
+.bestselling ul li .book {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  margin-right: 18px;
+  width: 80px;
+}
+
+.bestbook {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.bestbook img {
+  width: 80px;
+  height: 119px;
+}
+
+.bestcontent {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e6e8eb;
+  min-width: 0;
+  margin-bottom: 16px;
+  margin-left: 20px;
+}
+
+.bestcontent h3 {
+  flex: 0 0 auto;
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  height: 22px;
+  line-height: 1.4em;
+  margin-left: -16px;
+  margin-right: 43px;
+}
+
+.bookcontent .booklogo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.bestlogo {
+  margin-left: -12px;
+}
+
+
+.bestlogo .bookname {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  line-height: 1.4em;
+  cursor: pointer;
+  margin-left: -13px;
+
+}
+.bestlogo .author {
+    font-weight: normal;
+    line-height: 1.2em;
+    color: #636C73;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 5px;
+    padding: 1px 0 1px;
+    margin-top: 4px;
+    margin-left: -12px;
+}
+
+.bestlogo .stars {
+  font-size: 13px;
+  line-height: 1.2em;
+  display: flex;
+  color: #666;
+  padding-top: 5px;
+  margin: 0 0 9px -10px;
+}
+
+.stars .starwrapper {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 10px;
+}
+
+.stars .starwrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 94%;
+  height: 10px;
+  color: #fa722e;
+}
+
+.stars .number {
+  color: #999;
+  font-size: 11px;
+  padding-top: 1px;
+  margin: 0 2px;
+  line-height: 1em;
+}
+
+
+/* 푸터 부분 */
+.newfooter {
+  width: 100%;
+  color: #fff;
+  background-color: #303538;
+}
+
+.newfooter footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  transition: all 0.3s;
+  max-height: 700px;
+  display: block;
+  color: #fff;
+}
+
+footer .notice {
+  display: flex;
+  align-items: start;
+  justify-content: unset;
+}
+
+.notice .submain {
+  display: flex;
+  margin-right: 80px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.submain li a {
+  text-decoration: none;
+}
+
+
+.submain li a span {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1em;
+  letter-spacing: -0.03em;
+}
+
+.notice .sub {
+  display: flex;
+  padding-top: 6px;
+  margin-bottom: 48px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sub li .subnav1, .sub li .subnav2, .sub li .subnav3, .sub li .subnav4 {
+  margin-right: 16px;
+  position: relative;
+  list-style-type: none;
+
+}
+
+.subnav1 li, .subnav2 li, .subnav3 li, .subnav4 li {
+  width: 140px;
+}
+
+.subnav1 li:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.subnav2 li:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.subnav3 li:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.subnav4 li:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.subnav1 li a, .subnav2 li a, .subnav3 li a, .subnav4 li a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.subnav1 li a span, .subnav2 li a span, .subnav3 li a span, .subnav4 li a span {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.subnav1 li svg {
+  height: 11px;
+}
+
+.subnav4 li svg {
+  position: relative;
+  top: 2px;
+  margin-left: 6px;
+  fill: #509deb;
+  width: 14px;
+  height: 14px;
+}
+
+footer .corp {
+  margin-bottom: 16px;
+  color: #666;
+  font-size: 12px;
+  line-height: 1em;
+}
+
+footer .corp .information {
+  display: flex;
+  position: relative;
+  height: 17px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 24px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #808991;
+}
+
+.information svg {
+  fill: #808991;
+  font-size: 12px;
+  line-height: 20px;
+  transform: scale(0.5) rotate(90deg);
+  margin-left: -51px;
+  margin-top: 24px;
+}
+
+footer .ridicorp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #666;
+  font-size: 12px;
+  line-height: 1em;
+  letter-spacing: -0.03em;
+}
+
+footer .ridicorp p {
+  width: 83px;
+  height: 17px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #7e8992;
+  margin-right: 24px;
+}
+
+footer .ridicorp ul {
+  list-style-type: none;
+  display: flex;
+
+}
+
+footer .ridicorp ul li a {
+  width: 41px;
+  height: 20px;
+  font-size: 11px;
+  line-height: 1.82;
+  color: #7e8992;
+  text-decoration: none;
+}
