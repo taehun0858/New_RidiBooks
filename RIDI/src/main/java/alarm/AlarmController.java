@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/AlarmController")
+@WebServlet("/alarmcontroller")
 public class AlarmController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,16 +34,10 @@ public class AlarmController extends HttpServlet {
 				response.setStatus(201);
 			} // 알람에 메세지들이 하나도 없으면 201상태코드
 		} 
-		else if (active.equals("put")) {
+		else if (active.equals("change")) {
 			success = service.changeAlarm(IdNum, alarmNum);
-			if (success == false)
-				response.setStatus(401);
+			if (success == false) response.setStatus(401);
 		} 
-		else if (active.equals("out")) {
-			success = service.changeAlarm(IdNum, alarmNum);
-			if (success == false)
-				response.setStatus(402);
-		}
 
 	}
 }
