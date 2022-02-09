@@ -1,11 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="search.SearchDto"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	String searchWord = request.getParameter("searchword");
+	List<SearchDto> results = (ArrayList<SearchDto>)request.getAttribute("searchResults");
+%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>°Ë»ö °á°ú Å×½ºÆ® ÆäÀÌÁö</title>
+<meta charset="UTF-8">
+<title>ê²€ìƒ‰ ê²°ê³¼ í…ŒìŠ¤íŠ¸ í˜ì´ì§€</title>
 </head>
 <body>
-
+	<h1> <%= searchWord %>ì— ëŒ€í•œ ê²€ìƒ‰ ê²°ê³¼ </h1>
+	<div class="searchResult">
+<%-- 		<p> <%= results.get(0).getTitle() %></p> --%>
+	</div>
 </body>
+<script type="text/javascript">
+$.ajax({        		
+	url:"/ridibooks/search",
+	type:"GET",
+	data:"active=show&searchword="+searchWord,
+	success: function(){
+		
+	},
+	error:function(response){
+		
+	}
+});
+</script>
 </html>

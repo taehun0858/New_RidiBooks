@@ -302,7 +302,7 @@
                             <li>
                                 <div class="book">
                                     <div class="popularbook">
-                                        <img src="../WebContent/images/popular.jpg" alt="">
+<!--                                         <img src="../WebContent/images/popular.jpg" alt=""> -->
                                     </div>
                                 </div>
                                 <div class="bookcontent">
@@ -389,14 +389,16 @@
     });
     </script>
 	
-	<script type="text/javascript">
+	<script>
 	 // ID를 backend-search로 가지는 곳에서 키를 누를 경우
     $("#backend-search").keydown(function(key) {
+    	let searchWord = $("#backend-search").val();
+// 		var searchWord = document.getElementById("");
         //키의 코드가 13번일 경우 (13번은 엔터키)
-        let searchWord = $("#backend-search").val();
         if (key.keyCode == 13) {
-            
-            location.href = "/ridibooks/searchTest.jsp?searchWord="+searchWord;
+        	
+        	 alert(searchWord);
+             location.href = "/ridibooks/searchTest.jsp?searchWord="+searchWord;
             // searchWord에 검색어(searchWord)를 파라미터로 주면서 서치테스트 페이지로 이동
            
         }
