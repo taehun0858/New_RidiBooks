@@ -1,6 +1,7 @@
 package search;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class SearchController extends HttpServlet {
 		if(active.equals("show")) {
 			results= dao.searchResults(word);
 			request.setAttribute("searchResults", results);
+			
 			
 		}else if(active.equals("autosearch")) {
 			results = dao.autoSearchResults(word);	

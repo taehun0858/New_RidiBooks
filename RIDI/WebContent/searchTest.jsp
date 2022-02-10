@@ -18,11 +18,13 @@
 <%-- 		<p> <%= results.get(0).getTitle() %></p> --%>
 	</div>
 </body>
+<script src="js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+
 $.ajax({        		
 	url:"/ridibooks/search",
 	type:"GET",
-	data:"active=show&searchword="+searchWord,
+	data:"active=show&searchword=test",
 	success: function(){
 		
 	},
