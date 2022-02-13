@@ -38,17 +38,17 @@ public class SearchDao {
 			
 		try {
 			conn = getConnection();
-			String sql = "SELECT * FROM book WHERE b_name LIKE %?% OR b_publisher LIKE %?% OR b_author LIKE %?%;";
+			String sql = "SELECT * FROM book WHERE b_name =?;";
 			// b_name이나 b_publisher나 b_author에 검색 결과가 들어가는 값들을 찾는다.
 			pstmt = conn.prepareStatement(sql);
 				
 			pstmt.setString(1, word);
-			pstmt.setString(2, word);
-			pstmt.setString(3, word);
+//			pstmt.setString(2, word);
+//			pstmt.setString(3, word);
 				 	
 			ResultSet rs = pstmt.executeQuery();
 				
-			if(rs.next()) {
+			while(rs.next()) {
 				// 제목, 이미지,저자, 소개글, 가격을 book데이터 테이블에서 가져와 searchDto에 전달하고 List에 searchDto를 저장
 				// 해당 행이 없을 때 까지 반복.
 				String title = rs.getString("b_name");
@@ -91,12 +91,12 @@ public class SearchDao {
 			
 		try {
 			conn = getConnection();
-			String sql = "SELECT * FROM book WHERE b_name LIKE %?% OR b_publisher LIKE %?% OR b_author LIKE %?%;";
+			String sql = "SELECT * FROM book WHERE b_name=?;";
 			pstmt = conn.prepareStatement(sql);
 				
 			pstmt.setString(1, word);
-			pstmt.setString(2, word);
-			pstmt.setString(3, word);
+//			pstmt.setString(2, word);
+//			pstmt.setString(3, word);
 				 	
 			ResultSet rs = pstmt.executeQuery();
 				

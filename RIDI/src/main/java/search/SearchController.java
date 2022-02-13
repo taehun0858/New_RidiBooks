@@ -3,6 +3,7 @@ package search;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,15 +17,27 @@ public class SearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     // 에이잭스로 사용할 것임.
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("application/json;charset=UTF-8");
 		String active = request.getParameter("active");
 		String word = request.getParameter("searchWord");
 		SearchDao dao = new SearchDao();
+		PrintWriter out = response.getWriter();
 		List<SearchDto> results= new ArrayList<>();
 		
 		if(active.equals("show")) {
 			results= dao.searchResults(word);
-			request.setAttribute("searchResults", results);
-			
+			if(results.size()>0) {
+				String[] data = new String[results.size()];				
+				for(int i = 0; i<=results.size()-1;i++) {
+					data[i] = " {\"title\": \""+results.get(i).getTitle()+
+							   "\", \"publisher\":\""+results.get(i).getPublisher()+
+							   "\", \"author\": \""+results.get(i).getAuthor()+"\"}";					
+				}
+				String result = Arrays.toString(data);
+				System.out.println(result);
+				out.print(result);
+				out.close();
+			}
 			
 		}else if(active.equals("autosearch")) {
 			results = dao.autoSearchResults(word);	
