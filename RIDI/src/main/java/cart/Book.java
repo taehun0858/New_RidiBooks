@@ -4,6 +4,7 @@ public class Book {
 	String Title;
 	int Price;
 	String Publisher;
+	int bookNum;
 	
 	public String getTitle() {
 		return Title;
@@ -13,6 +14,12 @@ public class Book {
 	}
 	public int getPrice() {
 		return Price;
+	}
+	public int getBookNum() {
+		return bookNum;
+	}
+	public void setBookNum(int bookNum) {
+		this.bookNum = bookNum;
 	}
 	public void setPrice(int price) {
 		Price = price;
