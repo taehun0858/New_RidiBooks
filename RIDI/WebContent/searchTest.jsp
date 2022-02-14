@@ -21,17 +21,21 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 const element = document.getElementById("result");
+let word = window.location.search;
+// word => ?searchword=값으로 된다
+let searchword = word.slice(1);
+
 $.ajax({        		
 	url:"/ridibooks/search",
 	type:"GET",
-	data:"active=show&searchWord=test",
+	data:"active=show&"+searchword,
 	dataType:"json",
 	success: function(data){
-		console.log(data);
+		console.log(searchword);
 		alert(data[0].author);
 		for(var i=0;i<=data.length-1;i++){
 			element.innerHTML += 
-				"<div>"+data[i].author+"</div>"+
+				"<div>"+searchword+"</div>"+
 				"<img src=\"/ridibooks/images/"+data[i].author+".jpg\"></img>"			
 		}
 		

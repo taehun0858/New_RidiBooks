@@ -34,22 +34,23 @@ public class SearchDao {
 	public List<SearchDto> searchResults(String word) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		List<SearchDto> results= new ArrayList<>();
-			
+		List<SearchDto> results = new ArrayList<>();
+
 		try {
 			conn = getConnection();
-			String sql = "SELECT * FROM book WHERE b_name =?;";
+			String sql = "SELECT * FROM book WHERE b_name LIKE ? OR b_publisher LIKE ? OR b_author LIKE ?;";
+//			String sql = "SELECT * FROM book WHERE b_name REGEXP ? OR b_publisher REGEXP ? OR b_author REGEXP ? ;";
 			// b_name이나 b_publisher나 b_author에 검색 결과가 들어가는 값들을 찾는다.
 			pstmt = conn.prepareStatement(sql);
-				
-			pstmt.setString(1, word);
-//			pstmt.setString(2, word);
-//			pstmt.setString(3, word);
-				 	
+
+			pstmt.setString(1, "%" + word + "%");
+			pstmt.setString(2, "%" + word + "%");
+			pstmt.setString(3, "%" + word + "%");
+
 			ResultSet rs = pstmt.executeQuery();
-				
-			while(rs.next()) {
-				// 제목, 이미지,저자, 소개글, 가격을 book데이터 테이블에서 가져와 searchDto에 전달하고 List에 searchDto를 저장
+
+			while (rs.next()) {
+				// 제목, 이미지,저자, 소개글, 가격, 캍테고리, 세부 카테고리 등을 book데이터 테이블에서 가져와 searchDto에 전달하고 List에 searchDto를 저장
 				// 해당 행이 없을 때 까지 반복.
 				String title = rs.getString("b_name");
 				String imageurl = rs.getString("b_imageUrl");
@@ -57,6 +58,8 @@ public class SearchDao {
 				String introduce = rs.getString("b_introduce");
 				int price = rs.getInt("b_price");
 				String publisher = rs.getString("b_publisher");
+				String category = rs.getString("b_category");
+				String delicateCategory = rs.getString("b_delicate");
 				SearchDto result = new SearchDto();
 				result.setTitle(title);
 				result.setImageUrl(imageurl);
@@ -64,22 +67,33 @@ public class SearchDao {
 				result.setIntroduce(introduce);
 				result.setAuthor(author);
 				result.setPublisher(publisher);
+				result.setCategory(category);
+				result.setDelicateCategory(delicateCategory);
+
 				results.add(result);
-				
+
 			}
 			rs.close();
-							
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			if(conn!= null) {try {pstmt.close();} 
-				catch (SQLException e) {e.printStackTrace();}
+			if (conn != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
-				if(pstmt!= null) {try {conn.close();} 
-				catch (SQLException e) {e.printStackTrace();}
+			if (pstmt != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
 		}
-			
+
 		return results;
 	}
 
@@ -87,20 +101,20 @@ public class SearchDao {
 		// searchResults와 같은 메서드임. 다른점은 이름과, 출판사, 저자만 저장해서 전달해줌
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		List<SearchDto> results= new ArrayList<>();
-			
+		List<SearchDto> results = new ArrayList<>();
+
 		try {
 			conn = getConnection();
-			String sql = "SELECT * FROM book WHERE b_name=?;";
+			String sql = "SELECT * FROM book WHERE b_name LIKE ? OR b_publisher LIKE ? OR b_author LIKE ?;";
 			pstmt = conn.prepareStatement(sql);
-				
-			pstmt.setString(1, word);
-//			pstmt.setString(2, word);
-//			pstmt.setString(3, word);
-				 	
+
+			pstmt.setString(1, "%" + word + "%");
+			pstmt.setString(2, "%" + word + "%");
+			pstmt.setString(3, "%" + word + "%");
+
 			ResultSet rs = pstmt.executeQuery();
-				
-			if(rs.next()) {
+
+			if (rs.next()) {
 				String title = rs.getString("b_name");
 				String publisher = rs.getString("b_publisher");
 				String author = rs.getString("b_author");
@@ -109,21 +123,29 @@ public class SearchDao {
 				result.setAuthor(author);
 				result.setPublisher(publisher);
 				results.add(result);
-				
+
 			}
 			rs.close();
-							
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			if(conn!= null) {try {pstmt.close();} 
-				catch (SQLException e) {e.printStackTrace();}
+			if (conn != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
-				if(pstmt!= null) {try {conn.close();} 
-				catch (SQLException e) {e.printStackTrace();}
+			if (pstmt != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
 		}
-			
+
 		return results;
 	}
 

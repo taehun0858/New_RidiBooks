@@ -6,6 +6,25 @@ public class SearchDto {
 	String author;
 	String introduce;
 	String publisher;
+	String category;
+	String delicateCategory;
+	int price;
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getDelicateCategory() {
+		return delicateCategory;
+	}
+
+	public void setDelicateCategory(String delicateCategory) {
+		this.delicateCategory = delicateCategory;
+	}
 
 	public String getPublisher() {
 		return publisher;
@@ -14,8 +33,6 @@ public class SearchDto {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
-
-	int price;
 
 	public String getTitle() {
 		return title;
