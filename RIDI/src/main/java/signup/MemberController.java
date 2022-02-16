@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// POST동작 - 회원가입
@@ -30,11 +28,4 @@ public class MemberController extends HttpServlet {
 		}
 	}
 
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Put 동작 - 회원 정보 변경(비밀번호 변경)
-	}
-	
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Delete 동작 - 생각 중인것 없음
-	}
 }
