@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인 - 리디북스</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../css/login.css">
     <link rel="shortcut icon" href="https://static.ridicdn.net/_next/static/images/favicon-29c82025983fa410b3369f441b102764.ico">
 </head>
 <body>
@@ -23,13 +23,13 @@
     <!-- 본문 -->
     <section class="main">
         <div class="content-wrapper">
-            <form method="post" action="/ridibooks/member/logIn">
+
                 <div class="input-group">
                     <label class="account-label">
-                        <input type="text" class="userId" name="Id" placeholder="아이디">
+                        <input type="text" class="userId" name="userId" placeholder="아이디">
                     </label>
                     <label class="account-label">
-                        <input type="password" class="userPw" name="Pw" placeholder="비밀번호">
+                        <input type="password" class="userPw" name="userPw" placeholder="비밀번호">
                     </label>
 
                     <div class="remember-group">
@@ -52,22 +52,21 @@
                     <p>! 아이디 또는 비밀번호를 확인해주세요</p>
                 </div>
                 <div class="message4">
-                    <p>! 탈퇴한 사용자 입니다</p>
+                    <p>! 없는 사용자입니다.</p>
                 </div>
-            </form>
+
                 <button type="submit" class="loginbtn">로그인</button>
                 <button type="button" class="signupbtn">회원가입</button>
             
         </div>
     </section>
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script>
-                
-       
-        var $idmessage = $(".message1");
-        var $pwmessage = $(".message2");
-        var $allmessage = $(".message3");
-        var $dropuser = $(".message4");
+    <script>                
+        
+        let $idmessage = $(".message1");
+        let $pwmessage = $(".message2");
+        let $allmessage = $(".message3");
+        let $dropuser = $(".message4");
 
         $(".loginbtn").on("click", function() {
         	let $userid = $(".userId").val();
@@ -101,7 +100,8 @@
             });
 
         });
+
+            
     </script>
-    
 </body>
 </html>

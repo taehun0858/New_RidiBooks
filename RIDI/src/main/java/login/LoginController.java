@@ -37,7 +37,6 @@ public class LoginController extends HttpServlet {
 			loginId=service.getLoginIdNum(request, response);
 			session.setAttribute("isLogin", loginId);
 			session.setMaxInactiveInterval(60*5);
-			response.sendRedirect("/ridibooks/main.html");
 		}
 		
 		

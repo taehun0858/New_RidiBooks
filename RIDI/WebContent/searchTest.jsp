@@ -13,7 +13,7 @@
 <title>검색 결과 테스트 페이지</title>
 </head>
 <body>
-	<h1> <%= searchWord %>에 대한 검색 결과 </h1>
+	<h1> <%= searchWord %>에 대한 검색 결과 테스트 페이지  </h1>
 	<div class="searchResult">
 		<span id="result"></span>
 	</div>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!-- 	헤더 파일임 -->
 <!-- 상단 배너 -->
 <div class="header-banner">
 	<header>
@@ -17,8 +17,8 @@
 					</li>
 				</ul>
 				<ul class="button">
-					<li><a href="../WebContent/signup.html" class="signupbtn">회원가입</a></li>
-					<li><a href=" ../WebContent/login.html" class="loginbtn">로그인</a></li>
+					<li><a href="view/signupcontent.html" class="signupbtn">회원가입</a></li>
+					<li><a href="view/login.html" class="loginbtn">로그인</a></li>
 				</ul>
 				<div class="search">
 					<div class="searchbox">
