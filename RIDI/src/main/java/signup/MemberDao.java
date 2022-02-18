@@ -77,7 +77,7 @@ public class MemberDao {
 		return success;
 	}
 
-	
+	// 회원가입 할때 이미 가입된 아이디 인지 확인하는 메서드
 	public boolean getIdCheckBoolean(String id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -112,7 +112,7 @@ public class MemberDao {
 	}
 	
 	
-
+	// 회원가입 할때 이메일에 입력된 값이 이미 사용중인지 확인하는 메서드
 	public boolean getEmailCheckBoolean(String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -145,7 +145,6 @@ public class MemberDao {
 		return result;
 	}
 
-	
 
 	public boolean insertAgree1(MemberDto member) {
 		Connection conn = null;
@@ -220,7 +219,4 @@ public class MemberDao {
 		
 	}
 
-	
-
-	
 }

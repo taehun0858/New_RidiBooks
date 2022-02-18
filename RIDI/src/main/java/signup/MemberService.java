@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class MemberService {
+	
 	public int joinMember(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("UTF-8");
 		
@@ -83,7 +84,5 @@ public class MemberService {
 		
 		return result;
 	}
-
-	
 
 }
