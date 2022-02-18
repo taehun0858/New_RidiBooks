@@ -39,9 +39,20 @@
 		<ul class="control_slider">
 			<%
 			for(int i=0;i<=10;i++){
-			%>
-			<li><img src="images/main.jpg"></li>
-			<% 		
+				if(i%3==0){
+					%>
+					<li><img src="images/main.jpg"></li>
+					<% 
+				}else if(i%3==1){
+					%>
+					<li><img src="images/main1.jpg"></li>
+					<%
+				}else if(i%3==2){
+					%>
+					<li><img src="images/main2.jpg"></li>
+					<%
+				}
+					
 			}
 		%>
 
