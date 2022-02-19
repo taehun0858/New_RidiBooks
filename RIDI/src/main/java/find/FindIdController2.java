@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/find/id1")
+@WebServlet("/find/id2")
 // 입력한 이메일 정보를 통해 아이디를 찾는다. 찾은 아이디를 에이잭스를 통해 받을 수 있게 한다.
-public class FindIdController extends HttpServlet {
+public class FindIdController2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

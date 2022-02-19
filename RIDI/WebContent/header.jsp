@@ -17,8 +17,8 @@
 					</li>
 				</ul>
 				<ul class="button">
-					<li><a href="view/signupcontent.html" class="signupbtn">회원가입</a></li>
-					<li><a href="view/login.html" class="loginbtn">로그인</a></li>
+					<li><a href="/ridibooks/signupcontent.html" class="signupbtn">회원가입</a></li>
+					<li><a href="/ridibooks/login.html" class="loginbtn">로그인</a></li>
 				</ul>
 				<div class="search">
 					<div class="searchbox">

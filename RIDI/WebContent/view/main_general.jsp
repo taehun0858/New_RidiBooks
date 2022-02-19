@@ -7,13 +7,13 @@
 			<c:forEach var="i" begin="1" end="10">
 				<c:choose>
 					<c:when test="${i%3==1 }">
-						<li><img src="images/main.jpg"></li>
+						<li><a href="/ridibooks"><img src="images/main.jpg"></a></li>
 					</c:when>
 					<c:when test="${i%3==2 }">
-						<li><img src="images/main1.jpg"></li>
+						<li><a href="/ridibooks/signupcontent.html"><img src="images/main1.jpg"></a></li>
 					</c:when>
 					<c:when test="${i%3==0 }">
-						<li><img src="images/main2.jpg"></li>
+						<li><a href="/ridibooks/login.html"><img src="images/main2.jpg"></a></li>
 					</c:when>
 				</c:choose>
 			</c:forEach>
