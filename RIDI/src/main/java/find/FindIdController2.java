@@ -21,10 +21,11 @@ public class FindIdController2 extends HttpServlet {
 		FindService service = new FindService();
 		PrintWriter writer = response.getWriter();
 		response.setContentType("text/html;charset=UTF-8");
-		String foundId = service.findIdByEmail(Email);				
-		writer.print(Email);
+		String foundId = service.findIdByEmail(Email);	
+		foundId = foundId.substring(0, 2)+foundId.substring(2).replaceAll(".","*");
+		writer.print(foundId);
 		response.setStatus(200);
 	}
 
 
-}
+} 
