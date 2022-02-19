@@ -3,7 +3,6 @@ package find;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,10 +18,16 @@ public class FindIdController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String Email = request.getParameter("Email");
 		FindService service = new FindService();
-		PrintWriter writer = response.getWriter();
-		response.setContentType("text/html;charset=UTF-8");
-		writer.print(Email);
-		response.setStatus(200);
+		String foundId = service.findIdByEmail(Email);	
+		if(foundId==null) {
+			response.setStatus(404);
+		}else {
+			PrintWriter writer = response.getWriter();
+			response.setContentType("text/html;charset=UTF-8");
+			writer.print(Email);
+			response.setStatus(200);
+		}
+		
 	}
 
 
