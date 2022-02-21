@@ -40,6 +40,18 @@
 		<c:when test="${empty param.active or param.active eq 'main' }">
 			<%@ include file="view/main_general.jsp"%>
 		</c:when>
+		<c:when test="${param.active eq 'romance'}">
+			<%@ include file="view/main_romance.jsp"%>
+		</c:when>
+		<c:when test="${param.active eq 'BL' }">
+			<%@ include file="view/main_BL.jsp"%>
+		</c:when>
+		<c:when test="${param.active eq 'comic' }">
+			<%@ include file="view/main_comic.jsp"%>
+		</c:when>
+		<c:when test="${param.active eq 'fantasy' }">
+			<%@ include file="view/main_fantasy.jsp"%>
+		</c:when>
 	</c:choose>
 
 	<!-- 푸터  -->
