@@ -1,13 +1,13 @@
 package search;
 
 public class SearchDto {
-	String title;
-	String imageUrl;
-	String author;
-	String introduce;
-	String publisher;
-	String category;
-	String delicateCategory;
+	private String title;
+	private String imageUrl;
+	private String author;
+	private String introduce;
+	private String publisher;
+	private String category;
+	private String delicateCategory;
 	int price;
 
 	public String getCategory() {

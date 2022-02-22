@@ -14,6 +14,15 @@
 	<c:when test="${param.active eq 'romance' }">
 		<title>로맨스 웹 소설 - 리디북스</title>
 	</c:when>
+	<c:when test="${param.active eq 'fantasy' }">
+		<title>판타지 웹 소설 - 리디북스</title>
+	</c:when>
+	<c:when test="${param.active eq 'comic' }">
+		<title>웹툰 만화 - 리디북스</title>
+	</c:when>
+	<c:when test="${param.active eq 'BL' }">
+		<title>BL 웹 소설 - 리디북스</title>
+	</c:when>
 </c:choose>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
