@@ -27,10 +27,21 @@ public class FindPwController extends HttpServlet {
 		String Pw =service.findPw(member);
 		member.setPw(Pw);
 		
+//		PrintWriter out = response.getWriter();
+//		
+//		String result = "{\"Id\":\""+member.getId()+"\","
+//				+ "\"Email\"=\""+member.getEmail()+"\","
+//				+ "\"id\"=\""+member.getPw()+"\","
+//				+ "}";
+//		
+//		out.print(result);
+		// 위 코드는 에이잭스를 사용할때 대비한 코드이다.
 		request.setAttribute("memberPw", member);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("findIdTest.jsp");
 		rd.forward(request, response);
+		
+		
 	}
 
 }

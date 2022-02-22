@@ -31,6 +31,7 @@ $(".submitbtn").on("click",function(){
 		type:"POST",
 		data:"usedPw="+memberPw+"&Email="+memberEmail+"&Id="+memberId+"&Pw="+$Pw,
 		success: function(){
+			alert("비밀번호 변경을 성공했습니다.")
 			location.href = "/ridibooks/main.html";
 		},
 		error:function(response){

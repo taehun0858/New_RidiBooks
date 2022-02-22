@@ -36,7 +36,7 @@
 			</div>
 		</nav>
 		<ul class="mainnav">
-			<li class="home"><a href="#">
+			<li class="home"><a href="/ridibooks">
 					<div class="headerlogo">
 						<svg viewBox="0 0 24 24" class="fig-20c2qt">
 							<path
@@ -79,15 +79,15 @@
 						class="fig-oma3mu ed4re810">
 						<path d="M2 7.001h20V5H2v2.001zm3 6h14v-2H5v2zm3.999 6h6v-2h-6v2z"></path></svg>
 			</a></li>
-			<li><a href="/general"> <span>일반</span>
+			<li><a href="/ridibooks/frontController.jsp?active=main"> <span>일반</span>
 			</a></li>
-			<li><a href="/romance-serial"> <span>로맨스</span>
+			<li><a href="/ridibooks/frontController.jsp?active=romance"> <span>로맨스</span>
 			</a></li>
-			<li><a href="/fantasy-serial"> <span>판타지</span>
+			<li><a href="/ridibooks/frontController.jsp?active=fantasy"> <span>판타지</span>
 			</a></li>
-			<li><a href="/webtoon"> <span>만화</span>
+			<li><a href="/ridibooks/frontController.jsp?active=comic"> <span>만화</span>
 			</a></li>
-			<li><a href="/bl-webnovel"> <span>BL</span>
+			<li><a href="/ridibooks/frontController.jsp?active=BL"> <span>BL</span>
 			</a></li>
 		</ul>
 	</div>
