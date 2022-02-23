@@ -1,6 +1,8 @@
 package book;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -23,6 +25,22 @@ public class BookController extends HttpServlet {
 		
 		BookDao dao = new BookDao();
 		List<BookDto> books = dao.getbooks(sql);
+		
+		PrintWriter out = response.getWriter();
+		if(books.size()>0) {
+			String[] book = new String[books.size()];
+			for (int i = 0; i <= books.size() - 1; i++) {
+				book[i] = " {\"title\": \"" + books.get(i).getTitle() 
+						+ "\", \"publisher\":\""+ books.get(i).getPublisher() 
+						+ "\", \"author\": \""+ books.get(i).getAuthor() 
+						+ "\", \"imageUrl\": \""+ books.get(i).getImageUrl() 
+						+ "\", \"bookNum\": \""+ books.get(i).getBookNum() 
+						+ "\"}";
+			}
+			String result = Arrays.toString(book);
+			out.print(result);
+			out.close();
+		}
 		
 	}
 }
