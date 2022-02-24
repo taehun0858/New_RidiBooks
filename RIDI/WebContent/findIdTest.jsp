@@ -2,7 +2,9 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
 
 <%
-	PwDto foundPw = (PwDto)request.getAttribute("memberPw");
+	String usedPw = request.getParameter("Pw");
+	String Id = request.getParameter("Id");
+	String Email = request.getParameter("email");
 %>
 <!DOCTYPE html>
 <html>
@@ -11,9 +13,9 @@
 <title>찾은 비밀번호</title>
 </head>
 <body>
-	<h1> 찾은 비밀번호 =<%= foundPw.getPw() %> </h1>
-	<h1> 찾은 이메일 =<%= foundPw.getEmail() %> </h1>
-	<h1> 찾은 아이디 =<%= foundPw.getId() %> </h1>
+	<h1> 찾은 비밀번호 =<%= usedPw %> </h1>
+	<h1> 찾은 이메일 =<%= Email %> </h1>
+	<h1> 찾은 아이디 =<%= Id %> </h1>
 	
 		<input type="password" name="Pw" class="userPw">
 		<input type="submit" class="submitbtn">
@@ -23,9 +25,9 @@
 <script>
 $(".submitbtn").on("click",function(){
 	let $Pw = $(".userPw").val();        	
-	let memberPw = "<%=foundPw.getPw()%>"
-	let memberEmail = "<%=foundPw.getEmail()%>"
-	let memberId = "<%=foundPw.getId()%>"
+	let memberPw = "<%=usedPw%>"
+	let memberEmail = "<%=Email%>"
+	let memberId = "<%=Id%>"
 	$.ajax({        		
 		url:"/ridibooks/resetPw",
 		type:"POST",

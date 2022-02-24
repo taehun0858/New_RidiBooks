@@ -37,8 +37,9 @@ public class FindPwController extends HttpServlet {
 //		out.print(result);
 		// 위 코드는 에이잭스를 사용할때 대비한 코드이다.
 		request.setAttribute("memberPw", member);
+		service.sendEmail(member);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("findIdTest.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("resetPassword2.jsp");
 		rd.forward(request, response);
 		
 		
