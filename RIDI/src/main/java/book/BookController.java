@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class BookController
  */
 @WebServlet("/book")
+// 이벤트 용 컨트롤러 책 상세 정보 페이지 컨트롤러는 아님
 // 책 표지나 작가이름 등 이벤트마다 필요한 책들을 JSON으로 보내주는 컨트롤러
 public class BookController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

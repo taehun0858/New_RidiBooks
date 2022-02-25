@@ -4,7 +4,14 @@ public class PwDto {
 	String Pw;
 	String Email;
 	String Id;
+	int Id_Num;
 	
+	public int getId_Num() {
+		return Id_Num;
+	}
+	public void setId_Num(int id_Num) {
+		Id_Num = id_Num;
+	}
 	public String getPw() {
 		return Pw;
 	}

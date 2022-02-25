@@ -16,14 +16,15 @@ public class ResetPwController extends HttpServlet {
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String usedPw = request.getParameter("usedPw");
-		String Email = request.getParameter("Email");
-		String Id = request.getParameter("Id");
+//		String usedPw = request.getParameter("usedPw");
+//		String Email = request.getParameter("Email");
+//		String Id = request.getParameter("Id");
 		String Pw = request.getParameter("Pw");
+		Integer Id_Num = Integer.parseInt(request.getParameter("Id_Num"));
+		
 		PwDto member = new PwDto();
-		member.setEmail(Email);
-		member.setId(Id);
-		member.setPw(usedPw);
+		member.setId_Num(Id_Num);
+		
 		FindService service = new FindService();
 		boolean success = service.resetPw(member,Pw);
 		if(success==true) {

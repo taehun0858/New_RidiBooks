@@ -14,29 +14,33 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class FindService {
-
+	private FindDao dao = new FindDao();
 	public String findIdByEmail(String email) {
-		FindDao dao = new FindDao();
+		// 이메일로 아이디를 찾는다.
+		dao = new FindDao();
 		String foundId = dao.findIdByEmail(email);
 		return foundId;
 	}
 
-	public String findPw(PwDto member) {
-		FindDao dao = new FindDao();
+	public int findIdNum(PwDto member) {
+		// 아이디와 이메일로 아이디 고유 번호를 찾는다.
+		dao = new FindDao();
 		String id = member.getId();
 		String email = member.getEmail();
-		String Pw = dao.findPw(id, email);
-		return Pw;
+		int Id_Num = dao.findPw(id, email);
+		return Id_Num;
 	}
 
 	public boolean resetPw(PwDto member, String Pw) {
-		FindDao dao = new FindDao();
+		// 비밀번호를 재설정한다.
+		dao = new FindDao();
 		boolean success = dao.reset(Pw, member);
 		
 		return success;
 	}
 
 	public void sendEmail(PwDto member) {
+		// 입력한 정보를 토대로 메일을 보낸다.
 		  Properties p = System.getProperties();
 	        p.put("mail.smtp.starttls.enable", "true");     // gmail은 true 고정
 	        p.put("mail.smtp.host", "smtp.naver.com");      // smtp 서버 주소
@@ -63,7 +67,7 @@ public class FindService {
 	            msg.setSubject("비밀번호 재설정 테스트", "UTF-8");
 	            // 이메일 내용
 	            msg.setText(" 리디북스 프로젝트 의 비밀번호 변경 링크가 있는 메세지 입니다. </br>"
-	            		+ "<a href=\"http://localhost:80/ridibooks/findIdTest.jsp?Pw="+member.getPw()+"Id="+member.getId()+"email="+member.getEmail()+"\">비밀번호 바꾸기</a>", "UTF-8");
+	            		+ "<a href=\"http://localhost:80/ridibooks/findIdTest.jsp?Id_Num="+member.getId_Num()+"\">비밀번호 바꾸기</a>", "UTF-8");
 	            // 이메일 헤더
 	            msg.setHeader("content-Type", "text/html");
 	            //메일보내기

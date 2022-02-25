@@ -23,10 +23,8 @@ public class FindPwController extends HttpServlet {
 		
 		
 		member.setEmail(Email);
-		member.setId(Id);		
-		String Pw =service.findPw(member);
-		member.setPw(Pw);
-		
+		member.setId(Id);	
+		member.setId_Num(service.findIdNum(member));
 //		PrintWriter out = response.getWriter();
 //		
 //		String result = "{\"Id\":\""+member.getId()+"\","

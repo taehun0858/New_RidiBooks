@@ -95,10 +95,10 @@ public class FindDao {
 		return foundPw;
 	}
 
-	public String findPw(String id, String email) {
+	public int findPw(String id, String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String Pw = null;
+		int Id_Num = 0;
 		
 		try {
 			conn = getConnection();
@@ -111,8 +111,8 @@ public class FindDao {
 			ResultSet rs = pstmt.executeQuery();
 			
 			 if(rs.next()) {
-				 // 해당하는 비밀번호가 있으면 PwDto에 저장
-				 Pw = rs.getString("Pw");
+				 // 해당하는 회원이 있다면 고유번호를 저장해서 반환한다.
+				 Id_Num = Integer.parseInt(rs.getString("Id_Num"));
 			 }
 			rs.close();
 						
@@ -129,24 +129,22 @@ public class FindDao {
 		}
 		
 		
-		return Pw;
+		return Id_Num;
 	}
 
 	public boolean reset(String pw, PwDto pwDto) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String Id = pwDto.getId();
-		String email = pwDto.getEmail();
+		int Id_Num = pwDto.getId_Num();
 		boolean success=false;
 		try {
 			conn = getConnection();
-			String sql = "UPDATE member SET Pw=? WHERE id=? AND email=?";
+			String sql = "UPDATE member SET Pw=? WHERE Id_Num=?";
 			pstmt = conn.prepareStatement(sql);
 			
 			
 			pstmt.setString(1, pw);
-			pstmt.setString(2, Id);
-			pstmt.setString(3, email);
+			pstmt.setInt(2, Id_Num);
 			
 			int result = pstmt.executeUpdate();
 			if(result>0) {success=true;}
