@@ -25,6 +25,8 @@ public class MemberController extends HttpServlet {
 		if(statusCode == HttpServletResponse.SC_OK) {
 			// 상태코드가 200이면 다음 페이지로 이동
 			response.sendRedirect("/ridibooks/login.html"); 
+		}else {
+			response.sendRedirect("/ridibooks/signupcontent.html");
 		}
 	}
 
