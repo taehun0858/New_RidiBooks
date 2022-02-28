@@ -658,3 +658,272 @@ table tbody tr .pricetype {
     margin: 0;
     padding: 0 29px 70px 29px;
 }
+
+#series .seriestitle {
+    color: #666;
+    font-size: 12px;
+    line-height: 1ejm;
+    letter-spacing: -.03em;
+    padding: 10px 0 8px 0;
+    border-bottom: 2px solid #7d8e9e;
+    margin-bottom: 10px;
+}
+
+#series .seriestitle h3 {
+    display: inline-block;
+    font-size: 20px;
+    color: #59667a;
+    font-weight: 700;
+    letter-spacing: -.03em;
+}
+
+#series ul {
+    list-style: none;
+}
+#series ul li {
+    border-bottom: 1px solid #d6e3f0;
+}
+
+#series ul li .booklist {
+    padding: 0 10px;
+    display: table;
+}
+
+#series .booklist .bookimage {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 8px 0;
+    width: 52px;
+}
+#series .booklist .bookimage img {
+    display: block;
+    width: 40px;
+    min-height: 40px;
+    border-radius: 3px;
+}
+
+#series .booklist .bookinfo {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    padding: 8px 26px 8px 0;
+}
+
+#series .booklist .bookinfo span {
+    font-size: 12px;
+    line-height: 1em;
+    color: #666;
+    font-weight: 700;
+}
+
+/* 작품 소개 */
+#work-intro {
+    padding: 0 29px 70px 29px;
+}
+
+#work-intro .title {
+    margin-bottom: 15px;
+    padding: 10px 0 8px 0;
+    border-bottom: 2px solid #7d8e9e;
+}
+
+#work-intro .title h3 {
+    display: inline-block;
+    font-size: 20px;
+    color: #59667a;
+    font-weight: 700;
+}
+#work-intro .work-content p{
+    color: #333;
+    font-size: 13px;
+    line-height: 1.8em;
+    height: 186px;
+}
+
+#work-intro .work-content button {
+    display: block;
+    float: right;
+    background: 0 0;
+    font-size: 13px;
+    color: #4076b5;
+    border: none;
+    cursor: pointer;
+}
+
+/* 출판사 서평 */
+#publisher-review {
+    padding: 0 29px 70px 29px;
+}
+
+#publisher-review .title {
+    margin-bottom: 15px;
+    padding: 10px 0 8px 0;
+    border-bottom: 2px solid #7d8e9e;
+}
+
+#publisher-review .title h3 {
+    display: inline-block;
+    font-size: 20px;
+    color: #59667a;
+    font-weight: 700;
+    letter-spacing: -.03em;
+}
+
+#publisher-review .review-content p{
+    color: #333;
+    font-size: 13px;
+    line-height: 1.8em;
+    height: 186px;
+}
+
+#publisher-review .review-content button {
+    display: block;
+    float: right;
+    background: 0 0;
+    font-size: 13px;
+    color: #4076b5;
+    border: none;
+    cursor: pointer;
+}
+
+/* 저자 소개 */
+#writer-introduction {
+    padding: 0 29px 70px 29px;
+}
+
+#writer-introduction .title {
+    margin-bottom: 15px;
+    padding: 10px 0 8px 0;
+    border-bottom: 2px solid #7d8e9e;
+}
+
+#writer-introduction .title h3 {
+    display: inline-block;
+    font-size: 20px;
+    color: #59667a;
+    font-weight: 700;
+    letter-spacing: -.03em;
+}
+
+#writer-introduction .writer-content p{
+    color: #333;
+    font-size: 13px;
+    line-height: 1.8em;
+    height: 186px;
+}
+
+#writer-introduction .writer-content button {
+    display: block;
+    float: right;
+    background: 0 0;
+    font-size: 13px;
+    color: #4076b5;
+    border: none;
+    cursor: pointer;
+}
+
+/* 목차 */
+#prologue {
+    padding: 0 29px 70px 29px;
+}
+
+#prologue .title {
+    margin-bottom: 15px;
+    padding: 10px 0 8px 0;
+    border-bottom: 2px solid #7d8e9e;
+}
+
+#prologue .title h3 {
+    display: inline-block;
+    font-size: 20px;
+    color: #59667a;
+    font-weight: 700;
+    letter-spacing: -.03em;
+}
+
+#prologue .prologue-content p{
+    color: #333;
+    font-size: 13px;
+    line-height: 1.8em;
+    height: 186px;
+}
+
+#prologue .prologue-content button {
+    display: block;
+    float: right;
+    background: 0 0;
+    font-size: 13px;
+    color: #4076b5;
+    border: none;
+    cursor: pointer;
+}
+
+/* 베스트셀러 배너 */
+.side {
+    display: table-cell;
+    width: 207px;
+    background: 0 0;
+    vertical-align: top;
+    border-left: 1px solid #e6e8eb;
+    background-color: #fff!important;
+}
+
+.side aside {
+    width: 207px;
+}
+
+.side .sideimage {
+    margin-bottom: 30px;
+}
+
+.side .sideimage img {
+    width: 207px;
+    display: block;
+    box-sizing: border-box;
+    border: 0;
+}
+
+aside .sidecontent {
+    padding: 0 18px;
+    margin-bottom: 45px;
+}
+
+aside .sidecontent h2 {
+    line-height: 1.5em;
+    color: #333;
+    font-size: 13px;
+    font-weight: 700;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 3px;
+}
+aside .sidecontent ul {
+    list-style: none;
+}
+aside .sidecontent ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    font-size: 12px;
+    line-height: 1.5em;
+}
+
+aside .sidecontent ul li .rank {
+    width: 33px;
+    color: #e64938;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.5em;
+}
+
+aside .sidecontent button {
+    display: block;
+    text-align: center;
+    padding: 4px 0;
+    background: #eee;
+    font-size: 11px;
+    color: #666;
+    border-bottom: 1px solid #dfdfdf;
+    width: 171px;
+    cursor: pointer;
+    border: none;
+}
