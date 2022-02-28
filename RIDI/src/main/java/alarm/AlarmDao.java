@@ -97,7 +97,7 @@ public class AlarmDao {
 		
 		try {
 			conn = getConnection();
-			String sql = "UPDATE alarmCTX SET ?=? WHERE Id_num=?";
+			String sql = "UPDATE alarm SET ?=? WHERE Id_num=?";
 			pstmt = conn.prepareStatement(sql);
 			
 			
@@ -128,7 +128,7 @@ public class AlarmDao {
 		int CTXstatus=0;
 		try {
 			conn = getConnection();
-			String sql = "SELECT * FROM alarmCTX WHRER Id_Num=?;";
+			String sql = "SELECT * FROM alarm WHRER Id_Num=?;";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setInt(1, idNum);

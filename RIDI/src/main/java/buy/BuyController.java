@@ -20,7 +20,7 @@ public class BuyController extends HttpServlet {
 		// 예상과 다르다면 여러개의 책을사게하는 컨트롤러 또 만들어야 할듯함.
 		int IdNum = Integer.parseInt((String)request.getSession().getAttribute("isLogin"));
 		BuyDao dao = new BuyDao();
-		if(!dao.checkBook(bookNum) && !dao.checkId(IdNum)) {
+		if(!dao.checkBook(bookNum) || !dao.checkId(IdNum)) {
 			response.setStatus(405);
 			// 등록되지 않은 책이나 아이디 일때 상태코드에 405전달
 		}
