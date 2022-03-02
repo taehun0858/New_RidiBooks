@@ -36,7 +36,7 @@ $.ajax({
 		for(var i=0;i<=data.length-1;i++){
 			element.innerHTML += 
 				"<div>"+searchword+"</div>"+
-				"<img src=\"/ridibooks/images/"+data[i].author+".jpg\"></img>"			
+				"<img src=\""+data[i].imageurl+"\"></img>"			
 		}
 		
 	},

@@ -11,55 +11,55 @@
 								미래세대에 보내는 <br> 빛을 향한 메세지
 							</h3>
 						</div></li>
-					<li><img src="images/todaybook.jpg">
+					<li><img src="images/todaybook.JPG">
 						<div class="booktitle">
 							<h3>
 								미래세대에 보내는 <br> 빛을 향한 메세지
 							</h3>
 						</div></li>
-					<li><img src="images/todaybook.jpg">
+					<li><img src="images/todaybook.JPG">
 						<div class="booktitle">
 							<h3>
 								미래세대에 보내는 <br> 빛을 향한 메세지
 							</h3>
 						</div></li>
-					<li><img src="images/todaybook.jpg">
+					<li><img src="images/todaybook.JPG">
 						<div class="booktitle">
 							<h3>
 								미래세대에 보내는 <br> 빛을 향한 메세지
 							</h3>
 						</div></li>
-					<li><img src="images/todaybook.jpg">
+					<li><img src="images/todaybook.JPG">
 						<div class="booktitle">
 							<h3>
 								미래세대에 보내는 <br> 빛을 향한 메세지
 							</h3>
 						</div></li>
-					<li><img src="images/todaybook.jpg">
+					<li><img src="images/todaybook.JPG">
 						<div class="booktitle">
 							<h3>
 								미래세대에 보내는 <br> 빛을 향한 메세지
 							</h3>
 						</div></li>
-					<li><img src="images/todaybook.jpg">
+					<li><img src="images/todaybook.JPG">
 						<div class="booktitle">
 							<h3>
 								미래세대에 보내는 <br> 빛을 향한 메세지
 							</h3>
 						</div></li>
-					<li><img src="images/todaybook.jpg">
+					<li><img src="images/todaybook.JPG">
 						<div class="booktitle">
 							<h3>
 								미래세대에 보내는 <br> 빛을 향한 메세지
 							</h3>
 						</div></li>
-					<li><img src="images/todaybook.jpg">
+					<li><img src="images/todaybook.JPG">
 						<div class="booktitle">
 							<h3>
 								미래세대에 보내는 <br> 빛을 향한 메세지
 							</h3>
 						</div></li>
-					<li><img src="images/todaybook.jpg">
+					<li><img src="images/todaybook.JPG">
 						<div class="booktitle">
 							<h3>
 								미래세대에 보내는 <br> 빛을 향한 메세지

@@ -101,8 +101,6 @@
 				// 		var searchWord = document.getElementById("");
 				//키의 코드가 13번일 경우 (13번은 엔터키)
 				if (key.keyCode == 13) {
-
-					alert(searchWord);
 					// searchWord에 검색어(searchWord)를 파라미터로 주면서 서치테스트 페이지로 이동
 					location.href = "/ridibooks/searchTest.jsp?searchword="
 							+ searchWord;

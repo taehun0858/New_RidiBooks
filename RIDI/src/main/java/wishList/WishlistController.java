@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,12 +45,15 @@ public class WishlistController extends HttpServlet {
 		}else if(active.equals("show")) {
 			wishList = service.showWishList(IdNum);
 			if(wishList==null || wishList.isEmpty()) {
-				response.setStatus(205);
-				// 위시리스트가 아무것도 없을때는 205상태 코드 반환
+				request.setAttribute("wishList", wishList);
+				RequestDispatcher rd = request.getRequestDispatcher("위시리스트 페이지");
+				rd.forward(request, response);
 			}
 		}
 		if(success==true) response.setStatus(200);
 		// 동작을 완료 했다면 200코드(위시리스트 보여주기(show)는 여기까지 안옴.) 
+		
+		
 		 
 	}
 

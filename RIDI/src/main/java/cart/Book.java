@@ -5,7 +5,13 @@ public class Book {
 	int Price;
 	String Publisher;
 	int bookNum;
-	
+	String imageUrl;
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 	public String getTitle() {
 		return Title;
 	}

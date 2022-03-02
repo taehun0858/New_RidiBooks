@@ -31,8 +31,9 @@ public class SearchController extends HttpServlet {
 			if (results.size() > 0) {
 				String[] data = new String[results.size()];
 				for (int i = 0; i <= results.size() - 1; i++) {
-					data[i] = " {\"title\": \"" + results.get(i).getTitle() + "\", \"publisher\":\""
-							+ results.get(i).getPublisher() + "\", \"author\": \"" + results.get(i).getAuthor() + "\"}";
+					data[i] = " {\"title\": \"" + results.get(i).getTitle() + "\", \"publisher\":\""+ results.get(i).getPublisher()
+							+ "\", \"imageurl\": \"" + results.get(i).getImageUrl()
+							 + "\", \"author\": \"" + results.get(i).getAuthor() + "\"}";
 				}
 				String result = Arrays.toString(data);
 				System.out.println(result);

@@ -34,7 +34,7 @@
 						<li>
 							<div class="book">
 								<div class="bestbook">
-									<img src="images/bestseller.jpg" alt="거꾸로 읽는 세계사">
+									<img src="images/bestseller.JPG" alt="거꾸로 읽는 세계사">
 								</div>
 							</div>
 							<div class="bestcontent">
@@ -56,7 +56,7 @@
 						<li>
 							<div class="book">
 								<div class="bestbook">
-									<img src="images/bestseller.jpg" alt="거꾸로 읽는 세계사">
+									<img src="images/bestseller.JPG" alt="거꾸로 읽는 세계사">
 								</div>
 							</div>
 							<div class="bestcontent" style="border: 0;">
@@ -78,7 +78,7 @@
 						<li>
 							<div class="book">
 								<div class="bestbook">
-									<img src="images/bestseller.jpg" alt="거꾸로 읽는 세계사">
+									<img src="images/bestseller.JPG" alt="거꾸로 읽는 세계사">
 								</div>
 							</div>
 							<div class="bestcontent">
@@ -100,7 +100,7 @@
 						<li>
 							<div class="book">
 								<div class="bestbook">
-									<img src="images/bestseller.jpg" alt="거꾸로 읽는 세계사">
+									<img src="images/bestseller.JPG" alt="거꾸로 읽는 세계사">
 								</div>
 							</div>
 							<div class="bestcontent">
@@ -122,7 +122,7 @@
 						<li>
 							<div class="book">
 								<div class="bestbook">
-									<img src="images/bestseller.jpg" alt="거꾸로 읽는 세계사">
+									<img src="images/bestseller.JPG" alt="거꾸로 읽는 세계사">
 								</div>
 							</div>
 							<div class="bestcontent" style="border: 0;">
@@ -144,7 +144,7 @@
 						<li>
 							<div class="book">
 								<div class="bestbook">
-									<img src="images/bestseller.jpg" alt="거꾸로 읽는 세계사">
+									<img src="images/bestseller.JPG" alt="거꾸로 읽는 세계사">
 								</div>
 							</div>
 							<div class="bestcontent">
@@ -166,7 +166,7 @@
 						<li>
 							<div class="book">
 								<div class="bestbook">
-									<img src="images/bestseller.jpg" alt="거꾸로 읽는 세계사">
+									<img src="images/bestseller.JPG" alt="거꾸로 읽는 세계사">
 								</div>
 							</div>
 							<div class="bestcontent">
@@ -188,7 +188,7 @@
 						<li>
 							<div class="book">
 								<div class="bestbook">
-									<img src="images/bestseller.jpg" alt="거꾸로 읽는 세계사">
+									<img src="images/bestseller.JPG" alt="거꾸로 읽는 세계사">
 								</div>
 							</div>
 							<div class="bestcontent" style="border: 0;">

@@ -16,8 +16,6 @@ public class BuyController extends HttpServlet {
 		String payBy = request.getParameter("payBy");
 		String agree = request.getParameter("agree");
 		int bookNum = Integer.parseInt(request.getParameter("bookNum"));
-		// 살 책이 여러개 일때는 bookNum에 값이 여러개 들어올 것임 구분하는것은 ,로 구분될듯 => 예상이니깐 화면 구성하고 테스트하면서 확인해보기
-		// 예상과 다르다면 여러개의 책을사게하는 컨트롤러 또 만들어야 할듯함.
 		int IdNum = Integer.parseInt((String)request.getSession().getAttribute("isLogin"));
 		BuyDao dao = new BuyDao();
 		if(!dao.checkBook(bookNum) || !dao.checkId(IdNum)) {

@@ -3,6 +3,7 @@ package alarm;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,5 +40,7 @@ public class AlarmController extends HttpServlet {
 			if (success == false) response.setStatus(401);
 		} 
 
+		RequestDispatcher rd = request.getRequestDispatcher("카트페이지");
+		rd.forward(request, response);
 	}
 }
