@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import signup.MemberService;
 
 @WebServlet("/check")
 public class CheckController extends HttpServlet {
@@ -17,7 +16,7 @@ public class CheckController extends HttpServlet {
 		// 프론트에서 파라미터를 전달할 때 type을 같이 전달해줘서 type이 email이냐 id이냐 에 따라서 다른 메서드를 실행함
 		request.setCharacterEncoding("UTF-8");
 		
-		MemberService service = new MemberService();
+		MemberDao Dao = new MemberDao();
 		
 		String Type = request.getParameter("type");
 		// "type"라는 이름의 파라미터를 받아옴
@@ -29,12 +28,12 @@ public class CheckController extends HttpServlet {
 		boolean Idcheck;
 		
 		if(Type.equals("email")) {		
-			EmailCheck = service.checkEmail(Email);			
+			EmailCheck = Dao.getEmailCheckBoolean(Email);			
 			// 이메일이 없으면 200, 아이디가 있으면 400전달
 			if(!EmailCheck)response.setStatus(200);
 			else response.setStatus(400);
 		}else if(Type.equals("text")) {
-			Idcheck = service.checkId(Id);
+			Idcheck = Dao.getIdCheckBoolean(Id);
 			// 아이디가 없으면 200, 아이디가 있으면 400전달
 			if(!Idcheck)response.setStatus(200);
 			else response.setStatus(400);
