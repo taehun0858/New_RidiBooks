@@ -1061,6 +1061,10 @@ main {
   margin-top: 17px;
 }
 
+.newridiweek .weekcontent .bx-viewport ul li img{
+  height: 217.22px;
+}
+
 .weekwrapper .weekridicontent li p {
   font-size: 13px;
   color: #636c73;
