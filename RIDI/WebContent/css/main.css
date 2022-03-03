@@ -1072,6 +1072,10 @@ main {
   font-weight: normal;
   line-height: 1.2em;
 }
+.newridiweek .weekcontent .bx-viewport ul li img{
+  height: 217.22px;
+}
+
 
 @media (min-width: 1000px) {
   .weekcontent .weekwrapper {

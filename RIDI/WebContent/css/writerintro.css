@@ -1,0 +1,675 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header-banner {
+    width: 100%;
+    background-color: #1f8ce6;
+}
+
+.header-banner header {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav {
+    padding: 16px 16px 24px 20px;
+}
+
+.header-banner nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-banner .logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-banner .logo .logowrapper {
+    flex: none;
+    order: 1;
+    min-height: 30px;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-bottom: 0;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logowrapper .bar, .logowrapper li {
+    margin-top: 8px;
+}
+
+
+.logowrapper li svg, .logowrapper .bar svg , .headerlogo svg{
+    width: 119px;
+    height: 18px;
+    fill: white;
+}
+
+.logo .bar::before {
+    display: inline-block;
+    content: '';
+    width: 1px;
+    height: 14px;
+    margin: 0 10px;
+    background-color: white;
+    opacity: 0.3;
+}
+.logo .button {
+    order: 3;
+    margin-left: auto;
+}
+
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+}
+
+.button li {
+    margin-left: 6px;
+}
+
+.button .signupbtn {
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0 16px;
+    font-weight: bold;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    background-color: #1f8ce6;
+    border: 1px solid #99d1ff;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button .loginbtn {
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0 16px;
+    font-weight: bold;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #1f8ce6;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.search {
+    flex: 1;
+    max-width: 340px;
+    order: 2;
+    z-index: 7000;
+}
+
+.search .searchbox {
+    outline: none;
+    width: 340px;
+    height: 36px;
+    margin-left: 8px;
+}
+
+
+.search label {
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search label svg {
+    flex: none;
+    color: #808991;
+    font-size: 24px;
+    margin: 0 4px 0 6px;
+    opacity: 0.6;
+    width: 24px;
+    height: 24px;
+}
+
+.search .searchbox input {
+    width: 100%;
+    height: 36px;
+    letter-spacing: -0.03em;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 16px;
+    background: none;
+    appearance: none;
+}
+
+.search .searchbox input:active {
+    border: 0;
+}
+
+.mainnav {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+}
+
+.mainnav .home, .mainnav .alarm, .mainnav .cart, .mainnav .myridi{
+    margin-right: 50px;
+    padding-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    height: 36px;
+}
+
+
+.mainnav a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.mainnav a:hover {
+    cursor: pointer;
+    background-color: #3497e8;
+    border: 0;
+    border-radius: 3px;
+    color: #80bef1;
+}
+
+
+.headerlogo svg {
+    width: 20px;
+    height: 20px;
+}
+
+.headerlogo span {
+    height: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 5px;
+    line-height: 1;
+    top: 1px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.underline {
+    border-bottom: 3px solid #99d1ff;
+}
+
+.subnav {
+   width: 100%;
+   margin: 0;
+   background-color: white;
+   list-style-type: none; 
+}
+
+.subnav .line {
+    width: 100%;
+    border-bottom: 1px solid #e6e8eb;
+}
+
+.subnav .line ul {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.subnav .line ul li {
+    list-style: none;
+    line-height: 56px;
+    height: 100%;
+    margin-right: 0;
+    cursor: pointer;
+    text-align: center;
+    color: #40474d;
+}
+.subnav .line ul li a {
+    color: #40474d;
+    text-decoration: none;
+    padding: 0 20px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 48px;
+}
+.subnav .line ul li a:hover {
+    color: #b0b3b6;
+}
+
+
+.line ul li svg {
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    fill: #636c73;
+}
+
+.bookcontent {
+    width: 1016px;
+    margin: 0 auto 60px auto;
+    border-top: none;
+}
+
+.bookcontent .introduction {
+    display: table;
+    width: 1016px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1em;
+}
+
+/* 본문 */
+#authorpage {
+  width: 952px;
+  margin: 0 auto;
+}
+
+#authorpage .wrapper {
+  position: relative;
+}
+#authorpage .wrapper .mainauthor {
+  padding: 20px 20px 0 20px;
+  border: 10px solid #eee;
+  margin-top: 30px;
+}
+
+.mainauthor .profile {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.mainauthor .profile .authorname {
+  padding: 0 0 6px 1px;
+}
+.mainauthor .profile .authorname h4 {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 10px 17px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.3em;
+}
+.mainauthor .profile .authorname button {
+  display: block;
+  min-width: 168px;
+  padding: 8px 8px 7px 8px;
+  font-size: 12px;
+  line-height: 1em;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 700;
+  color: #1f8ce6;
+  background: #fff;
+  border: 1px solid #1f8ce6;
+  box-shadow: 0 1px 1px 0 rgb(31, 140, 230 / 30%);
+  cursor: pointer;
+}
+.mainauthor .profile .authorname button:hover {
+  background: #ebf6ff;
+}
+
+.mainauthor .profile .profilelist {
+  padding-top: 8px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mainauthor .profile .profilelist li .list-title {
+  display: table-cell;
+  padding-right: 7px;
+  width: 2em;
+  font-size: 13px;
+  color: #808991;
+  line-height: 1.8em;
+  white-space: nowrap;
+}
+.mainauthor .profile .profilelist li .list-content{
+  display: table-cell;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.8em;  
+}
+.mainauthor p {
+  padding: 14px 1px 20px 0;
+  text-align: right;
+}
+.mainauthor p .update {
+  padding-right: 10px;
+  color: #9ea7ad;
+  font-size: 13px;
+}
+.mainauthor p button {
+  color: #808991;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #d1d5d9;
+  padding: 4px 10px;
+  font-size: 11px;
+  box-shadow: 0 1px 1px 0 rgb(209, 213, 217 / 30%);
+}
+.mainauthor p button:hover {
+  background: #f2f4f5;
+}
+.mainauthor .author-biography {
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+}
+.mainauthor .author-biography .paragraph{
+  line-height: 1.8em;
+  text-align: left;
+  font-size: 13px;
+  color: #333;
+}
+
+.wrapper .mainbook {
+  border-top: 1px solid #eee;
+  padding-bottom: 50px;
+}
+.wrapper .mainbook .header-wrapper {
+  margin-top: 26px;
+  display: table;
+  width: 100%;
+}
+.wrapper .mainbook .header-wrapper h4 {
+  display: table-cell;
+  padding-left: 16px;
+  vertical-align: top;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+.wrapper .mainbook .header-wrapper .bookfilter {
+  display: inline-flex;
+  margin-left: -145px;
+  vertical-align: top;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px;
+  color: #999;
+}
+.wrapper .mainbook .bookcontent{
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid #dfdfdf;
+}
+.wrapper .mainbook .bookcontent .thumbnail {
+  padding-right: 0;
+  display: table-cell;
+  vertical-align: top;
+  padding: 8px 15px;
+}
+.wrapper .mainbook .bookcontent .thumbnail .thumbnailimg {
+  display: inline-block;
+  position: relative;
+}
+.wrapper .mainbook .bookcontent .thumbnail .thumbnailimg img {
+  width: 110px;
+  max-width: 167px;
+}
+.wrapper .mainbook .bookcontent .bookexplain{
+  display: table-cell;
+  vertical-align: top;
+  padding: 10px;
+}
+.wrapper .mainbook .bookcontent .bookexplain h3 {
+  margin-bottom: 7px;
+  font-size: 15px;
+  color: #000;
+  font-weight: 700;
+}
+.bestlogo .stars {
+  font-size: 13px;
+  line-height: 1.2em;
+  display: flex;
+  color: #666;
+  padding-top: 5px;
+  margin: 0 0 9px -10px;
+}
+
+.stars .starwrapper {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 10px;
+}
+
+.stars .starwrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 94%;
+  height: 10px;
+  color: #fa722e;
+}
+
+.stars .number, .author, .publish, .genre {
+  color: #999;
+  font-size: 11px;
+  padding-top: 1px;
+  margin: 0 2px;
+  line-height: 1em;
+}
+.stars .author, .publish, .genre {
+  font-size: 12px;
+  color: #666;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+.wrapper .mainbook .bookcontent .bookexplain .bookdescription {
+  margin-top: 7px;
+  font-size: 13px;
+  color: #666;
+  text-overflow: ellipsis;
+}
+.wrapper .mainbook .bookcontent .bookexplain .bookprice {
+  display: flex;
+  margin-top: 0.7em;
+}
+.wrapper .mainbook .bookcontent .bookexplain .bookprice p {
+  padding-left: 0;
+  font-size: 12px;
+  color: #666;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+.wrapper .mainbook .bookcontent .bookexplain .bookprice span {
+  color: #1f8ce6;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.2em;
+  margin-left: 3px;
+}
+
+
+
+/* 푸터 부분 */
+.newfooter {
+    width: 100%;
+    color: #fff;
+    background-color: #303538;
+  }
+  
+  .newfooter footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    transition: all 0.3s;
+    max-height: 700px;
+    display: block;
+    color: #fff;
+  }
+  
+  footer .notice {
+    display: flex;
+    align-items: start;
+    justify-content: unset;
+  }
+  
+  .notice .submain {
+    display: flex;
+    margin-right: 80px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .submain li a {
+    text-decoration: none;
+  }
+  
+  
+  .submain li a span {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1em;
+    letter-spacing: -0.03em;
+  }
+  
+  .notice .sub {
+    display: flex;
+    padding-top: 6px;
+    margin-bottom: 48px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sub li .subnav1, .sub li .subnav2, .sub li .subnav3, .sub li .subnav4 {
+    margin-right: 16px;
+    position: relative;
+    list-style-type: none;
+  
+  }
+  
+  .subnav1 li, .subnav2 li, .subnav3 li, .subnav4 li {
+    width: 140px;
+  }
+  
+  .subnav1 li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  .subnav2 li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  .subnav3 li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  .subnav4 li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  
+  .subnav1 li a, .subnav2 li a, .subnav3 li a, .subnav4 li a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .subnav1 li a span, .subnav2 li a span, .subnav3 li a span, .subnav4 li a span {
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .subnav1 li svg {
+    height: 11px;
+  }
+  
+  .subnav4 li svg {
+    position: relative;
+    top: 2px;
+    margin-left: 6px;
+    fill: #509deb;
+    width: 14px;
+    height: 14px;
+  }
+  
+  footer .corp {
+    margin-bottom: 16px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1em;
+  }
+  
+  footer .corp .information {
+    display: flex;
+    position: relative;
+    height: 17px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 24px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: #808991;
+  }
+  
+  .information svg {
+    fill: #808991;
+    font-size: 12px;
+    line-height: 20px;
+    transform: scale(0.5) rotate(90deg);
+    margin-left: -51px;
+    margin-top: 24px;
+  }
+  
+  footer .ridicorp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #666;
+    font-size: 12px;
+    line-height: 1em;
+    letter-spacing: -0.03em;
+  }
+  
+  footer .ridicorp p {
+    width: 83px;
+    height: 17px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7e8992;
+    margin-right: 24px;
+  }
+  
+  footer .ridicorp ul {
+    list-style-type: none;
+    display: flex;
+  
+  }
+  
+  footer .ridicorp ul li a {
+    width: 41px;
+    height: 20px;
+    font-size: 11px;
+    line-height: 1.82;
+    color: #7e8992;
+    text-decoration: none;
+  }
