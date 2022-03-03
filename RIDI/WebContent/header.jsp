@@ -36,7 +36,7 @@
 			</div>
 		</nav>
 		<ul class="mainnav">
-			<li class="home"><a href="/ridibooks">
+			<li class="home"><a href="/ridibooks/">
 					<div class="headerlogo">
 						<svg viewBox="0 0 24 24" class="fig-20c2qt">
 							<path
@@ -44,7 +44,7 @@
 						<span>홈</span>
 					</div>
 			</a></li>
-			<li class="alarm"><a href="#">
+			<li class="alarm"><a href="/ridibooks/alarm.jsp">
 					<div class="headerlogo">
 						<svg viewBox="0 0 24 24" class="fig-20c2qt">
 							<path
@@ -52,7 +52,7 @@
 						<span>알림</span>
 					</div>
 			</a></li>
-			<li class="cart"><a href="#">
+			<li class="cart"><a href="/ridibooks/mycart">
 					<div class="headerlogo">
 						<svg viewBox="0 0 24 24" class="fig-20c2qt">
 							<path

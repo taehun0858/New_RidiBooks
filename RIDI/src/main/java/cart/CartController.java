@@ -21,7 +21,7 @@ public class CartController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 카트 페이지로 이동했을때 로그인한 아이디가 카트에 등록해놓은 책들 목록을 전달해줘야함.
 		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
+		response.setContentType("UTF-8");
 		HttpSession session = request.getSession();
 		if(session.getAttribute("isLogin")!=null) { // || Integer.parseInt((String) session.getAttribute("isLogin"))!=0) {
 			// 로그인을 하고 카트페이지에 왔을때
