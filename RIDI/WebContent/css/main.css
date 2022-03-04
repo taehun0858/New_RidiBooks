@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+#result > li > img{
+	height: 217.23px !important;
+}
+
+
 .header-banner {
     width: 100%;
     background-color: #1f8ce6;
