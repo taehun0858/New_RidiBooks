@@ -21,6 +21,7 @@ public class CartController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 카트 페이지로 이동했을때 로그인한 아이디가 카트에 등록해놓은 책들 목록을 전달해줘야함.
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		response.setContentType("UTF-8");
 		HttpSession session = request.getSession();
 		if(session.getAttribute("isLogin")!=null) { // || Integer.parseInt((String) session.getAttribute("isLogin"))!=0) {
@@ -38,16 +39,18 @@ public class CartController extends HttpServlet {
 						+"\", \"bookNum\":\""+ books.get(i).getBookNum()+"\", \"imageurl\":\""+ books.get(i).getAuthor()
 						+"\", \"imageurl\":\""+ books.get(i).getImageUrl()+  "\"}";
 			}
-			String result = Arrays.toString(data);
-			System.out.println(result);
-			out.print(result);
-			out.close();
-//			request.setAttribute("CartBooks", books);
+//			String result = Arrays.toString(data);
+//			System.out.println(result);
+//			out.print(result);
+//			out.close();
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/Cart.jsp");
+			rd.forward(request, response);
 			response.setStatus(HttpServletResponse.SC_OK);
 		}else {
-			RequestDispatcher rd = request.getRequestDispatcher("/login.html");
-			rd.forward(request, response);
+			response.sendRedirect("login.html");
 			response.setStatus(HttpServletResponse.SC_BAD_GATEWAY);
+			
 		}
 		
 		
