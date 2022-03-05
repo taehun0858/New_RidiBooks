@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이미예 - 리디북스</title>
     <link rel="stylesheet" href="css/search.css">
-    <link href="css/jquery.bxslider.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="shortcut icon" href="https://static.ridicdn.net/books/dist/favicon/favicon.ico?210419">
     <link rel="stylesheet" href="css/all.min.css">
@@ -123,7 +122,8 @@
             <label class="noadult">
                 성인 제외
                 <span class="button">
-                    <span class="round"></span>
+                    <span class="round1"></span>
+                    <span class="round2"></span>
                     <input type="checkbox" class="roundbtn">
                 </span>
             </label>
@@ -131,10 +131,10 @@
         <div class="genrenav">
             <div class="navcontent">
                 <ul>
-                    <li><span>전체 (2)</span></li>
-                    <li><span>국내 판타지 소설 (2)</span></li>
-                    <li><span>한국소설 (1)</span></li>
-                    <li><span>청소년 (1)</span></li>
+                    <li class="total"><span>전체 (2)</span></li>
+                    <li class="nav"><span>국내 판타지 소설 (2)</span></li>
+                    <li class="nav"><span>한국소설 (1)</span></li>
+                    <li class="nav"><span>청소년 (1)</span></li>
                 </ul>
             </div>
         </div>
@@ -152,63 +152,81 @@
                 </label>
             </div>
             <div>
-                <label for="checkrent">
+                <label for="checkrent" class="checkrent">
                     <input type="checkbox" name="rent" id="checkrent" class="checkrent">
                     대여
                 </label>
             </div>
         </div>
         <div class="bookcontent">
-            <div class="thumbnail">
-                <div class="thumbnailimg">
-                    <img src="images/popular.jpg" alt="달러구트 꿈 백화점 2">
+            <div class="content1">
+                <div class="thumbnail">
+                    <div class="thumbnailimg">
+                        <img src="images/popular.jpg" alt="달러구트 꿈 백화점 2">
+                    </div>
+                </div>
+                <div class="bookexplain">
+                    <h3>달러구트 꿈 백화점 2</h3>
+                    <div class="explaincontent">
+                        <span class="exauthor">이미예</span>
+                        <p class="stars">
+                            <span class="starwrapper">
+                                <i class="fa-solid fa-star"></i>
+                                4.7점
+                            </span>
+                            <span class="number">(688)</span>
+                        </p>
+                        <p class="novel">
+                            <span class="publish">팩토리나인 |</span>
+                            <span class="genre"> 소설</span>
+                        </p>
+                    </div>
+                    <p class="bookdescription">
+                        100만 독자를 사로잡은 《달러구트 꿈 백화점》, 그 두 번째 이야기 어느덧 페니가 달러구트 꿈 백화점에서 일한 지도
+                        1년이 넘었다. 재고가 부족한 꿈을 관리하고, 꿈값 창고에서 감정으로 가득 찬 병을 옮기고, 프런트의 수많은 눈꺼풀 저울을 관리하는 일에 능숙해진
+                        페니는 자신감도 넘친다. 게다가 ...
+                    </p>
+                    <div class="bookprice">
+                        <p>
+                            소장
+                            <span>9,660원</span>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="bookexplain">
-                <h3>달러구트 꿈 백화점 2</h3>
-                <span class="author">이미예</span>
-                <p class="stars">
-                    <span class="starwrapper">
-                        <i class="fa-solid fa-star"></i>
-                        4.7점
-                    </span>
-                    <span class="number">(688)</span>
-                    <span class="publish">팩토리나인 |</span>
-                    <span class="genre">소설</span>
-                </p>
-                <p class="bookdescription">
-                    <책소개> 100만 독자를 사로잡은 《달러구트 꿈 백화점》, 그 두 번째 이야기 어느덧 페니가 달러구트 꿈 백화점에서 일한 지도
-                    1년이 넘었다. 재고가 부족한 꿈을 관리하고, 꿈값 창고에서 감정으로 가득 찬 병을 옮기고, 프런트의 수많은 눈꺼풀 저울을 관리하는 일에 ...
-                </p>
-                <div class="bookprice">
-                    <p>소장</p>
-                    <span>9,660원</span>
+            <div class="content2">
+                <div class="thumbnail">
+                    <div class="thumbnailimg">
+                        <img src="images/popular_series.JPG" alt="달러구트 꿈 백화점">
+                    </div>
                 </div>
-            </div>
-            <div class="thumbnail">
-                <div class="thumbnailimg">
-                    <img src="images/popular.jpg" alt="달러구트 꿈 백화점">
-                </div>
-            </div>
-            <div class="bookexplain">
-                <h3>달러구트 꿈 백화점</h3>
-                <span class="author">이미예</span>
-                <p class="stars">
-                    <span class="starwrapper">
-                        <i class="fa-solid fa-star"></i>
-                        4.6점
-                    </span>
-                    <span class="number">(5,023)</span>
-                    <span class="publish">북닻 |</span>
-                    <span class="genre">소설, 어린이/청소년</span>
-                </p>
-                <p class="bookdescription">
-                    만들어진 꿈을 살 수 있는 상점이 있다면? 꾸고 싶은 꿈은 살 수 있다면 사람들은 어떤 꿈을 고를까?《달러구트 꿈 백화점》은 '무의식에서만 존재하는 꿈을
-                    정말 사고 팔 수 있을까?'라는 기발한 질문에 답을 찾아가는 판타지 소설이다. 꿈을 통해 그리움고 상처를 치유하는 사람들의 이야기를 꿈을 만드는 사람, 파...
-                </p>
-                <div class="bookprice">
-                    <p>소장</p>
-                    <span>9,100원</span>
+                <div class="bookexplain">
+                    <h3>달러구트 꿈 백화점</h3>
+                    <div class="explaincontent">
+                        <span class="exauthor">이미예</span>
+                        <p class="stars">
+                            <span class="starwrapper">
+                                <i class="fa-solid fa-star"></i>
+                                4.6점
+                            </span>
+                            <span class="number">(5,023)</span>
+                        </p>
+                        <p class="novel">
+                            <span class="publish">북닻 |</span>
+                            <span class="genre"> 소설, 어린이/청소년</span>
+                        </p>
+                    </div>
+                    <p class="bookdescription">
+                        만들어진 꿈을 살 수 있는 상점이 있다면? 꾸고 싶은 꿈은 살 수 있다면 사람들은 어떤 꿈을 고를까?《달러구트 꿈 백화점》은 '무의식에서만 존재하는 꿈을
+                        정말 사고 팔 수 있을까?'라는 기발한 질문에 답을 찾아가는 판타지 소설이다. 꿈을 통해 그리움고 상처를 치유하는 사람들의 이야기를 꿈을 만드는 사람, 파...
+                    </p>
+                    <div class="bookprice">
+                        <p>
+                            소장
+                            <span>9,100원</span>
+                        </p>
+                        
+                    </div>
                 </div>
             </div>
         </div>
