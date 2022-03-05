@@ -215,12 +215,384 @@ nav {
 .underline {
     border-bottom: 3px solid #99d1ff;
 }
+/* 본문 */
+.main {
+  max-width: 952px;
+  min-height: 620px;
+  margin: 0px auto ;
+  padding-top: 8px;
+}
+.main .header {
+  display: flex;
+  align-items: center;
+}
+.main .header h2 {
+  display: block;
+  margin: 10px 0;
+  min-width: 0px;
+  color: rgb(48, 53, 56);
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: bolc;
+}
+.main .header span {
+  font-size: 13px;
+  font-weight: normal;
+  margin-left: 5px;
+  color: rgb(158, 167, 173);
+  flex: 0 0 auto;
+}
+.main .results {
+  margin-bottom: 6px;
+  list-style-type: none;
+}
+.main .results li {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+}
+.main .results li .wrapper {
+  display: flex;
+  align-items: center;
+}
+.main .results li .wrapper span i{
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  margin-right: 6px;
+  color: rgb(209, 213, 217);
+  border-radius: 22px;
+}
+.main .results li .wrapper .content {
+  flex: 1 1 0%;
+  min-width: 0px;
+  display: flex;
+  align-items: center;
+}
+.main .results li .wrapper .content .author {
+  flex: 0 0 auto;
+  max-width: 100%;
+  margin-right: 8px;
+  white-space: nowrap;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+.main .results li .wrapper .content .book {
+  font-size: 14px;
+  color: rgb(128, 137, 145);
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  max-height: calc(1.2em);
+  line-height: 1.2em;
+  font-weight: 500;
+}
+.main .results li button {
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  padding: 12px 0px;
+  width: 100%;
+  height: 46px;
+  color: rgb(99, 108, 115);
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  background: #fff;
 
+}
+.main .subheader {
+  display: flex;
+  align-items: center;
+}
+.main .subheader h2 {
+  flex: 1 1 0%;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgb(48, 53, 56);
+  display: block;
+  margin: 10px 0px;
+  min-width: 0px;
+}
+.subheader .noadult {
+  display: inline-flex;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(99, 108, 115);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+}
+.subheader .noadult .button {
+  display: flex;
+    width: 50px;
+    height: 30px;
+    border: 2px solid rgb(204, 204, 204);
+    font-size: 26px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+    background: rgb(204, 204, 204);
+    position: relative;
+    margin-left: 4px;
+    transform: scale(0.85);  
+}
+.subheader .noadult .button .round1 {
+  -webkit-box-flex: 0;
+    flex: 0 1 0px;
+    transition: all 0.2s ease 0s;  
+}
+.subheader .noadult .button .round2 {
+  display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 1em;
+    height: 1em;
+    border: none;
+    border-radius: 0.5em;
+    background: white;
+    box-shadow: rgb(0 0 0 / 25%) 0px 2px 3px;
+    pointer-events: none;
+    transition: all 0.2s ease 0s;
+    color: rgb(204, 204, 204);  
+}
+.subheader .noadult .button input {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;  
+}
+.main .genrenav {
+  position: relative;
+}
 
-
-
-
-
+.genrenav .navcontent {
+  display: flex;
+  flex: 1 0 auto;
+}
+.genrenav .navcontent ul {
+  display: flex;
+  height: 45px;
+  list-style-type: none;
+}
+.genrenav .navcontent ul .total {
+  flex: 0 0 auto;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+  box-shadow: rgb(158 167 173) 0px -3px 0px inset;
+}
+.genrenav .navcontent ul .total span {
+  padding: 15px 4px;
+  color: rgb(99, 108, 115);
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 1;
+}
+.genrenav .navcontent ul .nav {
+  flex: 0 0 auto;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+  margin-left: 10px;
+}
+.genrenav .navcontent ul .nav span {
+  padding: 15px 4px;
+  color: rgb(99, 108, 115);
+  font-size: 14px;
+  font-weight: normal;
+  opacity: 0.7;
+}
+.popular {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-top: 12px;
+}
+.popular label {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+}
+.popular label select {
+  appearance: none;
+  width: 93px;
+  height: 2.8em;
+  padding: 7px;
+  border: 1px solid rgb(209, 213, 217);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  background: white;
+  color: rgb(99, 108, 115);
+  font-size: 12px;
+  font-weight: bold;
+  line-height: calc(2.8em - 14px);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+}
+.popular label i {
+  position: absolute;
+  color: rgb(128, 137, 145);
+  width: 10px;
+  height: 6px;
+  margin-left: -5px;
+  margin-top: -3px;
+  top: 33%;
+  right: 7%;
+}
+.popular label select:hover {
+  background: #f2f2f2;
+}
+.popular .checkrent {
+  cursor: pointer;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 6px 4px 6px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 13px;
+  color: rgb(99, 108, 115);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+}
+.popular .checkrent input {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(209, 213, 217);
+  box-sizing: border-box;
+  border-radius: 2px;
+  background: white;
+  transition: background 0.2s ease 0s;
+  margin-right: 6px;  
+}
+.bookcontent {
+  display: flex;
+  flex-direction: column;
+}
+.bookcontent .content1, .content2 {
+  border-bottom: 1px solid rgb(209, 213, 217);
+  display: flex;
+  margin: 0 -15px;
+}
+.bookcontent .thumbnail {
+  padding: 20px 0px 20px 15px;
+  flex: 0 0 auto;
+}
+.bookcontent .thumbnail img {
+  width: 100px;
+}
+.bookcontent .bookexplain {
+  padding: 20px 15px;
+  flex: 1 1 0%;
+}
+.bookcontent .bookexplain h3 {
+  font-size: 16px;
+  font-weight: bolder;
+}
+.bookcontent .bookexplain .explaincontent {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3px;
+}
+.bookcontent .bookexplain .explaincontent .exauthor {
+  font-weight: normal;
+  line-height: 1.2em;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 14px;
+  color: rgb(99, 108, 115);
+}
+.bookcontent .bookexplain .explaincontent .stars {
+  font-weight: normal;
+  line-height: 1.2em;
+  font-size: 13px;
+  color: rgb(128, 137, 145);
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-top: 4px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;  
+}
+.bookcontent .bookexplain .explaincontent .stars .starwrapper {
+  font-weight: bold;
+  color: rgb(250, 114, 46);
+  font-size: 13px; 
+}
+.bookcontent .bookexplain .explaincontent .stars .number {
+  color: rgb(153, 153, 153);
+  padding-top: 1px;
+  margin: 0px 2px;
+  line-height: 1em;
+  font-size: 12px; 
+}
+.bookcontent .bookexplain .explaincontent .novel {
+  display: flex;
+  margin-top: 4px;
+  position: relative;
+  align-items: center;
+  white-space: pre-wrap;
+  -webkit-box-align: center;
+}
+.bookcontent .bookexplain .explaincontent .novel span {
+  font-weight: normal;
+  line-height: 1.2em;
+  font-size: 13px;
+  color: rgb(128, 137, 145);
+  padding-top: 1px;
+  padding-bottom: 1px; 
+}
+.bookcontent .bookexplain .bookdescription {
+  margin-top: 9px;
+  display: flex;
+  margin: 6px 0px;
+  color: rgb(102, 102, 102);
+  font-size: 13px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  word-break: keep-all;
+  max-height: calc(4.5em);
+  line-height: 1.5em;
+}
+.bookcontent .bookexplain .bookprice{
+  margin-top: 3px;
+}
+.bookcontent .bookexplain .bookprice p {
+  padding: 1px 0px 5px;
+  text-align: left;
+  color: rgb(102, 102, 102);
+  font-weight: normal;
+  font-size: 13px;
+}
+.bookcontent .bookexplain .bookprice p span {
+  color: rgb(31, 140, 230);
+  font-weight: bold;
+}
 
 
 
