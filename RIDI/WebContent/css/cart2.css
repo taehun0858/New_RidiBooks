@@ -1,0 +1,769 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header-banner {
+    width: 100%;
+    background-color: #1f8ce6;
+}
+
+.header-banner header {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav {
+    padding: 16px 16px 24px 20px;
+}
+
+.header-banner nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-banner .logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-banner .logo .logowrapper {
+    flex: none;
+    order: 1;
+    min-height: 30px;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-bottom: 0;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logowrapper .bar, .logowrapper li {
+    margin-top: 8px;
+}
+
+
+.logowrapper li svg, .logowrapper .bar svg , .headerlogo svg{
+    width: 119px;
+    height: 18px;
+    fill: white;
+}
+
+.logo .bar::before {
+    display: inline-block;
+    content: '';
+    width: 1px;
+    height: 14px;
+    margin: 0 10px;
+    background-color: white;
+    opacity: 0.3;
+}
+.logo .button {
+    order: 3;
+    margin-left: auto;
+}
+
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+}
+
+.button li {
+    margin-left: 6px;
+}
+
+.button .signupbtn {
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0 16px;
+    font-weight: bold;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    background-color: #1f8ce6;
+    border: 1px solid #99d1ff;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button .loginbtn {
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0 16px;
+    font-weight: bold;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #1f8ce6;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.search {
+    flex: 1;
+    max-width: 340px;
+    order: 2;
+    z-index: 7000;
+}
+
+.search .searchbox {
+    outline: none;
+    width: 340px;
+    height: 36px;
+    margin-left: 8px;
+}
+
+
+.search label {
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search label svg {
+    flex: none;
+    color: #808991;
+    font-size: 24px;
+    margin: 0 4px 0 6px;
+    opacity: 0.6;
+    width: 24px;
+    height: 24px;
+}
+
+.search .searchbox input {
+    width: 100%;
+    height: 36px;
+    letter-spacing: -0.03em;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 16px;
+    background: none;
+    appearance: none;
+}
+
+.search .searchbox input:active {
+    border: 0;
+}
+
+.mainnav {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+}
+
+.mainnav .home, .mainnav .alarm, .mainnav .cart, .mainnav .myridi{
+    margin-right: 50px;
+    padding-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    height: 36px;
+}
+
+
+.mainnav a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.mainnav a:hover {
+    cursor: pointer;
+    background-color: #3497e8;
+    border: 0;
+    border-radius: 3px;
+    color: #80bef1;
+}
+
+
+.headerlogo svg {
+    width: 20px;
+    height: 20px;
+}
+
+.headerlogo span {
+    height: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 5px;
+    line-height: 1;
+    top: 1px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.underline {
+    border-bottom: 3px solid #99d1ff;
+}
+
+.subnav {
+   width: 100%;
+   margin: 0;
+   background-color: white;
+   list-style-type: none; 
+}
+
+.subnav .line {
+    width: 100%;
+    border-bottom: 1px solid #e6e8eb;
+}
+
+.subnav .line ul {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.subnav .line ul li {
+    list-style: none;
+    line-height: 56px;
+    height: 100%;
+    margin-right: 0;
+    cursor: pointer;
+    text-align: center;
+    color: #40474d;
+}
+.subnav .line ul li a {
+    color: #40474d;
+    text-decoration: none;
+    padding: 0 20px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 48px;
+}
+.subnav .line ul li a:hover {
+    color: #b0b3b6;
+}
+
+
+.line ul li svg {
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    fill: #636c73;
+}
+/* 본문 */
+.main {
+    width: 100%;
+    position: relative;
+    min-height: 500px;
+}
+.main .page_purchase {
+    display: table;
+    table-layout: fixed;
+    width: 952px;
+    margin: 30px auto 100px;
+}
+.main .page_purchase .orderlist {
+    display: table-cell;
+    width: 564px;
+    vertical-align: top;
+}
+.main .page_purchase .orderlist .order {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.main .page_purchase .orderlist .order .ordertitle {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e5e8eb;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+.main .page_purchase .orderlist .order .ordertitle span {
+    font-size: 16px;
+    color: #818a92;
+}
+ul {
+    list-style: none;
+}
+.main .page_purchase .orderlist .order ul li .book {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #dfdfdf;
+}
+ul li .book .thumbnail{
+    padding: 15px 0 15px 8px;
+    width: 22px;
+}
+ul li .book .thumbnail img {
+    width: 60px;
+    max-height: 87px;
+    border: 0;
+}
+ul li .book .content {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px 0 15px 0;
+}
+ul li .book .content .content-wrapper {
+    display: table;
+    width: 100%;
+}
+ul li .book .content .content-wrapper .booktitle {
+    padding: 0 8px 15px 15px;
+    display: table-cell;
+    vertical-align: top;
+    position: relative;    
+}
+ul li .book .content .content-wrapper .booktitle .bookname {
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 7px;
+    font-size: 13px;
+    color: #000;
+    font-weight: 700;
+}
+ul li .book .content .content-wrapper .booktitle p{
+    display: block;
+    margin-top: 3px;
+    font-size: 12px;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+ul li .book .content .content-wrapper .bookprice {
+    width: 100px;
+    display: table-cell;
+    vertical-align: middle;
+}
+ul li .book .content .content-wrapper .bookprice .minus {
+    display: inline-block;
+    margin-right: 4px;
+    min-width: 35px;
+    text-align: center;
+}
+ul li .book .content .content-wrapper .bookprice .number {
+    color: #1f8ce6;
+    font-size: 14px;
+    font-weight: bold;
+}
+.main .page_purchase .orderreceipt {
+    display: table-cell;
+    width: 290px;
+    vertical-align: top;
+    padding-left: 50px;
+}
+
+.orderreceipt form .order-form .formtitle{
+    padding-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+form .order-form .order-info{
+    border: 1px solid #87b4e9;
+}
+form .order-form .order-info ul .infolist {
+    min-height: 44px;
+    border-top: 1px solid #d9e2eb;
+}
+form .order-form .order-info ul .infolist .listwrapper {
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+form .order-form .order-info ul .infolist .listwrapper h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #545f6f;
+}
+form .order-form .order-info ul .infolist .listwrapper .price {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #000;
+}
+form .order-form .order-info ul .infolist .listwrapper .discount {
+    font-size: 13px;
+    font-weight: 700;
+    color: #abb3ba;
+}
+form .order-form .order-info ul .current-price{
+    background: #ebf6ff;
+    padding: 22px 0 20px 0;
+    text-align: center;
+}
+form .order-form .order-info ul .current-price strong {
+    color: #59667a;
+    font-size: 14px;
+}
+form .order-form .order-info ul .current-price .totalprice {
+    font-size: 20px;
+    color: #1f8ce6;
+}
+
+.order-method .payment {
+    margin-top: -1px;
+    border: 1px solid #87b4e9;
+    opacity: 1;
+    max-height: 480px;
+    transition: max-height 0.3s, opacity 0.3s, border 0.3s;
+    transition-timing-function: ease;
+}
+.order-method .payment h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #545f6f;
+    padding: 14px 14px 0 14px;
+}
+.paymentsection .paymentlist {
+    padding-top: 4px;
+}
+.paymentlist {
+    padding: 12px 16px 20px;
+}
+.paymentsection .paymentlist li {
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-top: 8px;
+    height: 20px;
+    line-height: 20px;
+}
+.paymentsection .paymentlist li input label {
+    height: 20px;
+    line-height: 20px;
+    box-sizing: border-box;
+    color: #303538;
+}
+label .naver {
+    color: transparent;
+    text-indent: -444px;
+    background: url("../images/naverpay.svg") center center no-repeat;
+    background-size: 100% 100%;
+    width: 79px;
+    height: 20px;
+    padding-left: 26px;
+    cursor: pointer;
+}
+.paymentlist li .taxdeduct {
+    margin-left: 8px;
+    border-radius: 2px;
+    background-color: #ebf6ff;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 5px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #66baff;
+    position: relative;
+}
+.paymentlist li .kakaopay {
+    height: 20px;
+    line-height: 20px;
+    padding-left: 12px;
+}
+label .kakao {
+    text-indent: -444px;
+    color: transparent;
+    background: url("../images/kakao.svg") center center no-repeat;
+    background-color: #ffeb00;
+    background-size: 41px 14px;
+    width: 48px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+label .samsung {
+    color: transparent;
+    text-indent: -444px;
+    background: url("../images/samsung.svg") center center no-repeat;
+    background-size: 100% 100%;
+    width: 84px;
+    height: 22px;
+    padding-left: 26px;
+    cursor: pointer;
+}
+.paymentlist li .sspay {
+    height: 20px;
+    line-height: 20px;
+    padding-left: 12px;
+}
+label .payco {
+    text-indent: -444px;
+    color: transparent;
+    background: url("../images/payco.svg") center center no-repeat;
+    background-size: 100% 100%;
+    width: 48px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.paymentlist li .paycopay {
+    height: 20px;
+    line-height: 20px;
+    padding-left: 12px;
+}
+label .normal {
+    padding-left: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #636c73;
+    cursor: pointer;
+}
+.order-method .warning {
+    margin-top: 15px;
+    max-height: 10em;
+    opacity: 1;
+}
+
+.order-method .warning .warningcontent {
+    margin-bottom: 7px;
+    position: relative;
+    padding-left: 9px;
+    color: #808991;
+    font-size: 13px;
+    line-height: 1.4em;
+}
+.warning .warningcontent .taxdeduct {
+    border-radius: 2px;
+    background-color: #ebf6ff;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 5px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #66baff;
+    position: relative;
+}
+.order-method .agreement {
+    margin-top: 25px;
+}
+.order-method .agreement h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+input[type=checkbox] {
+    margin-top: 5px;
+    margin-right: 7px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #b9bcc2;
+    -webkit-appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 #e5e5e5;
+    border-radius: 4px;
+}
+.order-method .agreement .agree-checkbox {
+    display: table;
+    margin-top: 10px;
+}
+.order-method .agreement .agree-checkbox label {
+    display: table-cell;
+    font-size: 14px;
+    font-weight: 700;
+    color: #40474d;
+    vertical-align: top;
+    line-height: 18px;
+}
+.order-method .checkbutton button{
+    width: 100%;
+    margin-top: 15px;
+    outline: 0;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 1em;
+    text-align: center;
+    background: #1f8ce6;
+    border: 1px solid #007799;
+    box-shadow: 0 1px 1px 0 rgb(31, 140, 230 / 30%);
+    color: #fff;
+    padding: 16px 34px;
+}
+
+/* 푸터 부분 */
+.newfooter {
+    width: 100%;
+    color: #fff;
+    background-color: #303538;
+  }
+  
+  .newfooter footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    transition: all 0.3s;
+    max-height: 700px;
+    display: block;
+    color: #fff;
+  }
+  
+  footer .notice {
+    display: flex;
+    align-items: start;
+    justify-content: unset;
+  }
+  
+  .notice .submain {
+    display: flex;
+    margin-right: 80px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .submain li a {
+    text-decoration: none;
+  }
+  
+  
+  .submain li a span {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1em;
+    letter-spacing: -0.03em;
+  }
+  
+  .notice .sub {
+    display: flex;
+    padding-top: 6px;
+    margin-bottom: 48px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sub li .subnav1, .sub li .subnav2, .sub li .subnav3, .sub li .subnav4 {
+    margin-right: 16px;
+    position: relative;
+    list-style-type: none;
+  
+  }
+  
+  .subnav1 li, .subnav2 li, .subnav3 li, .subnav4 li {
+    width: 140px;
+  }
+  
+  .subnav1 li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  .subnav2 li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  .subnav3 li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  .subnav4 li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  
+  .subnav1 li a, .subnav2 li a, .subnav3 li a, .subnav4 li a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .subnav1 li a span, .subnav2 li a span, .subnav3 li a span, .subnav4 li a span {
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .subnav1 li svg {
+    height: 11px;
+  }
+  
+  .subnav4 li svg {
+    position: relative;
+    top: 2px;
+    margin-left: 6px;
+    fill: #509deb;
+    width: 14px;
+    height: 14px;
+  }
+  
+  footer .corp {
+    margin-bottom: 16px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1em;
+  }
+  
+  footer .corp .information {
+    display: flex;
+    position: relative;
+    height: 17px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 24px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: #808991;
+  }
+  
+  .information svg {
+    fill: #808991;
+    font-size: 12px;
+    line-height: 20px;
+    transform: scale(0.5) rotate(90deg);
+    margin-left: -51px;
+    margin-top: 24px;
+  }
+  
+  footer .ridicorp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #666;
+    font-size: 12px;
+    line-height: 1em;
+    letter-spacing: -0.03em;
+  }
+  
+  footer .ridicorp p {
+    width: 83px;
+    height: 17px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7e8992;
+    margin-right: 24px;
+  }
+  
+  footer .ridicorp ul {
+    list-style-type: none;
+    display: flex;
+  
+  }
+  
+  footer .ridicorp ul li a {
+    width: 41px;
+    height: 20px;
+    font-size: 11px;
+    line-height: 1.82;
+    color: #7e8992;
+    text-decoration: none;
+  }
+
