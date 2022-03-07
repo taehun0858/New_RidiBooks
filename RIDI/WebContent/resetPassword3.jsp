@@ -1,19 +1,19 @@
-<%@page import="find.PwDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%
-PwDto foundPw = (PwDto)request.getAttribute("memberPw");
-%>
+	Integer Id_Num = Integer.parseInt(request.getParameter("Id_Num"));
+%>   
 <!DOCTYPE html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비밀번호 재설정 - 리디북스</title>
-    <link rel="stylesheet" href="css/resetPassword2.css">
-    <link rel="shortcut icon" href="https://static.ridicdn.net/_next/static/images/favicon-29c82025983fa410b3369f441b102764.ico">
+    <title>새 비밀번호 설정 - 리디북스</title>
+    <link rel="stylesheet" href="css/resetPassword3.css">
+    <link rel="shortcut icon" href="https://static.ridicdn.net/books/dist/favicon/favicon.ico?210419">
 </head>
-
 <body>
     <!-- 상단 배너 -->
     <div class="header-wrapper">
@@ -29,20 +29,52 @@ PwDto foundPw = (PwDto)request.getAttribute("memberPw");
     <!-- 본문 -->
     <section>
         <div class="main">
-            <div class="account-form">
-                <h2>이메일이 전송되었습니다!</h2>
-                <h3><%=foundPw.getEmail()%>로<br>
-                    비밀번호 안내 메일을 보내드렸습니다.
-                </h3>
-                <button type="button" class="home">홈으로</button>
+            <div class="account-resetPassword">
+                <h2>새 비밀번호 설정</h2>
+                <div class="account-form">
+<!--                     <form action="post"> -->
+                        <div class="form-wrapper">
+                            <div class="input-group">
+                               <label for="newPassword">
+                                   <input type="password" id="newPassword" class="newPassword" name="Pw" placeholder="새 비밀번호">
+                               </label>
+                               <label for="checkPassword">
+                                    <input type="password" id="checkPassword" name="Pw2" class="checkPassword" placeholder="새 비밀번호 확인">
+                               </label> 
+                            </div>
+                        </div>
+                        <div class="notice-wrapper">
+                            <h4>비밀번호 변경 시 유의사항</h4>
+                            <ul class="notes">
+                                <li class="note">8자 이상, 영문/숫자/특수문자 중 2가지 이상 입력해주세요</li>
+                                <li class="note">연속된 3자 이상의 같은 문자는 제한합니다.</li>
+                                <li class="note">ID와 같은 비밀번호는 사용할 수 없습니다.</li>
+                            </ul>
+                        </div>
+                        <button type="submit" class="submitbtn">확인</button>
+<!--                     </form> -->
+                </div>
             </div> 
         </div>
     </section>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script>
-    $(".home").on("click" ,function () {
-    	 location.href = "/ridibooks/";
-    });
-    </script>
+    
 </body>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(".submitbtn").on("click",function(){
+	let $Pw = $(".newPassword").val();        	
+	$.ajax({        		
+		url:"/ridibooks/resetPw",
+		type:"POST",
+		data:"Pw="+$Pw+"&Id_Num="+<%=Id_Num%>,
+		success: function(){
+			alert("비밀번호 변경을 성공했습니다.")
+			location.href = "/ridibooks/main.html";
+		},
+		error:function(response){
+			
+		}
+	});
+});
+</script>
 </html>

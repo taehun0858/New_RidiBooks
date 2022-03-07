@@ -20,6 +20,7 @@ public class ResetPwController extends HttpServlet {
 //		String Email = request.getParameter("Email");
 //		String Id = request.getParameter("Id");
 		String Pw = request.getParameter("Pw");
+		String Pw2 = request.getParameter("Pw2");
 		Integer Id_Num = Integer.parseInt(request.getParameter("Id_Num"));
 		
 		PwDto member = new PwDto();

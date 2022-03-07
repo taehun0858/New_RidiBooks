@@ -67,7 +67,7 @@ public class FindService {
 	            msg.setSubject("비밀번호 재설정 테스트", "UTF-8");
 	            // 이메일 내용
 	            msg.setText(" 리디북스 프로젝트 의 비밀번호 변경 링크가 있는 메세지 입니다. </br>"
-	            		+ "<a href=\"http://localhost:80/ridibooks/findIdTest.jsp?Id_Num="+member.getId_Num()+"\">비밀번호 바꾸기</a>", "UTF-8");
+	            		+ "<a href=\"http://localhost:80/ridibooks/resetPassword3.jsp?Id_Num="+member.getId_Num()+"\">비밀번호 바꾸기</a>", "UTF-8");
 	            // 이메일 헤더
 	            msg.setHeader("content-Type", "text/html");
 	            //메일보내기
